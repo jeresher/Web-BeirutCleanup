@@ -2,7 +2,7 @@ import React from 'react';
 
 function SideBar() {
     return(
-      <div className='tab-bar'>
+      <div className='sidebar'>
         TabBar
       </div>
     );
