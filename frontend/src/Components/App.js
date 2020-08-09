@@ -1,9 +1,18 @@
 import React from 'react';
-import '../Style/App.css';
+import NavBar from './NavBar';
+import SideBar from './SideBar';
+import MainContent from './MainContent';
+import '../Style/App.css'; 
 
 function App() {
   return (
-    <h1>h1</h1>
+    <div className="main-container">
+      < NavBar />
+      <div className="inner-container">
+        <SideBar />
+        <MainContent />
+      </div>
+    </div>
   );
 }
 
