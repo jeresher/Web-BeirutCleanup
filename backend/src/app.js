@@ -8,15 +8,13 @@ const createPost = require("./controllers/posts").createPost;
 
 
 
-
 mongoose.connect('mongodb://localhost/beirut')
 .then(() => console.log("Connection Successful."))
 
 app.use(express.json());
 
-app.get("/", createPost, (req, res, next) => {
-    res.send('hey');
+app.post("/", createPost, (req, res, next) => {
+    res.send(req.document);
 });
-
 
 app.listen(3000);
