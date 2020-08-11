@@ -1,14 +1,11 @@
 import React from 'react';
-import MainContent from "./MainContent"
+import CreateMap from "./CreateMap"
 import '../Style/App.css'; 
 
 function CreateForm() {
-    return (
-        <div className="inner-create-container">
-            <MainContent />
-            <div className="inner-create-box">
-                <h1>Form</h1>
-            </div>
+    return (       
+        <div className="inner-form-box">
+            <h1>Form</h1>
         </div>
     );
 }

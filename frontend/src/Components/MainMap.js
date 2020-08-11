@@ -22,7 +22,7 @@ const options = {
   zoomControl: true
 }
 
-function MainContent() {
+function MainMap() {
 
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -46,4 +46,4 @@ function MainContent() {
   );
 }
   
-  export default MainContent
+  export default MainMap;

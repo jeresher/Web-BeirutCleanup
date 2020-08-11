@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
 import SideBar from '../Components/SideBar';
-import MainContent from '../Components/MainContent';
+import MainMap from '../Components/MainMap';
 import '../Style/App.css'; 
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
       < NavBar />
       <div className="inner-container">
         <SideBar />
-        <MainContent />
+        <MainMap />
       </div>
     </div>
   );
