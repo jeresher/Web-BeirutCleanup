@@ -20,7 +20,7 @@ function CreateForm(props) {
                 </section>
                 <section>
                     <h6>Date</h6>
-                    <input type="date"></input>
+                    <input type="date" pattern="\d{4}-\d{2}-\d{2}"></input>
                 </section>
                 <section className="textarea">
                     <h6>Description</h6>
