@@ -4,14 +4,21 @@ import CreateMap from '../Components/CreateMap'
 import '../Style/App.css'; 
 
 function Create() {
-  return (
-    <div className="main-create-container">
-        <div className="inner-create-container">
-            <CreateMap />
-            {/* <CreateForm /> */}
+
+    const [ location, setLocation ] = React.useState('')
+
+    function handleLocationChange(newLocation) {
+        setLocation(newLocation)
+    }
+
+    return (
+        <div className="main-create-container">
+            <div className="inner-create-container">
+                <CreateMap handleLocationChange={handleLocationChange} />
+                <CreateForm location={location} />
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default Create;

@@ -64,7 +64,66 @@
 .inner-form-box {
   position: absolute;
   width: 30%;
-  height: 60%;
+  height: 80%;
   margin: 3%;
-  background-color: red;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0px 1px 5px #999;
+}
+
+.inner-form-box .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 13%;
+  box-shadow: 0px 3px 5px #999;
+}
+
+.inner-form-box .header h1 {
+  font-size: 2vw;
+}
+
+.inner-form-box .body {
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+
+.inner-form-box .body section {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 4% 0;
+}
+
+.inner-form-box .body section.textarea {
+  flex-grow: 1;
+}
+
+.inner-form-box .body h6 {
+  margin: 0;
+  padding-left: 5%;
+  flex-basis: 20%;
+}
+
+.inner-form-box .body input {
+  width: 70%;
+}
+
+.inner-form-box .body textarea {
+  resize: none;
+  width: 70%;
+  height: 100%;
+}
+
+
+
+
+.inner-form-box .footer {
+  width: 100%;
+  height: 13%;
 }

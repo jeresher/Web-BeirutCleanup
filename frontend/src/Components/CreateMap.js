@@ -24,7 +24,7 @@ const options = {
   clickableIcons: false
 }
 
-function CreateMap() {
+function CreateMap(props) {
 
     const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -45,7 +45,11 @@ function CreateMap() {
           zoom={13}
           center={center}
           options={options}
-          onClick={(event) => setMarker({ lng: event.latLng.lng(), lat: event.latLng.lat() })}
+          onClick={(event) => {
+              const location = { lng: event.latLng.lng(), lat: event.latLng.lat() }
+              props.handleLocationChange(location);
+              setMarker(location)
+          }}
         >
         {marker ? <Marker position={{ lat: marker.lat, lng: marker.lng }} /> : null}
         </GoogleMap>
