@@ -40,3 +40,27 @@
   border-style: solid;
 }
 
+
+
+
+.main-create-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+}
+
+.inner-create-container {
+  display: flex;
+  width: 80%;
+  margin: 3% auto;
+  background-color: white;
+}
+
+.inner-create-box {
+  position: absolute;
+  width: 30%;
+  height: 60%;
+  margin: 3%;
+  background-color: red;
+}

@@ -1,15 +1,13 @@
 import React from 'react';
-import NavBar from '../Components/NavBar';
-import SideBar from '../Components/SideBar';
-import MainContent from '../Components/MainContent';
+import CreateForm from '../Components/CreateForm'
 import '../Style/App.css'; 
 
-function Home() {
+function Create() {
   return (
-    <div className="main-container">
-        <h1>hi</h1>
+    <div className="main-create-container">
+        <CreateForm />
     </div>
   );
 }
 
-export default Home;
+export default Create;
