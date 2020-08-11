@@ -3,7 +3,8 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow
+  InfoWindow,
+  MarkerClusterer
 } from "@react-google-maps/api";
 import mapStyles from "../Style/mapStyles"
 
@@ -19,7 +20,8 @@ const center = {
 const options = {
   styles: mapStyles,
   disableDefaultUI: true,
-  zoomControl: true
+  zoomControl: true,
+  clickableIcons: false
 }
 
 function CreateMap() {
@@ -29,18 +31,25 @@ function CreateMap() {
         libraries,
     });
 
+    const [marker, setMarker] = React.useState();
+
     if (loadError) return "Error loading maps"
     if (!isLoaded) return "Loading maps"
   
 
     return (
       <div className="inner-map-box">
+
         <GoogleMap 
           mapContainerStyle={mapContainerStyle} 
           zoom={13}
           center={center}
           options={options}
-        ></GoogleMap>
+          onClick={(event) => setMarker({ lng: event.latLng.lng(), lat: event.latLng.lat() })}
+        >
+        {marker ? <Marker position={{ lat: marker.lat, lng: marker.lng }} /> : null}
+        </GoogleMap>
+
       </div>
     );
 }
