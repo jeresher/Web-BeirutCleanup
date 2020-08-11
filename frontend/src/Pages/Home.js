@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from './NavBar';
-import SideBar from './SideBar';
-import MainContent from './MainContent';
+import NavBar from '../Components/NavBar';
+import SideBar from '../Components/SideBar';
+import MainContent from '../Components/MainContent';
 import '../Style/App.css'; 
 
-function App() {
+function Home() {
   return (
     <div className="main-container">
       < NavBar />
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
