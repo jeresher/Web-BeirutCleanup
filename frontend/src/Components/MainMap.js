@@ -60,6 +60,11 @@ function MainMap(props) {
         onBoundsChanged={debounce(onBoundsChanged, 150)}
       >
         {props.viewportMarkersMapObject}
+
+        {props.selected ? (<InfoWindow 
+          position={{lat: props.selected[1].latLng.lat(), lng: props.selected[1].latLng.lng()}}
+          options={{pixelOffset: new window.google.maps.Size(0,-30)}}
+        ><div></div></InfoWindow>) : null}
       </GoogleMap>
     </div>
   );

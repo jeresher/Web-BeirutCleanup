@@ -19,6 +19,9 @@ function Home() {
   const [ viewportMarkersTableObject, setViewportMarkersTableObject ] = React.useState([]);
   const [ bounds, setBounds ] = React.useState();
 
+  const [selectedMapMarker, setSelectedMapMarker ] = React.useState(null);
+  const [selectedTableMarker, setSelectedTableMarker ] = React.useState(null);
+
   function retrieveActiveMarkers() {
 
     fetch("http://localhost:5000/api/posts/")
@@ -39,23 +42,23 @@ function Home() {
     const markersMapObject = []
     const markersTableObject = []
 
-    for (const element of allMarkers) {
-      const id = element._id;
-      const eventName = element.eventName;
-      const eventDate = element.eventDate;
-      const eventDescription = element.eventDescription;
-      const eventComments = element.eventComments;
+    for (const marker of allMarkers) {
+      const id = marker._id;
+      const eventName = marker.eventName;
+      const eventDate = marker.eventDate;
+      const eventDescription = marker.eventDescription;
+      const eventComments = marker.eventComments;
       const swlng = bounds[0]; 
       const nelng = bounds[1]; 
       const swlat = bounds[2]; 
       const nelat = bounds[3]; 
-      const lat = Number(element.eventLongLat[1].$numberDecimal);
-      const lng = Number(element.eventLongLat[0].$numberDecimal);
+      const lat = Number(marker.eventLongLat[1].$numberDecimal);
+      const lng = Number(marker.eventLongLat[0].$numberDecimal);
 
       if (lng > nelng || lng < swlng || lat > nelat || lat < swlat) { continue };
 
-      markers.push(element);
-      markersMapObject.push(<Marker key={id} position={{lat: lat, lng: lng}} />);
+      markers.push(marker);
+      markersMapObject.push(<Marker key={id} position={{lat: lat, lng: lng}} onClick={(event) => setSelectedMapMarker([marker, event])} />);
       markersTableObject.push(<SideBarCell key={id} name={eventName} date={eventDate} description={eventDescription} comments={eventComments} />);
     }
 
@@ -67,7 +70,7 @@ function Home() {
 
   React.useEffect(retrieveActiveMarkers, [])
   React.useEffect(retrieveViewpointMarkers, [bounds])
-  // React.useEffect(Do something, [viewportMarkers])
+  React.useEffect(() => {console.log(selectedMapMarker)}, [selectedMapMarker])
 
 
   return (
@@ -76,7 +79,7 @@ function Home() {
       <div className="inner-container">
         {/* clickedState ? new bar | sidebar*/}
         <SideBar viewportMarkersTableObject={viewportMarkersTableObject} />
-        <MainMap setCurrentBounds={retrieveCurrentBounds} viewportMarkersMapObject={viewportMarkersMapObject} />
+        <MainMap setCurrentBounds={retrieveCurrentBounds} viewportMarkersMapObject={viewportMarkersMapObject} selected={selectedMapMarker}/>
       </div>
     </div>
   );
