@@ -32,13 +32,9 @@ function MainMap(props) {
     libraries
   });
 
-  /* const mapRef = React.useRef(); */
   const [map, setMap] = React.useState(null)
 
   const onMapLoad = React.useCallback((map) => {
-    /* const bounds = new window.google.maps.LatLngBounds(); */
-    /*console.log(bounds.getNorthEast().lng()); */
-    /*map.fitBounds(bounds); */
     setMap(map)
   })
 
@@ -63,11 +59,12 @@ function MainMap(props) {
         center={center}
         options={options}
         onLoad={onMapLoad}
-        /*onMapMounted={onMapMounted} */
         onBoundsChanged={debounce(onBoundsChanged, 150)}
-      ></GoogleMap>
+      >
+        {props.viewportMarkersObject}
+      </GoogleMap>
     </div>
   );
 }
   
-  export default MainMap;
+export default MainMap;

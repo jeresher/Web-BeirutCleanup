@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow
+} from "@react-google-maps/api";
 import NavBar from '../Components/NavBar';
 import SideBar from '../Components/SideBar';
 import MainMap from '../Components/MainMap';
@@ -6,10 +12,9 @@ import '../Style/App.css';
 
 function Home() {
   
-  // All Markers
-  var allActiveMarkers = [];
-  // Markers in view
-  const [ markers, setMarkers ] = React.useState();
+  const [ allMarkers, setAllMarkers] = React.useState([]);
+  const [ viewportMarkers, setViewportMarkers ] = React.useState([]);
+  const [ viewportMarkersObject, setViewportMarkersObject ] = React.useState([]);
   const [ bounds, setBounds ] = React.useState();
 
   function retrieveActiveMarkers() {
@@ -17,38 +22,43 @@ function Home() {
     fetch("http://localhost:5000/api/posts/")
         .then(res => res.json())
         .then((result) => {
-          allActiveMarkers = result;
-          filterActiveMarkersToScreen();
-        },
-        (error) => {
+          setAllMarkers(result);
         })
 
   }
 
   function retrieveCurrentBounds(swlng, nelng, swlat, nelat) {
     setBounds([swlng, nelng, swlat, nelat]);
-    console.log(bounds);
   }
 
-  function filterActiveMarkersToScreen() {
-    allActiveMarkers.map(element => {
-      /* console.log(element) */
-    })
-    /*
-    const couponList = []
-    for (const [key, value] of Object.entries(result)) {
-        if (key.toLowerCase().includes(props.searchInput.toLowerCase())) {
-            couponList.push(<CouponResult name={key} amount={value.amount} update={getCoupons} />)
-        } else {
-            continue
-        }
+  function retrieveViewpointMarkers() {
+
+    const markers = []
+    const markersObject = []
+
+    for (const element of allMarkers) {
+      const id = element._id;
+      const swlng = bounds[0]; 
+      const nelng = bounds[1]; 
+      const swlat = bounds[2]; 
+      const nelat = bounds[3]; 
+      const lat = Number(element.eventLongLat[1].$numberDecimal);
+      const lng = Number(element.eventLongLat[0].$numberDecimal);
+
+      if (lng > nelng || lng < swlng || lat > nelat || lat < swlat) { continue };
+
+      markers.push(element);
+      markersObject.push(<Marker key={id} position={{lat: lat, lng: lng}} />)
     }
-    setResults(couponList)
-    */
+
+    setViewportMarkers(markers);
+    setViewportMarkersObject(markersObject);
   }
 
 
   React.useEffect(retrieveActiveMarkers, [])
+  React.useEffect(retrieveViewpointMarkers, [bounds])
+  // React.useEffect(Do something, [viewportMarkers])
 
 
   return (
@@ -56,7 +66,7 @@ function Home() {
       < NavBar />
       <div className="inner-container">
         <SideBar />
-        <MainMap setCurrentBounds={retrieveCurrentBounds} />
+        <MainMap setCurrentBounds={retrieveCurrentBounds} viewportMarkersObject={viewportMarkersObject} />
       </div>
     </div>
   );
