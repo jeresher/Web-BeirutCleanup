@@ -26,36 +26,44 @@ const options = {
 
 function CreateMap(props) {
 
-    const {isLoaded, loadError} = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-        libraries,
-    });
+  const {isLoaded, loadError} = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    libraries,
+  });
 
-    const [marker, setMarker] = React.useState();
+  const [marker, setMarker] = React.useState();
 
-    if (loadError) return "Error loading maps"
-    if (!isLoaded) return "Loading maps"
-  
+  const onMapClick = React.useCallback((event) => {
+    const location = { lng: event.latLng.lng(), lat: event.latLng.lat() }
+    props.handleLocationChange(location);
+    setMarker(location)
+  }, [])
 
-    return (
-      <div className="inner-map-box">
+  const mapRef = React.useRef();
+  const onMapLoad = React.useCallback((map) => {
+    mapRef.current = map;
+  })
 
-        <GoogleMap 
-          mapContainerStyle={mapContainerStyle} 
-          zoom={13}
-          center={center}
-          options={options}
-          onClick={(event) => {
-              const location = { lng: event.latLng.lng(), lat: event.latLng.lat() }
-              props.handleLocationChange(location);
-              setMarker(location)
-          }}
-        >
-        {marker ? <Marker position={{ lat: marker.lat, lng: marker.lng }} /> : null}
-        </GoogleMap>
+  if (loadError) return "Error loading maps"
+  if (!isLoaded) return "Loading maps"
 
-      </div>
-    );
+
+  return (
+    <div className="inner-map-box">
+
+      <GoogleMap 
+        mapContainerStyle={mapContainerStyle} 
+        zoom={13}
+        center={center}
+        options={options}
+        onClick={onMapClick}
+        onLoad={onMapLoad}
+      >
+      {marker ? <Marker position={{ lat: marker.lat, lng: marker.lng }} /> : null}
+      </GoogleMap>
+
+    </div>
+  );
 }
 
 export default CreateMap;

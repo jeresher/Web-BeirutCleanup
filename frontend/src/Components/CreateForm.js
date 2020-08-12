@@ -3,6 +3,7 @@ import '../Style/App.css';
 
 function CreateForm(props) {
 
+
     return (       
         <div className="inner-form-box">
             <div className="header">
@@ -10,7 +11,7 @@ function CreateForm(props) {
             </div>
 
             <div className="body">
-            <section>
+                <section>
                     <h6>Location</h6>
                     <input value={props.location}></input>
                 </section>
