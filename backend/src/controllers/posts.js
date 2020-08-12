@@ -1,18 +1,31 @@
 var mongoose = require("mongoose");
-var Post = require("../models/post").Post;
+var { getBeirutDate } = require('../tools/helperfunctions');
+var { Post } = require("../models/post");
+
+
+async function getActivePosts(req, res, next) {
+    const beirutDate = getBeirutDate(); // Date Object: 2020-08-12T00:00:00.000Z
+
+    const allActivePosts = await Post
+        .find({eventDate: {"$gte": beirutDate} })
+        .sort({eventDate: -1});
+    
+    req.documents = allActivePosts; 
+    next();
+}
 
 async function createPost(req, res, next) {
 
     const post = new Post({
         eventName: req.body.eventName,
-        eventLocationDescription: req.body.eventLocationDescription,
+        eventDate: new Date(req.body.eventDate),
         eventDescription: req.body.eventDescription,
         eventLongLat: req.body.eventLongLat,
         eventComments: req.body.eventComments
     })
 
-    const result = await post.save();
-    req.document = result;
+    const newPost = await post.save();
+    req.document = newPost;
     next();
 }
 
@@ -24,12 +37,13 @@ async function createComment(req, res, next) {
 
     post.eventComments.push(comment);
 
-    const result = await post.save();
-    req.document = result;
+    const updatedPost = await post.save();
+    req.document = updatedPost;
     next();
 }
 
 module.exports = {
     createPost: createPost,
-    createComment: createComment
+    createComment: createComment,
+    getActivePosts: getActivePosts
 }
