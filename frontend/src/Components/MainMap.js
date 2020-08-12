@@ -46,13 +46,11 @@ function MainMap(props) {
     props.setCurrentBounds(swlng, nelng, swlat, nelat);
   }
 
-  
-  // Don't put callbacks above here for some reason
   if (loadError) return "Error loading maps"
   if (!isLoaded) return "Loading maps"
 
   return (
-    <div className="main-content">
+    <div className="mainmap">
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
         zoom={13}
@@ -61,7 +59,7 @@ function MainMap(props) {
         onLoad={onMapLoad}
         onBoundsChanged={debounce(onBoundsChanged, 150)}
       >
-        {props.viewportMarkersObject}
+        {props.viewportMarkersMapObject}
       </GoogleMap>
     </div>
   );

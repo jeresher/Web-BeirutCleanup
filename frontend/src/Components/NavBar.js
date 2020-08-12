@@ -2,8 +2,8 @@ import React from 'react';
 
 function NavBar() {
     return(
-      <div>
-          AppBar
+      <div className="navbar">
+          <h1 className="logo">Beirut Cleanup</h1>
       </div>
     );
   }
