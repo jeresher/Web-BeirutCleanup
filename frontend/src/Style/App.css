@@ -123,13 +123,13 @@ table {
   font-size: 2.1vw;
   font-weight: 700;
   color: white;
-  border-bottom: 4px white solid;
+  border-bottom: 6px white solid;
 }
 
 .sidebar .heading h6 {
   margin-top: 3px;
   color: white;
-  font-size: 1.4vw;
+  font-size: .8vw;
   font-weight: 900;
 }
 
