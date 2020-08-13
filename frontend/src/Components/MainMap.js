@@ -27,6 +27,7 @@ const options = {
 
 function MainMap(props) {
 
+
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
@@ -58,13 +59,18 @@ function MainMap(props) {
         options={options}
         onLoad={onMapLoad}
         onBoundsChanged={debounce(onBoundsChanged, 150)}
+        onClick={() => props.setSelected(null)}
       >
         {props.viewportMarkersMapObject}
 
         {props.selected ? (<InfoWindow 
           position={{lat: props.selected[1].latLng.lat(), lng: props.selected[1].latLng.lng()}}
           options={{pixelOffset: new window.google.maps.Size(0,-30)}}
-        ><div></div></InfoWindow>) : null}
+          onLoad={() => console.log(this)}
+          onCloseClick={() => {props.setSelected(null)}}
+        ><div>
+          <h2>this shit lit bruh?</h2>
+          <h2>idk let's see</h2></div></InfoWindow>) : null}
       </GoogleMap>
     </div>
   );

@@ -79,7 +79,7 @@ function Home() {
       <div className="inner-container">
         {/* clickedState ? new bar | sidebar*/}
         <SideBar viewportMarkersTableObject={viewportMarkersTableObject} />
-        <MainMap setCurrentBounds={retrieveCurrentBounds} viewportMarkersMapObject={viewportMarkersMapObject} selected={selectedMapMarker}/>
+        <MainMap setCurrentBounds={retrieveCurrentBounds} viewportMarkersMapObject={viewportMarkersMapObject} selected={selectedMapMarker} setSelected={setSelectedMapMarker} />
       </div>
     </div>
   );
