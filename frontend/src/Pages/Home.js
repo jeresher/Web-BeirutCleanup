@@ -58,6 +58,7 @@ function Home() {
           key={marker._id} 
           marker={marker}
           setSelectedMapMarker={setSelectedMapMarker}
+          setSelectedTableMarker={setSelectedTableMarker}
         />);
     }
 
@@ -76,10 +77,10 @@ function Home() {
     <div className="main-container">
       < NavBar />
       <div className="inner-container">
-        {/* clickedState ? new bar | sidebar*/}
 
         <SideBar 
           viewportMarkersTableObject={viewportMarkersTableObject} 
+          selectedTableMarker={selectedTableMarker}
           setSelectedMapMarker={setSelectedMapMarker}
           setSelectedTableMarker={setSelectedTableMarker}
         />

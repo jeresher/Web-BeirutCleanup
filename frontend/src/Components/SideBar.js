@@ -1,4 +1,5 @@
 import React from 'react';
+import SideBarDetailCell from './SideBarDetailCell';
 
 function SideBar(props) {
 
@@ -9,7 +10,11 @@ function SideBar(props) {
         <h6>UPCOMING EVENTS</h6>
       </div>
       <div className='body'>
-        {props.viewportMarkersTableObject}
+        {props.selectedTableMarker ? 
+        <SideBarDetailCell 
+          marker={props.selectedTableMarker}
+          setSelectedTableMarker={props.setSelectedTableMarker}
+        /> : props.viewportMarkersTableObject}
       </div>
     </div>
   );

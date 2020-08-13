@@ -63,14 +63,18 @@ function MainMap(props) {
       >
         {props.viewportMarkersMapObject}
 
-        {props.selectedMapMarker ? (<InfoWindow 
-          position={{lat: props.selectedMapMarker[1], lng: props.selectedMapMarker[2]}}
-          options={{pixelOffset: new window.google.maps.Size(0,-30)}}
-          // onLoad={() => console.log("this")}
-          onCloseClick={() => {props.setSelectedMapMarker(null)}}
-        ><div>
-          <h2>this shit lit bruh?</h2>
-          <h2>idk let's see</h2></div></InfoWindow>) : null}
+        {props.selectedMapMarker ? 
+          (<InfoWindow 
+            position={{lat: props.selectedMapMarker[1], lng: props.selectedMapMarker[2]}}
+            options={{pixelOffset: new window.google.maps.Size(0,-30)}}
+            // onLoad={() => console.log("this")}
+            onCloseClick={() => {props.setSelectedMapMarker(null)}}>
+            <div>
+              <h2>this shit lit bruh?</h2>
+              <h2>idk let's see</h2>
+            </div>
+          </InfoWindow>) : null}
+
       </GoogleMap>
     </div>
   );

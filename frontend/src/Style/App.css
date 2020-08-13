@@ -176,8 +176,8 @@ table {
 }
 
 .sidebar .cell .eventtext p {
-  display: block;/* or inline-block */
-  font-size: 13px;
+  font-size: 1vw;
+  line-height: 2.1vh;
   color: grey;
 }
 

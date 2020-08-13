@@ -20,9 +20,9 @@ function SideBarCell(props) {
                 <p>{marker.eventDescription}</p>
             </div>
             <div className="moreinformation">
-                <button>MORE INFORMATION | معلومات اكثر</button>
+                <button onClick={() => props.setSelectedTableMarker(marker)}>MORE INFORMATION | معلومات اكثر</button>
             </div>
-            
+
         </div>
     )
 }
