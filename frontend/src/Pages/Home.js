@@ -74,26 +74,25 @@ function Home() {
 
 
   return (
-    <div className="main-container">
-      < NavBar />
-      <div className="inner-container">
 
-        <SideBar 
-          viewportMarkersTableObject={viewportMarkersTableObject} 
-          selectedTableMarker={selectedTableMarker}
-          setSelectedMapMarker={setSelectedMapMarker}
-          setSelectedTableMarker={setSelectedTableMarker}
-        />
+    <div className="inner-container">
 
-        <MainMap 
-          setBounds={setBounds} 
-          viewportMarkersMapObject={viewportMarkersMapObject} 
-          selectedMapMarker={selectedMapMarker} 
-          setSelectedMapMarker={setSelectedMapMarker} 
-        />
+      <SideBar 
+        viewportMarkersTableObject={viewportMarkersTableObject} 
+        selectedTableMarker={selectedTableMarker}
+        setSelectedMapMarker={setSelectedMapMarker}
+        setSelectedTableMarker={setSelectedTableMarker}
+      />
 
-      </div>
+      <MainMap 
+        setBounds={setBounds} 
+        viewportMarkersMapObject={viewportMarkersMapObject} 
+        selectedMapMarker={selectedMapMarker} 
+        setSelectedMapMarker={setSelectedMapMarker} 
+      />
+
     </div>
+    
   );
 }
 

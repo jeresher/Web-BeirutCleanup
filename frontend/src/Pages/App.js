@@ -1,21 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from "../Components/NavBar.js"
 import Create from "./Create";
 import Home from "./Home";
 import '../Style/App.css'; 
 
 function App() {
+
+  const [ createPage, loadCreatePage ] = React.useState(false);
+
   return (
-    <Router>
-      
-      <Switch>
-
-        <Route exact path='/' component={Home} />
-        <Route exact path='/create' component={Create} />
-
-      </Switch>
-
-    </Router>
+    <div className="main-container">
+      < NavBar loadCreatePage={loadCreatePage}/>
+      { createPage ? <Create /> : <Home />}
+    </div>
   );
 }
 

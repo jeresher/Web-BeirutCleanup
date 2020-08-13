@@ -12,12 +12,12 @@ function Create() {
     }
 
     return (
-        <div className="main-create-container">
-            <div className="inner-create-container">
-                <CreateMap handleLocationChange={handleLocationChange} />
-                <CreateForm location={location} />
-            </div>
+
+        <div className="inner-container">
+            <CreateMap handleLocationChange={handleLocationChange} />
+            <CreateForm location={location} />
         </div>
+        
     );
 }
 

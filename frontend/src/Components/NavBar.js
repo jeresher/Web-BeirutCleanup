@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../Assets/logo.png';
 
-function NavBar() {
+function NavBar(props) {
     return(
       <div className="navbar">
         <div className="logo">
@@ -11,7 +11,7 @@ function NavBar() {
           <h1></h1>
         </div>
         <div className="newevent">
-          <button>NEW EVENT</button>
+          <button onClick={() => props.loadCreatePage(true)}>NEW EVENT</button>
         </div>
       </div>
     );
