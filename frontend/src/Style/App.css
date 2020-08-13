@@ -50,24 +50,22 @@ table {
 }
 
 .navbar {
-  height: 11%;
-  box-shadow: 0px 1px 3px #999;
+  height: 12%;
+  box-shadow: 0px 1px 3px rgb(190, 190, 190);
   z-index: 3;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
 .navbar .logo {
-  font-size: 1.8vw;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 350;
   padding-left: 2%;
-  color: #353A4D;
-
 }
 
-
+.navbar .logo img {
+  max-width: 13vw;
+  display: inline;
+}
 
 .inner-container {
   display: flex;
@@ -81,7 +79,27 @@ table {
 
 .sidebar {
   flex-basis: 30%;
+  background-color: #F5F8FA;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .main-create-container {
   display: flex;
