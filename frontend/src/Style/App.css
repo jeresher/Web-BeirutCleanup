@@ -110,6 +110,8 @@ table {
 /* SIDEBAR: HEADING */
 .sidebar .heading {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 5vh 0 5vh 0;
   background-color: #0e1046;
@@ -121,14 +123,21 @@ table {
   font-size: 2.1vw;
   font-weight: 700;
   color: white;
-  border-bottom: 6px white solid;
+  border-bottom: 4px white solid;
+}
+
+.sidebar .heading h6 {
+  margin-top: 3px;
+  color: white;
+  font-size: 1.4vw;
+  font-weight: 900;
 }
 
 /* SIDEBAR: BODY */
 .sidebar .body {
   overflow: scroll;
   margin-top: 2px;
-  height: 77vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
+  height: 76vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
 }
 
 .sidebar .cell {
