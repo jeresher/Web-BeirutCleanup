@@ -10,8 +10,8 @@ function NavBar() {
         <div>
           <h1></h1>
         </div>
-        <div>
-          <h1></h1>
+        <div className="newevent">
+          <button>NEW EVENT</button>
         </div>
       </div>
     );

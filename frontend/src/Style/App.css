@@ -49,15 +49,17 @@ table {
   height: 100vh;
 }
 
+/* NAVBAR */
 .navbar {
-  height: 12%;
-  box-shadow: 0px 1px 3px rgb(190, 190, 190);
+  height: 11vh;
+  box-shadow: 0px 1px 2px rgb(190, 190, 190);
   z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* NAVBAR: LOGO */
 .navbar .logo {
   padding-left: 2%;
 }
@@ -67,26 +69,131 @@ table {
   display: inline;
 }
 
+/* NAVBAR: NEW EVENT */
+.navbar .newevent {
+  padding-right: 2%;
+}
+
+.navbar .newevent button {
+  border: 0;
+  border-radius: 5%;
+  padding: 10px 10px;
+  background-color: #121459;
+  color: white;
+  font-weight: 900;
+  font-size: .8rem;
+  box-shadow: 0px 2px 3px rgb(190, 190, 190);
+}
+
 .inner-container {
   display: flex;
   flex-direction: row;
   flex-basis: 100%;
+  height: 100%;
 }
 
+/* MAP */
 .mainmap {
-  flex-basis: 70%;
+  flex-basis: 60%;
+  height: 100%;
 }
 
+/* SIDEBAR */
 .sidebar {
-  flex-basis: 30%;
-  background-color: #F5F8FA;
+  flex-basis: 40%;
+  max-width: 40vw; /* new addition for whitespace */
+  background-color: #EFF2F5;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 
+/* SIDEBAR: HEADING */
+.sidebar .heading {
+  display: flex;
+  justify-content: center;
+  padding: 5vh 0 5vh 0;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgb(190, 190, 190);
+}
 
+.sidebar .heading h1 {
+  font-size: 2.1vw;
+  font-weight: 700;
+  border-bottom: 6px #121558 solid;
+}
 
+/* SIDEBAR: BODY */
+.sidebar .body {
+  overflow: scroll;
+  height: 77vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
+}
 
+.sidebar .cell {
+  display: flex;
+  flex-direction: column;
+  height: 26vh;
+  color: #353A4D;
+  /* height: 30vh; */
+  padding: 1.2vh 1.2vw 1.2vh 1.2vw;
+  margin: .4vw .6vw;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgb(190, 190, 190);
+  border-radius: 2%;
+  /* border-bottom: 1px solid rgb(190, 190, 190); */
+}
 
+.sidebar .cell .eventtext {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  padding-bottom: 3vw
+}
 
+.sidebar .cell .eventtext h4 {
+  font-size: 1vw;
+  font-weight: 900;
+  color: rgb(109, 108, 108);
+  margin: .4vw 0;
+  font-weight: 400;
+}
+
+.sidebar .cell .eventtext h1 {
+  font-size: 1.6vw;
+  font-weight: 500;
+  font-color: black;
+}
+
+.sidebar .cell .eventtext p {
+  display: block;/* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3em;
+  line-height: 1em;
+  font-size: 13px;
+  color: grey;
+  /*
+  margin: 5% 0;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  */
+}
+
+.sidebar .cell .moreinformation {
+  margin-top: 5%;
+}
+
+.sidebar .cell .moreinformation button {
+  width: 100%;
+  height: 40px;
+  background-color: #121459;
+  border: 1;
+  color: white;
+  font-weight: 900;
+  font-size: 1vw;
+}
 
 
 
@@ -183,4 +290,12 @@ table {
 .inner-form-box .footer {
   width: 100%;
   height: 13%;
+}
+
+
+.miniLine {
+  margin: .5vw 0;
+  width: 30px;
+  height: 1px;
+  background-color: rgb(187, 187, 187);
 }
