@@ -51,7 +51,7 @@ table {
 
 /* NAVBAR */
 .navbar {
-  height: 11vh;
+  height: 9vh;
   box-shadow: 0px 1px 2px rgb(190, 190, 190);
   z-index: 3;
   display: flex;
@@ -105,6 +105,8 @@ table {
   background-color: #EFF2F5;
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  z-index: 2;
+  box-shadow: 1px 5px 5px rgb(190, 190, 190);
 }
 
 /* SIDEBAR: HEADING */
@@ -115,7 +117,7 @@ table {
   justify-content: center;
   padding: 5vh 0 5vh 0;
   background-color: #0e1046;
-  box-shadow: 0px 8px 6px rgb(190, 190, 190);
+  box-shadow: 0px 5px 3px rgb(190, 190, 190);
   z-index: 2;
 }
 
@@ -123,13 +125,13 @@ table {
   font-size: 2.1vw;
   font-weight: 700;
   color: white;
-  border-bottom: 6px white solid;
+  border-bottom: 4px white solid;
 }
 
 .sidebar .heading h6 {
   margin-top: 3px;
   color: white;
-  font-size: .8vw;
+  font-size: 1.4vw;
   font-weight: 900;
 }
 
@@ -137,29 +139,26 @@ table {
 .sidebar .body {
   overflow: scroll;
   margin-top: 2px;
-  height: 76vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
+  height: 73vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
 }
 
 .sidebar .cell {
   display: flex;
   flex-direction: column;
-  height: 26vh;
+  position: relative;
+  height: 27vh;
   color: #353A4D;
-  /* height: 30vh; */
   padding: 1.2vh 1.2vw 1.2vh 1.2vw;
-  margin: .4vw .6vw;
+  margin: 1vw .6vw;
   background-color: white;
   box-shadow: 0px 5px 5px rgb(190, 190, 190);
   border-radius: 2%;
-  /* border-bottom: 1px solid rgb(190, 190, 190); */
 }
 
 .sidebar .cell .eventtext {
   flex-grow: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
-  /* white-space: nowrap; */
-  padding-bottom: 3vw
+  padding-bottom: 3vw;
 }
 
 .sidebar .cell .eventtext h4 {
@@ -178,22 +177,12 @@ table {
 
 .sidebar .cell .eventtext p {
   display: block;/* or inline-block */
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow: hidden;
-  max-height: 3em;
-  line-height: 1em;
   font-size: 13px;
   color: grey;
-  /*
-  margin: 5% 0;
-  font-size: 13px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  */
 }
 
 .sidebar .cell .moreinformation {
+  z-index: 3; /* Prevent overlap from text truncation fade effect */
   margin-top: 5%;
 }
 
@@ -208,6 +197,12 @@ table {
 }
 
 
+.sidebar .cell .texttruncationfadeeffect {
+  position: absolute;
+  width: 96%; /* Somewhat iffy measurements for text fade */
+  height: 75%;
+  background: linear-gradient(to bottom, transparent, transparent, transparent, white 80%);
+}
 
 
 
