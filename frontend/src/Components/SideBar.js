@@ -15,6 +15,5 @@ function SideBar(props) {
   );
 }
 
-/*الأحداث القادمة*/
 
 export default SideBar;

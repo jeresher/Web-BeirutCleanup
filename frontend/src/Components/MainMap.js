@@ -44,7 +44,7 @@ function MainMap(props) {
     const nelng = map.getBounds().getNorthEast().lng();
     const swlat = map.getBounds().getSouthWest().lat();
     const nelat = map.getBounds().getNorthEast().lat();
-    props.setCurrentBounds(swlng, nelng, swlat, nelat);
+    props.setBounds([swlng, nelng, swlat, nelat]);
   }
 
   if (loadError) return "Error loading maps"
@@ -59,15 +59,15 @@ function MainMap(props) {
         options={options}
         onLoad={onMapLoad}
         onBoundsChanged={debounce(onBoundsChanged, 150)}
-        onClick={() => props.setSelected(null)}
+        onClick={() => props.setSelectedMapMarker(null)}
       >
         {props.viewportMarkersMapObject}
 
-        {props.selected ? (<InfoWindow 
-          position={{lat: props.selected[1].latLng.lat(), lng: props.selected[1].latLng.lng()}}
+        {props.selectedMapMarker ? (<InfoWindow 
+          position={{lat: props.selectedMapMarker[1], lng: props.selectedMapMarker[2]}}
           options={{pixelOffset: new window.google.maps.Size(0,-30)}}
-          onLoad={() => console.log(this)}
-          onCloseClick={() => {props.setSelected(null)}}
+          // onLoad={() => console.log("this")}
+          onCloseClick={() => {props.setSelectedMapMarker(null)}}
         ><div>
           <h2>this shit lit bruh?</h2>
           <h2>idk let's see</h2></div></InfoWindow>) : null}
