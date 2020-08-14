@@ -1,5 +1,5 @@
 import React from 'react';
-import SideBarDetailCell from './SideBarDetailCell';
+import SideBarMoreInformation from './SideBarMoreInformation';
 
 function SideBar(props) {
 
@@ -11,7 +11,7 @@ function SideBar(props) {
       </div>
       <div className='body'>
         {props.selectedTableMarker ? 
-        <SideBarDetailCell 
+        <SideBarMoreInformation 
           marker={props.selectedTableMarker}
           setSelectedTableMarker={props.setSelectedTableMarker}
         /> : props.viewportMarkersTableObject}
