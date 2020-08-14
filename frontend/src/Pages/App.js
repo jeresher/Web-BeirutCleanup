@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "../Components/NavBar.js"
 import Create from "./Create";
 import Home from "./Home";
@@ -11,8 +10,11 @@ function App() {
 
   return (
     <div className="main-container">
-      < NavBar loadCreatePage={loadCreatePage}/>
-      { createPage ? <Create /> : <Home />}
+      < NavBar createPage={createPage} loadCreatePage={loadCreatePage}/>
+
+      {createPage ? 
+      <Create loadCreatePage={loadCreatePage} /> : 
+      <Home />}
     </div>
   );
 }

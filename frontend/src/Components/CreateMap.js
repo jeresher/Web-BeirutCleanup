@@ -49,7 +49,7 @@ function CreateMap(props) {
 
 
   return (
-    <div className="inner-map-box">
+    <div className="createmap">
 
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 

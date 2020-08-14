@@ -3,9 +3,9 @@ import CreateForm from '../Components/CreateForm'
 import CreateMap from '../Components/CreateMap'
 import '../Style/App.css'; 
 
-function Create() {
+function Create(props) {
 
-    const [ location, setLocation ] = React.useState('')
+    const [ location, setLocation ] = React.useState();
 
     function handleLocationChange(newLocation) {
         setLocation(newLocation)
@@ -15,9 +15,9 @@ function Create() {
 
         <div className="inner-container">
             <CreateMap handleLocationChange={handleLocationChange} />
-            <CreateForm location={location} />
+            <CreateForm location={location} loadCreatePage={props.loadCreatePage} />
         </div>
-        
+
     );
 }
 

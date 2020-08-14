@@ -11,7 +11,10 @@ function NavBar(props) {
           <h1></h1>
         </div>
         <div className="newevent">
-          <button onClick={() => props.loadCreatePage(true)}>NEW EVENT</button>
+          { props.createPage ?
+          <button onClick={() => props.loadCreatePage(false)}>VIEW ALL EVENTS</button> :
+          <button onClick={() => props.loadCreatePage(true)}>ADD EVENT</button>
+          }
         </div>
       </div>
     );
