@@ -13,6 +13,9 @@ function SideBarMainInformation(props) {
             </div>
             <div className="information">
                 <h1>{marker.eventName}</h1>
+                <div />
+                <p>{marker.eventDescription}</p>
+                <div />
             </div>
         </div>
     )
