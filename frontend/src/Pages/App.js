@@ -11,10 +11,8 @@ function App() {
   return (
     <div className="main-container">
       < NavBar createPage={createPage} loadCreatePage={loadCreatePage}/>
-
-      {createPage ? 
-      <Create loadCreatePage={loadCreatePage} /> : 
-      <Home />}
+      
+      {createPage ? <Create loadCreatePage={loadCreatePage} /> : <Home />}
     </div>
   );
 }
