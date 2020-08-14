@@ -145,6 +145,7 @@ table {
 }
 
 .sidebar .cell {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -164,10 +165,10 @@ table {
 }
 
 .sidebar .cell .eventtext h4 {
-  font-size: 1vw;
-  color: rgb(109, 108, 108);
+  font-size: .8vw;
+  color: rgb(153, 153, 153);
   margin: .4vw 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .sidebar .cell .eventtext h1 {

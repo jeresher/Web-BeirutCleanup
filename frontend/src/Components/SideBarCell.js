@@ -11,6 +11,7 @@ function SideBarCell(props) {
             className='cell' 
             onMouseOver={(event) => props.setSelectedMapMarker([marker, lat, lng])}
             onMouseOut={(event) => props.setSelectedMapMarker(null)}
+            onClick={() => props.setSelectedTableMarker(marker)}
         >
             <div className="texttruncationfadeeffect"></div>
             <div className="eventtext">
