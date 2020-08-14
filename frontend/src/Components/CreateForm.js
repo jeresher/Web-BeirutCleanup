@@ -115,6 +115,7 @@ function CreateForm(props) {
                 <input 
                     id="name"
                     placeholder="Event Name اسم الحدث" 
+                    maxLength="75"
                     required
                 />
             </div>

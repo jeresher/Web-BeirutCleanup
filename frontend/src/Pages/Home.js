@@ -20,7 +20,7 @@ function Home() {
   const [ bounds, setBounds ] = React.useState();
 
   const [selectedMapMarker, setSelectedMapMarker ] = React.useState(null); // Format: [marker, lat, lng]
-  const [selectedTableMarker, setSelectedTableMarker ] = React.useState(null);
+  const [selectedTableMarker, setSelectedTableMarker ] = React.useState(null); //Format: marker
 
   function retrieveActiveMarkers() {
 
@@ -89,6 +89,7 @@ function Home() {
         viewportMarkersMapObject={viewportMarkersMapObject} 
         selectedMapMarker={selectedMapMarker} 
         setSelectedMapMarker={setSelectedMapMarker} 
+        setSelectedTableMarker={setSelectedTableMarker}
       />
 
     </div>

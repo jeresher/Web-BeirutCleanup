@@ -10,8 +10,9 @@ function App() {
 
   return (
     <div className="main-container">
+      {/* Navigation Bar. */}
       < NavBar createPage={createPage} loadCreatePage={loadCreatePage}/>
-      
+      {/* Main Content. */}
       {createPage ? <Create loadCreatePage={loadCreatePage} /> : <Home />}
     </div>
   );
