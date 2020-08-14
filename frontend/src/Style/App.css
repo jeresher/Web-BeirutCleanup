@@ -163,7 +163,6 @@ table {
 
 .sidebar .cell .eventtext h4 {
   font-size: 1vw;
-  font-weight: 900;
   color: rgb(109, 108, 108);
   margin: .4vw 0;
   font-weight: 400;
@@ -178,11 +177,11 @@ table {
 .sidebar .cell .eventtext p {
   font-size: 1vw;
   line-height: 2.1vh;
-  color: grey;
+  color: #848484;
 }
 
 .sidebar .cell .moreinformation {
-  z-index: 3; /* Prevent overlap from text truncation fade effect */
+  z-index: 3;
   margin-top: 5%;
 }
 
@@ -198,7 +197,6 @@ table {
   font-size: 1vw;
 }
 
-
 .sidebar .cell .texttruncationfadeeffect {
   position: absolute;
   width: 96%; /* Somewhat iffy measurements for text fade */
@@ -209,12 +207,48 @@ table {
 .sidebar .cell .miniLine {
   margin: .5vw 0;
   width: 30px;
-  height: 1px;
-  background-color: rgb(187, 187, 187);
+  height: 2px;
+  background-color: #EBEBEB;
 }
 
+/* INFO WINDOW */
+.infowindow {
+  font-family: 'Roboto', sans-serif;
+}
 
+.infowindow .title {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+}
 
+.infowindow .divider {
+  height: 1px;
+  width: 100%;
+  margin: 2px auto;
+  background-color: #EBEBEB;
+}
+
+.infowindow .date {
+  background-color: #121459;
+  color: white;
+  padding: 2px 2px;
+  font-weight: 900;
+  font-size: 10px;
+}
+
+.infowindow .description {
+  display: block;
+  overflow: scroll;
+  color: #313131;
+  font-size: 14px;
+  max-height: 4rem;
+  line-height: 1em;
+  border-bottom: 1px solid #EBEBEB;
+}
 
 
 

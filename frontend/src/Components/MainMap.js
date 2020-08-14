@@ -66,12 +66,13 @@ function MainMap(props) {
         {props.selectedMapMarker ? 
           (<InfoWindow 
             position={{lat: props.selectedMapMarker[1], lng: props.selectedMapMarker[2]}}
-            options={{pixelOffset: new window.google.maps.Size(0,-30)}}
+            options={{pixelOffset: new window.google.maps.Size(0,-30), maxWidth: 300, maxHeight: 400}}
             // onLoad={() => console.log("this")}
             onCloseClick={() => {props.setSelectedMapMarker(null)}}>
-            <div>
-              <h2>this shit lit bruh?</h2>
-              <h2>idk let's see</h2>
+            <div className="infowindow">
+              <h2 className="title">{props.selectedMapMarker[0].eventName}</h2>
+              <div className="divider" />
+              <p className="description"><span className="date">TOMORROW | اليوم</span> {props.selectedMapMarker[0].eventDescription}</p>
             </div>
           </InfoWindow>) : null}
 
