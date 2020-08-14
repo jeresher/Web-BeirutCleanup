@@ -8,8 +8,12 @@ function SideBarMainInformation(props) {
 
     return (
         <div className='moreinformation'>
-            <button className="exitdetail" onClick={() => props.setSelectedTableMarker(null)}></button>
-            <h1>{marker.eventName}</h1>
+            <div className="exitbutton">
+                <button onClick={() => props.setSelectedTableMarker(null)}>X</button>
+            </div>
+            <div className="information">
+                <h1>{marker.eventName}</h1>
+            </div>
         </div>
     )
 }

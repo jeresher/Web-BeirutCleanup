@@ -5,7 +5,7 @@ function NavBar(props) {
     return(
       <div className="navbar">
         <div className="logo">
-          <img src={logo}></img>
+          <img src={logo} onClick={() => window.location.reload()}></img>
         </div>
         <div>
           <h1></h1>

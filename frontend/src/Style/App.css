@@ -65,6 +65,7 @@ table {
 }
 
 .navbar .logo img {
+  cursor: pointer;
   max-width: 13vw;
   display: inline;
 }
@@ -181,12 +182,12 @@ table {
   color: #848484;
 }
 
-.sidebar .cell .moreinformation {
+.sidebar .cell .moreinformationbutton {
   z-index: 3;
   margin-top: 5%;
 }
 
-.sidebar .cell .moreinformation button {
+.sidebar .cell .moreinformationbutton button {
   cursor: pointer;
   width: 100%;
   height: 40px;
@@ -253,7 +254,26 @@ table {
   cursor: pointer;
 }
 
+/* MORE INFORMATION */
+.moreinformation {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 2%;
+  box-shadow: 0px 5px 5px rgb(190, 190, 190);
+}
 
+.moreinformation .exitbutton button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 1.1vw;
+  color: #7c7c7c;
+  cursor: pointer;
+  float: right;
+  margin: 2vh .8vw 0 0;
+  border: 0px;
+  background-color: inherit;
+}
 
 
 
@@ -355,6 +375,7 @@ table {
 }
 
 .form .submit button {
+  cursor: pointer;
   width: 90%;
   height: 45px;
   border: 0;
