@@ -12,8 +12,8 @@ function NavBar(props) {
         </div>
         <div className="newevent">
           { props.createPage ?
-          <button onClick={() => props.loadCreatePage(false)}>VIEW ALL EVENTS</button> :
-          <button onClick={() => props.loadCreatePage(true)}>ADD EVENT</button>
+          <button onClick={() => props.loadCreatePage(false)}><h1>VIEW EVENTS</h1><h1>عرض الأحداث</h1></button> :
+          <button onClick={() => props.loadCreatePage(true)}><h1>ADD EVENT</h1><h1>إضافة حدث</h1></button>
           }
         </div>
       </div>

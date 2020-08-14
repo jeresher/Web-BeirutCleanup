@@ -79,7 +79,7 @@ table {
   cursor: pointer;
   border: 0;
   border-radius: 3px;
-  padding: 10px 10px;
+  padding: 4px 15px;
   background-color: #121459;
   color: white;
   font-weight: 900;
@@ -298,11 +298,17 @@ table {
   margin: 2vh 0;
 }
 
-.moreinformation .information p {
+.moreinformation .information p,span {
+  white-space: pre-wrap;
   font-weight: 150;
   font-size: 1vw;
   line-height: 2.5vh;
   color: rgb(43, 43, 43);
+}
+
+.moreinformation .information .date {
+  font-weight: 500;
+  font-size: .8vw;
 }
 
 

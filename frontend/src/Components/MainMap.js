@@ -77,7 +77,7 @@ function MainMap(props) {
 
               <p className="description"
                 onClick={() => props.setSelectedTableMarker(props.selectedMapMarker[0])}>
-                <span className="date">TOMORROW | اليوم</span> {props.selectedMapMarker[0].eventDescription}
+                <span className="date">{props.selectedMapMarker[0].eventDate}</span> {props.selectedMapMarker[0].eventDescription}
               </p>
 
             </div>
