@@ -14,7 +14,7 @@ function SideBarCell(props) {
         >
             <div className="texttruncationfadeeffect"></div>
             <div className="eventtext">
-                <h4>TODAY | اليوم</h4>
+                <h4>{marker.eventDate}</h4>
                 <h1>{marker.eventName}</h1>
                 <div className="miniLine" />
                 <p>{marker.eventDescription}</p>

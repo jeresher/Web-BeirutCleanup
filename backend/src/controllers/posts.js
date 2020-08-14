@@ -1,16 +1,18 @@
 var mongoose = require("mongoose");
-var { getBeirutDate } = require('../tools/helperfunctions');
+var { getBeirutDate, formatPosts } = require('../tools/helperfunctions');
 var { Post } = require("../models/post");
 
 
 async function getActivePosts(req, res, next) {
     const beirutDate = getBeirutDate(); // Date Object: 2020-08-12T00:00:00.000Z
 
-    const allActivePosts = await Post
+    var allActivePosts = await Post
         .find({eventDate: {"$gte": beirutDate} })
-        .sort({eventDate: -1});
+        .sort({eventDate: 1})
     
-    req.documents = allActivePosts; 
+    const formattedPosts = await formatPosts(allActivePosts);
+
+    req.documents = formattedPosts; 
     next();
 }
 

@@ -19,6 +19,31 @@ function getBeirutDate() {
     return formattedDate; // Find a better solution
 }
 
+async function formatPosts(allActivePosts) {
+
+    var stringifyPosts = await JSON.stringify(allActivePosts);
+    var formattedPosts = await JSON.parse(stringifyPosts);
+
+    // Format Date: 2020-08-12T00:00:00.000Z -> TODAY.
+    const beirutDate = getBeirutDate().getUTCDate();
+
+    for (var i = 0; i < formattedPosts.length; i++) {
+        const eventDate = allActivePosts[i].eventDate.getUTCDate();
+        const difference = eventDate-beirutDate;
+
+        if (difference === 0) {
+            formattedPosts[i].eventDate = "TODAY | اليوم"
+        } else if (difference === 1) {
+            formattedPosts[i].eventDate = "TOMORROW | غدا"
+        } else {
+            formattedPosts[i].eventDate = String(difference) + " DAYS";
+        }
+    }
+
+    return formattedPosts;
+}
+
 module.exports = {
-    getBeirutDate: getBeirutDate
+    getBeirutDate: getBeirutDate,
+    formatPosts: formatPosts
 }

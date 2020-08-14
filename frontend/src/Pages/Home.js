@@ -61,17 +61,14 @@ function Home() {
           setSelectedTableMarker={setSelectedTableMarker}
         />);
     }
-
+    
     setViewportMarkers(markers);
     setViewportMarkersMapObject(markersMapObject);
     setViewportMarkersTableObject(markersTableObject);
   }
 
-
   React.useEffect(retrieveActiveMarkers, [])
   React.useEffect(retrieveViewportMarkers, [bounds])
-  // React.useEffect(() => {console.log(selectedMapMarker)}, [selectedMapMarker])
-
 
   return (
 
