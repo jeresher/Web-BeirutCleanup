@@ -25,11 +25,12 @@ async function formatPosts(allActivePosts) {
     var formattedPosts = await JSON.parse(stringifyPosts);
 
     // Format Date: 2020-08-12T00:00:00.000Z -> TODAY.
-    const beirutDate = getBeirutDate().getUTCDate();
+    const beirutDate = getBeirutDate();
+    const oneDay = 24 * 60 * 60 * 1000;
 
     for (var i = 0; i < formattedPosts.length; i++) {
-        const eventDate = allActivePosts[i].eventDate.getUTCDate();
-        const difference = eventDate-beirutDate;
+        const eventDate = allActivePosts[i].eventDate;
+        const difference = Math.round(Math.abs((beirutDate - eventDate) / oneDay));
 
         if (difference === 0) {
             formattedPosts[i].eventDate = "TODAY | اليوم"
