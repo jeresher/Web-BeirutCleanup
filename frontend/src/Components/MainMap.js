@@ -5,19 +5,8 @@ import {
   Marker,
   InfoWindow
 } from "@react-google-maps/api";
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng
-} from 'use-places-autocomplete';
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption
-} from "@reach/combobox";
 import { debounce } from 'lodash';
-import "@reach/combobox/styles.css";
+import SearchBar from "./SearchBar";
 import mapStyles from "../Style/mapStyles";
 
 
@@ -39,32 +28,22 @@ const options = {
 
 function MainMap(props) {
 
-
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
   });
 
   const mapRef = React.useRef();
-  // const [map, setMap] = React.useState(null)
 
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   })
 
-  /*
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(14);
   }, [])
-  */
-
-  function panTo({lat, lng}) {
-    mapRef.current.panTo({ lat, lng});
-    mapRef.current.setZoom(15);
-  };
-  // maybe use a useeffect if selected location changes, triggering panTo
-
+  
   function onBoundsChanged() {
     const swlng = mapRef.current.getBounds().getSouthWest().lng();
     const nelng = mapRef.current.getBounds().getNorthEast().lng();
@@ -79,7 +58,7 @@ function MainMap(props) {
   return (
     <div className="mainmap">
 
-      <Search panTo={panTo} />
+      <SearchBar panTo={panTo} />
 
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
@@ -118,55 +97,5 @@ function MainMap(props) {
   );
 }
 
-function Search({ panTo }) {
-  const { 
-    ready, 
-    value, 
-    suggestions: {status, data }, 
-    setValue, 
-    clearSuggestion 
-  } = usePlacesAutocomplete({
-    requestOptions: {
-      location: {lat: () => 33.8938, lng: () => 35.5018},
-      radius: 10000 // 6 MILES.
-    }
-  })
-
-  return (
-    <div className="searchbar">
-      <Combobox 
-        onSelect={async (address) => {
-          try {
-            const results = await getGeocode({ address });
-            const { lat, lng } = await getLatLng(results[0]);
-            panTo({ lat, lng});
-          } catch(error) {
-            console.log("error!");
-          }
-        }}
-      >
-
-        <ComboboxInput
-          value={value} 
-          onChange={(event) => {
-            setValue(event.target.value)
-          }}
-          disabled={!ready}
-          placeholder="Enter an address | أدخل عنوانا"
-        />
-
-        <ComboboxPopover key="asdasd">
-          {status === "OK" && 
-          data.map(({ place_id, description }) => (
-            <ComboboxOption value={description} key={place_id} />
-          ))}
-        </ComboboxPopover>
-
-      </Combobox>
-    </div>
-  )
-}
-
-
-  
+ 
 export default MainMap;
