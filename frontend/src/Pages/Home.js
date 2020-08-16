@@ -23,6 +23,7 @@ function Home() {
   const [selectedMapMarker, setSelectedMapMarker ] = React.useState(null); // Format: [marker, lat, lng]
   const [selectedTableMarker, setSelectedTableMarker ] = React.useState(null); //Format: marker
 
+  
   function retrieveActiveMarkers() {
 
     fetch(`${Config.url.API_URL}/api/posts/`)
@@ -32,10 +33,19 @@ function Home() {
         })
         .catch((err) => console.log(err));
   }
+  
 
   function retrieveViewportMarkers() {
 
     console.log('retrieveViewportMarkers execution');
+
+    /*
+    const response = await fetch(`${Config.url.API_URL}/api/posts/`)
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);     
+    }
+    */
 
     const markers = []
     const markersMapObject = []
@@ -73,7 +83,7 @@ function Home() {
   }
 
   React.useEffect(retrieveActiveMarkers, [])
-  React.useEffect(retrieveViewportMarkers, [bounds])
+  React.useEffect(retrieveViewportMarkers, [bounds, allMarkers])
 
   return (
 
