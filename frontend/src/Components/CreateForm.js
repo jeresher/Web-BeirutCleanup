@@ -1,4 +1,5 @@
 import React from 'react';
+import Config from '../Miscellaneous/Config'
 import '../Style/App.css'; 
 
 function CreateForm(props) {
@@ -83,7 +84,7 @@ function CreateForm(props) {
 
     function submitPostRequest(name, date, description, location) {
 
-        fetch("https://beirutcleanup.herokuapp.com/api/posts/", {
+        fetch(`${Config.url.API_URL}/api/posts/`, {
             method: "POST",
             body: JSON.stringify({
                 "eventName": name,

@@ -1,4 +1,5 @@
 import React from 'react';
+import Config from '../Miscellaneous/Config';
 import {
   GoogleMap,
   useLoadScript,
@@ -24,12 +25,12 @@ function Home() {
 
   function retrieveActiveMarkers() {
 
-    fetch("https://beirutcleanup.herokuapp.com/api/posts/")
+    fetch(`${Config.url.API_URL}/api/posts/`)
         .then(res => res.json())
         .then((result) => {
           setAllMarkers(result);
         })
-
+        .catch((err) => console.log(err));
   }
 
   function retrieveViewportMarkers() {

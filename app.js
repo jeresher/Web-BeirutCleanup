@@ -4,6 +4,8 @@ const path = require('path');
 const routes = require('./routes/routes');
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut')
 .then(() => console.log("Connection Successful."))
 
@@ -14,7 +16,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
 
 app.use(express.json());
 app.use(routes);
@@ -27,6 +28,6 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.listen(process.env.PORT || 5000, function() {
-    console.log(`Server is starting...`)
+app.listen(PORT, function() {
+    console.log(`Server is starting on PORT: ${PORT}.`);
 });
