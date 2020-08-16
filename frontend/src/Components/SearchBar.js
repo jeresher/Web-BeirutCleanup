@@ -50,11 +50,28 @@ function SearchBar({ panTo }) {
             placeholder="Enter an address | أدخل عنوانا"
           />
   
-          <ComboboxPopover>
+          <ComboboxPopover 
+            style={{
+                "listStyleType": "none",
+                "zIndex": "9",
+                "border": "none",
+                "borderBottomLeftRadius": "2px",
+                "borderBottomRightRadius": "2px",
+                "boxShadow": "0px 1px 2px rgb(190, 190, 190)"
+            }}  
+          >
             {status === "OK" && 
             data.map(({ place_id, description }) => (
-              <ComboboxOption value={description} key={place_id} />
+              <ComboboxOption 
+                value={description} 
+                key={place_id} 
+                style={{
+                    "fontSize": "1.5vw",
+                    "font-family": "'Roboto', sans-serif"
+                }}
+              />
             ))}
+
           </ComboboxPopover>
   
         </Combobox>

@@ -6,7 +6,8 @@ import {
   InfoWindow,
   MarkerClusterer
 } from "@react-google-maps/api";
-import mapStyles from "../Style/mapStyles"
+import SearchBar from "./SearchBar";
+import mapStyles from "../Style/mapStyles";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -40,9 +41,15 @@ function CreateMap(props) {
   }, [])
 
   const mapRef = React.useRef();
+
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
   })
+
+  const panTo = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(15);
+  }, [])
 
   if (loadError) return "Error loading maps"
   if (!isLoaded) return "Loading maps"
@@ -50,6 +57,8 @@ function CreateMap(props) {
 
   return (
     <div className="createmap">
+
+      <SearchBar panTo={panTo} />
 
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
