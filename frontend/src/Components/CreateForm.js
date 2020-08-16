@@ -83,7 +83,7 @@ function CreateForm(props) {
 
     function submitPostRequest(name, date, description, location) {
 
-        fetch("http://localhost:5000/api/posts/", {
+        fetch("https://beirutcleanup.herokuapp.com/api/posts/", {
             method: "POST",
             body: JSON.stringify({
                 "eventName": name,

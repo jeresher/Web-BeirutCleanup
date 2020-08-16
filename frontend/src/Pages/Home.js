@@ -24,7 +24,7 @@ function Home() {
 
   function retrieveActiveMarkers() {
 
-    fetch("http://localhost:5000/api/posts/")
+    fetch("https://beirutcleanup.herokuapp.com/api/posts/")
         .then(res => res.json())
         .then((result) => {
           setAllMarkers(result);
