@@ -41,10 +41,6 @@ async function formatPosts(allActivePosts) {
             const month = eventDate.getUTCMonth() + 1;
             const year = eventDate.getUTCFullYear();
 
-            console.log(eventDate);
-            console.log(eventDate.getUTCDate());
-            console.log(eventDate.getUTCMonth());
-            console.log(eventDate.getUTCFullYear());
             formattedPosts[i].eventDate = `${day}/${month}/${year}`;
         }
     }
