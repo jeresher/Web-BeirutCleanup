@@ -21,9 +21,9 @@ app.use(routes);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static( 'frontend/build' ))
 
-    app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname + 'frontend/build/index.html'));
-      });
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+    });
 }
 
 app.listen(process.env.PORT || 3000, function() {
