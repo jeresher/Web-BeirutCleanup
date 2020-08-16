@@ -18,12 +18,12 @@ function Home() {
   const [ viewportMarkers, setViewportMarkers ] = React.useState([]);
   const [ viewportMarkersMapObject, setViewportMarkersMapObject ] = React.useState([]);
   const [ viewportMarkersTableObject, setViewportMarkersTableObject ] = React.useState([]);
-  const [ bounds, setBounds ] = React.useState();
+  const [ bounds, setBounds ] = React.useState([35.404396920728686, 35.59700098567009, 33.802433062302086, 33.9932866008829]);
 
   const [selectedMapMarker, setSelectedMapMarker ] = React.useState(null); // Format: [marker, lat, lng]
   const [selectedTableMarker, setSelectedTableMarker ] = React.useState(null); //Format: marker
 
-  
+
   function retrieveActiveMarkers() {
 
     fetch(`${Config.url.API_URL}/api/posts/`)
@@ -36,16 +36,6 @@ function Home() {
   
 
   function retrieveViewportMarkers() {
-
-    console.log('retrieveViewportMarkers execution');
-
-    /*
-    const response = await fetch(`${Config.url.API_URL}/api/posts/`)
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      console.log(jsonResponse);     
-    }
-    */
 
     const markers = []
     const markersMapObject = []
@@ -74,8 +64,6 @@ function Home() {
           setSelectedTableMarker={setSelectedTableMarker}
         />);
     }
-
-    console.log('finished retrieveViewportMarkers execution', markers);
     
     setViewportMarkers(markers);
     setViewportMarkersMapObject(markersMapObject);
