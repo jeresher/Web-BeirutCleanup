@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const app = express();
 
+const PORT = process.env.PORT || 5000;
 
-mongoose.connect('mongodb://localhost/beirut')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut')
 .then(() => console.log("Connection Successful."))
 
 //Temporary for CORS.
@@ -18,5 +19,10 @@ app.use(function(req, res, next) {
 app.use(express.json());
 app.use(routes);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static( '../../frontend/build' ))
+}
 
-app.listen(5000);
+app.listen(PORT, () => {
+    console.log(`Server is starting on PORT: ${PORT}.`)
+});
