@@ -1,12 +1,6 @@
 import React from 'react';
 import Config from '../Miscellaneous/Config';
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow
-} from "@react-google-maps/api";
-import NavBar from '../Components/NavBar';
+import { Marker } from "@react-google-maps/api";
 import SideBar from '../Components/SideBar';
 import SideBarCell from '../Components/SideBarCell';
 import MainMap from '../Components/MainMap';

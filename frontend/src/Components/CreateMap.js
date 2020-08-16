@@ -2,9 +2,7 @@ import React from 'react';
 import {
   GoogleMap,
   useLoadScript,
-  Marker,
-  InfoWindow,
-  MarkerClusterer
+  Marker
 } from "@react-google-maps/api";
 import SearchBar from "./SearchBar";
 import mapStyles from "../Style/mapStyles";
