@@ -66,7 +66,7 @@ function MainMap(props) {
         center={center}
         options={options}
         onLoad={onMapLoad}
-        onBoundsChanged={debounce(onBoundsChanged, 150)}
+        onIdle={onBoundsChanged}
         onClick={() => props.setSelectedMapMarker(null)}
       >
         {props.viewportMarkersMapObject}
