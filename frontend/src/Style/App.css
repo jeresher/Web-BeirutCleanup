@@ -311,6 +311,40 @@ table {
   font-size: .8vw;
 }
 
+/* SEARCH BAR */
+.searchbar {
+  position: absolute;
+  top: 1.4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-bottom: 4px solid #0F1146;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar input {
+  font-size: 1.1vw;
+  padding: 1.3vh .3vw;
+  width: 18vw;
+  border: none;
+}
+
+.searchbar input:focus {
+  outline: none;
+}
+
+.searchbar button {
+  width: 1.2vw;
+  height: 1.2vw;
+  border: none;
+  background-color: transparent;
+  background-image: url("../Assets/search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;  
+}
 
 
 

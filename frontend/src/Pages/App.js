@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from "../Components/NavBar.js"
 import Create from "./Create";
 import Home from "./Home";
+import "@reach/combobox/styles.css";
 import '../Style/App.css'; 
 
 function App() {

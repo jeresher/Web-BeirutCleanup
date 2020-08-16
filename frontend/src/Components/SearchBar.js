@@ -10,7 +10,6 @@ import {
     ComboboxList,
     ComboboxOption
 } from "@reach/combobox";
-import "@reach/combobox/styles.css";
 
 
 function SearchBar({ panTo }) {
@@ -59,6 +58,7 @@ function SearchBar({ panTo }) {
           </ComboboxPopover>
   
         </Combobox>
+        <button></button>
       </div>
     )
 }
