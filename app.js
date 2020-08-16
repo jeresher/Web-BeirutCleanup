@@ -4,8 +4,11 @@ const path = require('path');
 const routes = require('./routes/routes');
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut')
+/* mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut') */
+
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("Connection Successful."))
+.catch((err) => console.log(err))
 
 //Temporary for CORS.
 app.use(function(req, res, next) {
