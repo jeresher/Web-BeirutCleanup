@@ -4,8 +4,6 @@ const path = require('path');
 const routes = require('./routes/routes');
 const app = express();
 
-const PORT = process.env.PORT || 5000;
-
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut')
 .then(() => console.log("Connection Successful."))
 
@@ -28,6 +26,6 @@ if (process.env.NODE_ENV === 'production') {
       });
 }
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, function() {
     console.log(`Server is starting on PORT: ${PORT}.`)
 });
