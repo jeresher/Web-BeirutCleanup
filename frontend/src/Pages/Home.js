@@ -35,6 +35,8 @@ function Home() {
 
   function retrieveViewportMarkers() {
 
+    console.log('retrieveViewportMarkers execution');
+
     const markers = []
     const markersMapObject = []
     const markersTableObject = []
@@ -62,6 +64,8 @@ function Home() {
           setSelectedTableMarker={setSelectedTableMarker}
         />);
     }
+
+    console.log('finished retrieveViewportMarkers execution', markers);
     
     setViewportMarkers(markers);
     setViewportMarkersMapObject(markersMapObject);

@@ -45,6 +45,7 @@ function MainMap(props) {
   }, [])
   
   function onBoundsChanged() {
+    console.log('onBoundsChanged execution');
     const swlng = mapRef.current.getBounds().getSouthWest().lng();
     const nelng = mapRef.current.getBounds().getNorthEast().lng();
     const swlat = mapRef.current.getBounds().getSouthWest().lat();
@@ -66,7 +67,7 @@ function MainMap(props) {
         center={center}
         options={options}
         onLoad={onMapLoad}
-        onIdle={onBoundsChanged}
+        onIdle={debounce(onBoundsChanged, 100)}
         onClick={() => props.setSelectedMapMarker(null)}
       >
         {props.viewportMarkersMapObject}
