@@ -37,7 +37,15 @@ async function formatPosts(allActivePosts) {
         } else if (difference === 1) {
             formattedPosts[i].eventDate = "TOMORROW | غدا"
         } else {
-            formattedPosts[i].eventDate = String(difference) + " DAYS";
+            const day = eventDate.getUTCDate();
+            const month = eventDate.getUTCMonth() + 1;
+            const year = eventDate.getUTCFullYear();
+
+            console.log(eventDate);
+            console.log(eventDate.getUTCDate());
+            console.log(eventDate.getUTCMonth());
+            console.log(eventDate.getUTCFullYear());
+            formattedPosts[i].eventDate = `${day}/${month}/${year}`;
         }
     }
 
