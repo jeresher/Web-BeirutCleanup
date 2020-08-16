@@ -40,7 +40,7 @@ function SearchBar({ panTo }) {
               const { lat, lng } = await getLatLng(results[0]);
               panTo({ lat, lng});
             } catch(error) {
-              console.log("error");
+              console.log(error);
             }
           }}
         >
@@ -72,7 +72,7 @@ function SearchBar({ panTo }) {
                     key={place_id} 
                     style={{
                         "fontSize": "1.5vw",
-                        "font-family": "'Roboto', sans-serif"
+                        "fontFamily": "'Roboto', sans-serif"
                     }}
                 />
                 ))}
