@@ -19,7 +19,7 @@ function SearchBar({ panTo }) {
       value, 
       suggestions: {status, data }, 
       setValue, 
-      clearSuggestion 
+      clearSuggestions 
     } = usePlacesAutocomplete({
       requestOptions: {
         location: {lat: () => 33.8938, lng: () => 35.5018}, //BEIRUT.
@@ -31,12 +31,16 @@ function SearchBar({ panTo }) {
       <div className="searchbar">
         <Combobox 
           onSelect={async (address) => {
+
+            setValue(address, false);
+            clearSuggestions()
+
             try {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);
               panTo({ lat, lng});
             } catch(error) {
-              console.log("error!");
+              console.log("error");
             }
           }}
         >
@@ -60,22 +64,24 @@ function SearchBar({ panTo }) {
                 "boxShadow": "0px 1px 2px rgb(190, 190, 190)"
             }}  
           >
-            {status === "OK" && 
-            data.map(({ place_id, description }) => (
-              <ComboboxOption 
-                value={description} 
-                key={place_id} 
-                style={{
-                    "fontSize": "1.5vw",
-                    "font-family": "'Roboto', sans-serif"
-                }}
-              />
-            ))}
+            <ComboboxList>
+                {status === "OK" && 
+                data.map(({ place_id, description }) => (
+                <ComboboxOption 
+                    value={description} 
+                    key={place_id} 
+                    style={{
+                        "fontSize": "1.5vw",
+                        "font-family": "'Roboto', sans-serif"
+                    }}
+                />
+                ))}
+            </ComboboxList>
 
           </ComboboxPopover>
   
         </Combobox>
-        <button></button>
+        <button disabled></button>
       </div>
     )
 }
