@@ -70,12 +70,13 @@ table {
   display: inline;
 }
 
-/* NAVBAR: NEW EVENT */
-.navbar .newevent {
+/* NAVBAR: BUTTONS */
+.navbar .navigation {
   padding-right: 2%;
+  display: flex;
 }
 
-.navbar .newevent button {
+.navbar .navigation #viewevent, #addevent {
   cursor: pointer;
   border: 0;
   border-radius: 3px;
@@ -87,6 +88,54 @@ table {
   box-shadow: 0px 2px 3px rgb(190, 190, 190);
 }
 
+.navbar .navigation #donate {
+  border: 1px solid #d6d6d6;
+  color: #121459;
+  font-weight: 900;
+  font-size: .8rem;
+  background-color: transparent;
+  border-radius: 3px;
+  margin-left: 1.2vw;
+  padding: 4px 20px;
+  box-shadow: 0px 1px 3px rgb(190, 190, 190);
+}
+
+/* NAVBAR: SEARCH BAR */
+.searchbar {
+  position: absolute;
+  top: 1.4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-bottom: 4px solid #0F1146;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar input {
+  font-size: 1.1vw;
+  padding: 1.3vh .3vw;
+  width: 18vw;
+  border: none;
+}
+
+.searchbar input:focus {
+  outline: none;
+}
+
+.searchbar button {
+  width: 1.2vw;
+  height: 1.2vw;
+  border: none;
+  background-color: transparent;
+  background-image: url("../Assets/search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;  
+}
+
+/* INNER CONTAINER */
 .inner-container {
   display: flex;
   flex-direction: row;
@@ -309,41 +358,6 @@ table {
 .moreinformation .information .date {
   font-weight: 500;
   font-size: .8vw;
-}
-
-/* SEARCH BAR */
-.searchbar {
-  position: absolute;
-  top: 1.4vh;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  border-bottom: 4px solid #0F1146;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.searchbar input {
-  font-size: 1.1vw;
-  padding: 1.3vh .3vw;
-  width: 18vw;
-  border: none;
-}
-
-.searchbar input:focus {
-  outline: none;
-}
-
-.searchbar button {
-  width: 1.2vw;
-  height: 1.2vw;
-  border: none;
-  background-color: transparent;
-  background-image: url("../Assets/search.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;  
 }
 
 
