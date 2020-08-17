@@ -117,6 +117,7 @@ table {
 }
 
 .searchbar input {
+  background-color: transparent;
   font-size: 1.1vw;
   padding: 1.3vh .3vw;
   width: 18vw;
@@ -478,4 +479,31 @@ table {
   font-weight: 900;
   color: white;
   box-shadow: 0px 2px 2px rgb(190, 190, 190);
+}
+
+
+/* MOBILE SCREENS */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mainmap {
+    flex-basis: 100%;
+  }
+
+  .searchbar input {
+    font-size: 15px;
+    width: 70vw;
+    height: 2vh;
+  }
+
+  .searchbar button {
+    width: 5vw;
+    height: 2.5vh;
+  }
 }
