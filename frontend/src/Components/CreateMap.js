@@ -47,7 +47,7 @@ function CreateMap(props) {
 
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(15);
+    mapRef.current.setZoom(17);
   }, [])
 
   if (loadError) return "Error loading maps"
