@@ -47,6 +47,7 @@ table {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height:0;
 }
 
 /* NAVBAR */
@@ -57,6 +58,7 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height:0;
 }
 
 /* NAVBAR: LOGO */
@@ -142,6 +144,7 @@ table {
   flex-direction: row;
   flex-basis: 100%;
   height: 100%;
+  min-height:0;
 }
 
 /* MAP */
@@ -152,6 +155,8 @@ table {
 
 /* SIDEBAR */
 .sidebar {
+  display: flex;
+  flex-direction: column;
   flex-basis: 40%;
   max-width: 40vw; /* new addition for whitespace */
   background-color: #EFF2F5;
@@ -159,10 +164,12 @@ table {
   height: 100%;
   z-index: 2;
   box-shadow: 1px 5px 5px rgb(190, 190, 190);
+  min-height:0;
 }
 
 /* SIDEBAR: HEADING */
 .sidebar .heading {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,6 +178,7 @@ table {
   background-color: #0e1046;
   box-shadow: 0px 5px 3px rgb(190, 190, 190);
   z-index: 2;
+  min-height:0;
 }
 
 .sidebar .heading h1 {
@@ -191,7 +199,6 @@ table {
 .sidebar .body {
   overflow: scroll;
   margin-top: 2px;
-  height: 73vh; /* VERY IFFY MEASUREMENT. FIGURE OUT HOW TO FIX SCROLL. */
 }
 
 .sidebar .cell {
@@ -471,4 +478,3 @@ table {
   color: white;
   box-shadow: 0px 2px 2px rgb(190, 190, 190);
 }
-
