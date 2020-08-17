@@ -484,6 +484,12 @@ table {
 
 /* MOBILE SCREENS */
 @media only screen and (max-width: 600px) {
+
+  .main-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
   .navbar {
     display: none;
   }
