@@ -199,6 +199,7 @@ table {
 .sidebar .body {
   overflow: scroll;
   margin-top: 2px;
+  flex-grow: 1;
 }
 
 .sidebar .cell {
