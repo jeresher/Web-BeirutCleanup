@@ -1,4 +1,5 @@
 import React from 'react';
+import Config from '../Miscellaneous/Config'
 import {
   GoogleMap,
   useLoadScript,
@@ -28,7 +29,7 @@ const options = {
 function MainMap(props) {
 
   const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: Config.key.GOOGLE_KEY,
     libraries
   });
 
