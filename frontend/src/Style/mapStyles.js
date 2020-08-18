@@ -16,36 +16,6 @@ export default [
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 40
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "saturation": -10
-            },
-            {
-                "lightness": 30
-            }
-        ]
-    },
-    {
         "featureType": "landscape.man_made",
         "elementType": "all",
         "stylers": [
@@ -80,13 +50,28 @@ export default [
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
+            },
+            {
+                "hue": "#005cff"
+            },
+            {
+                "lightness": "33"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
             },
             {
                 "saturation": -100
             },
             {
-                "lightness": 60
+                "lightness": 40
             }
         ]
     },
@@ -102,6 +87,21 @@ export default [
             },
             {
                 "lightness": 60
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": -10
+            },
+            {
+                "lightness": 30
             }
         ]
     }
