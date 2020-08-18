@@ -13,7 +13,7 @@ function Create(props) {
 
     return (
 
-        <div className="inner-container">
+        <div className="inner-container create">
             <CreateMap handleLocationChange={handleLocationChange} />
             <CreateForm location={location} loadCreatePage={props.loadCreatePage} />
         </div>
