@@ -485,13 +485,15 @@ table {
 /* MOBILE SCREENS */
 @media only screen and (max-width: 600px) {
 
+  * {
+    font-size: 15px !important;
+  }
+
+
+  /* MAIN SCREEN */
   .main-container {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-  }
-
-  .navbar {
-    display: none;
   }
 
   .sidebar {
@@ -502,14 +504,42 @@ table {
     flex-basis: 100%;
   }
 
+  .navbar .logo {
+    display: none;
+  }
+
+  .navbar .navigation #donate {
+    display: none;
+  }
+
+  .searchbar {
+    left: 3%;
+    transform: unset;
+
+  }
+
   .searchbar input {
-    font-size: 15px;
-    width: 70vw;
+    font-size: 15px !important;
+    width: 50vw;
     height: 2vh;
   }
 
   .searchbar button {
     width: 5vw;
     height: 2.5vh;
+  }
+
+  /* CREATE SCREEN */
+  .form {
+    position: absolute;
+    bottom: 0;
+    padding: unset;
+    margin: 3% auto;
+    width: 100%;
+    height: 50%;
+  }
+
+  .form ::placeholder {
+    font-size: 15px !important;
   }
 }
