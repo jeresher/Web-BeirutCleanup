@@ -482,6 +482,140 @@ table {
 }
 
 
+
+
+
+
+
+
+
+
+/* ADMIN LOGIN */
+.admin-login-main-container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.admin-login-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35vw;
+  height: 60vh;
+  background-color: red;
+}
+
+.admin-login-form {
+  flex-grow: 1;
+}
+
+.admin-login-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-login-buttons .submit {
+  height: 30px;
+  width: 70px;
+}
+
+/* ADMIN DASHBOARD */
+.admin-dashboard-main-container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dddddd;
+}
+
+.admin-dashboard-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+}
+
+.admin-dashboard-header {
+  flex-shrink: 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2vw 2vw 0 2vw;
+  padding-bottom: .5vw;
+  border-bottom: 1px solid #CCCFD8;
+}
+
+.admin-dashboard-header .dashboard-title {
+  color: #353A4D;
+  font-weight: 350;
+  font-size: 2.5vw;
+}
+
+.admin-dashboard-header .dashboard-button {
+  border: 0;
+  padding: 10px 10px;
+  color: white;
+  background-color: #121459;
+  border-radius: 5%;
+  font-weight: 900;
+  font-size: .8rem;
+}
+
+.admin-dashboard-table {
+  flex-grow: 1;
+  overflow: scroll;
+  margin: 2vw;
+}
+
+.admin-dashboard-table table {
+  font-weight: 500;
+  background-color: white;
+  width: 100%;
+  text-align: left;
+
+}
+
+.coupon-table {
+  background-color: white;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0px 1px 3px #999;
+}
+
+.coupon-table th, .coupon-table td {
+  padding: 15px 0 15px 2%;
+}
+
+.coupon-table thead tr th {
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #CCCFD8;
+  font-weight: 600;
+  color: #353A4D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* MOBILE SCREENS */
 @media only screen and (max-width: 600px) {
 
