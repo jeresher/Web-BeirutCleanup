@@ -34,10 +34,40 @@ async function registerAdmin(req, res, next) {
     });
 
     const newAdmin = await admin.save();
-    req.user = newAdmin;
+    req.admin = newAdmin;
+    next();
+}
+
+
+//LOGIN VALIDATION.
+const loginSchema = Joi.object({
+    email: Joi.string().min(6).required().email(),
+    password: Joi.string().min(6).required()
+})
+
+async function loginAdmin (req, res, next) {
+
+    //VALIDATE THE DATA A USER PROVIDED.
+    const { error } = loginSchema.validate(req.body)
+    if (error) res.status(400).send(error.details[0].message);
+
+    // CHECK IF EMAIL EXISTS.
+    const admin = await Admin.findOne({email: req.body.email})
+    if (!admin) res.status(400).send('Email doesn\'t exist.');
+
+    // CHECK IF PASSWORD IS CORRECT.
+    const validPass = await bcrypt.compare(req.body.password, admin.password)
+    if (!validPass) res.status(400).send('Password is invalid.');
+
+    // CREATE & ASSIGN A TOKEN.
+    const token = jwt.sign({_id: admin.id}, process.env.TOKEN_SECRET) 
+    res.header('auth-token', token); 
+
+    req.admin = admin;
     next();
 }
 
 module.exports = {
-    registerAdmin: registerAdmin
+    registerAdmin: registerAdmin,
+    loginAdmin: loginAdmin
 }

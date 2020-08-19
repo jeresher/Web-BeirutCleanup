@@ -17,7 +17,11 @@ router.post("/api/posts/:id", createComment, (req, res, next) => {
 });
 
 router.post("/api/register", registerAdmin, (req, res, next) => {
-    res.send(req.user);
+    res.send(req.admin);
+});
+
+router.post("/api/login", loginAdmin, (req, res, next) => {
+    res.send(req.admin);
 });
 
 

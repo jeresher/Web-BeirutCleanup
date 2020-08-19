@@ -9,7 +9,8 @@ function Admin() {
             <div className="admin-login-inner-container">
 
                 <div className="admin-login-form">
-                    <h1>Hey</h1>     
+                    <input placeholder="Email" />
+                    <input placeholder="password" type="password" />
                 </div>
 
                 <div className="admin-login-buttons">
