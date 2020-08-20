@@ -35,27 +35,20 @@ function Admin() {
         <div className="admin-login-main-container">
             <div className="admin-login-inner-container">
                 <div className="admin-login-vertical-container" onSubmit={attemptLogin}>
-                    {/* <h1 className="noselect">Beirut Cleanup</h1> */}
                     <img src={logo}></img>
                     <form className="admin-login-form">
                         <h5>Email</h5>
                         <input placeholder="example@email.com" id="admin-email" required />
                         <h5>Password</h5>
                         <input placeholder="• • • • •" type="password" id="admin-password" required />
-                
+
                         <Link to="./dashboard">
                         <button type="submit" className="submit">Sign In</button>
                         </Link>
+                        
                         <button className="request">Request an Account</button>
                     </form>
-
-                    <form className="admin-login-buttons">
-                        {/* <Link to="./dashboard"><input className="submit"></input></Link> */}
-                        {/*<button type="submit" className="submit"></button>
-                        */}
-                    </form>
                 </div>
-                
             </div>
         </div>
     )
