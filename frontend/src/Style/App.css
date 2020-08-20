@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;700;900&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -496,34 +496,100 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #43425D;
   height: 100vh;
   width: 100vw;
 }
 
 .admin-login-inner-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  height: 85vh;
+  border-radius: 30px;
+  box-shadow: 0px 11px 20px 8px #232230;
+  background-color: #43425D;
+}
+
+.admin-login-vertical-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35vw;
-  height: 60vh;
-  background-color: red;
+  width: 18vw;
+  height: 100%;
+  background-color: transparent;
+}
+
+.admin-login-vertical-container h1 {
+  margin-top: 8vh;
+  font-size: 2.4vw;
+  font-weight: 300;
+  color: white;
+  padding-bottom: 1vh;
 }
 
 .admin-login-form {
-  flex-grow: 1;
-}
-
-.admin-login-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 16vh;
   width: 100%;
 }
 
-.admin-login-buttons .submit {
-  height: 30px;
-  width: 70px;
+.admin-login-form h5 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 1vh;
+  color: white;
 }
+
+.admin-login-form input {
+  height: 3vh;
+  border: none;
+  background-color: transparent !important;
+  color: white;
+  font-size: 13px;
+  padding-bottom: .5vh;
+  border-bottom: 2px solid white;
+  margin-bottom: 3vh;
+}
+
+.admin-login-form input::placeholder {
+  color: rgb(180, 180, 180);
+}
+
+.admin-login-form input:focus {
+  outline: none;
+}
+
+.admin-login-form button.submit {
+  width: 100%;
+  margin-top: 3.5vh;
+  height: 4.5vh;
+  background-color: #22CE99;
+  color: #2f2e41;
+  border: none;
+  border-radius: 2px;
+}
+
+.admin-login-form button.request {
+  background-color: transparent;
+  border: none;
+  margin-top: 3vh;
+  text-align: center;
+  font-size: .9vw;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ADMIN DASHBOARD */
 .admin-dashboard-main-container {
@@ -533,15 +599,17 @@ table {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #dddddd;
+  background: #43425D;
 }
 
 .admin-dashboard-inner-container {
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  height: 80vh;
-  background-color: white;
+  width: 75vw;
+  height: 85vh;
+  border-radius: 30px;
+  box-shadow: 0px 11px 20px 8px #232230;
+  background-color: #43425D;
 }
 
 .admin-dashboard-header {
@@ -555,13 +623,13 @@ table {
   border-bottom: 1px solid #CCCFD8;
 }
 
-.admin-dashboard-header .dashboard-title {
-  color: #353A4D;
-  font-weight: 350;
+.admin-dashboard-header h1 {
+  color: white;
+  font-weight: 400;
   font-size: 2.5vw;
 }
 
-.admin-dashboard-header .dashboard-button {
+.admin-dashboard-header button {
   border: 0;
   padding: 10px 10px;
   color: white;
@@ -575,15 +643,36 @@ table {
   flex-grow: 1;
   overflow: scroll;
   margin: 2vw;
+  background-color: transparent;
 }
 
 .admin-dashboard-table table {
   font-weight: 500;
-  background-color: white;
   width: 100%;
   text-align: left;
-
+  text-overflow: clip;
 }
+
+.admin-dashboard-table .tdname {
+  width: 15%;
+  max-width: 15%;
+}
+
+.admin-dashboard-table thead tr td:first-child {
+  max-width: 15%;
+}
+
+.admin-dashboard-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30vw;
+}
+
+
+
+
+
 
 .coupon-table {
   background-color: white;
@@ -611,7 +700,15 @@ table {
 
 
 
-
+/* MISCELLANEOUS */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version (supported by Chrome, Edge, Opera and Firefox) */
+}
 
 
 

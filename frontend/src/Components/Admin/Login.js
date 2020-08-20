@@ -32,19 +32,32 @@ function Admin() {
 
     return (
         <div className="admin-login-main-container">
-            <form className="admin-login-inner-container" onSubmit={attemptLogin}>
+            <div className="admin-login-inner-container">
+                <div className="admin-login-vertical-container" onSubmit={attemptLogin}>
+                    <h1 className="noselect">Beirut Cleanup</h1>
+                    {/*
+                    <h2>Welcome!</h2>
+                    */}
+                    <form className="admin-login-form">
+                        <h5>Email</h5>
+                        <input placeholder="example@email.com" id="admin-email" required />
+                        <h5>Password</h5>
+                        <input placeholder="• • • • •" type="password" id="admin-password" required />
+                
+                        <Link to="./dashboard">
+                        <button type="submit" className="submit">Sign In</button>
+                        </Link>
+                        <button className="request">Request an Account</button>
+                    </form>
 
-                <div className="admin-login-form">
-                    <input placeholder="email" id="admin-email" required />
-                    <input placeholder="password" type="password" id="admin-password" required />
-                </div>
-
-                <div className="admin-login-buttons">
-                    {/* <Link to="./dashboard"><input className="submit"></input></Link> */}
-                    <button type="submit" className="submit"></button>
+                    <form className="admin-login-buttons">
+                        {/* <Link to="./dashboard"><input className="submit"></input></Link> */}
+                        {/*<button type="submit" className="submit"></button>
+                        */}
+                    </form>
                 </div>
                 
-            </form>
+            </div>
         </div>
     )
 
