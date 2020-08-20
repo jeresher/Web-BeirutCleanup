@@ -1,6 +1,7 @@
 import React from "react";
-import Config from '../../Miscellaneous/Config'
+import Config from '../../Miscellaneous/Config';
 import { Link } from "react-router-dom";
+import logo from "../../Assets/logobluewhite.png";
 
 function Admin() {
 
@@ -34,10 +35,8 @@ function Admin() {
         <div className="admin-login-main-container">
             <div className="admin-login-inner-container">
                 <div className="admin-login-vertical-container" onSubmit={attemptLogin}>
-                    <h1 className="noselect">Beirut Cleanup</h1>
-                    {/*
-                    <h2>Welcome!</h2>
-                    */}
+                    {/* <h1 className="noselect">Beirut Cleanup</h1> */}
+                    <img src={logo}></img>
                     <form className="admin-login-form">
                         <h5>Email</h5>
                         <input placeholder="example@email.com" id="admin-email" required />

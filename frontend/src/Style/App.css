@@ -499,17 +499,20 @@ table {
   background: #43425D;
   height: 100vh;
   width: 100vw;
+  background: url("../Assets/loginbackground.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .admin-login-inner-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75vw;
-  height: 85vh;
-  border-radius: 30px;
-  box-shadow: 0px 11px 20px 8px #232230;
-  background-color: #43425D;
+  width: 25vw;
+  height: 65vh;
+  border-radius: 2px;
+  box-shadow: 0px 11px 20px 8px #221e4198;
+  background-color: #bebebe80;
 }
 
 .admin-login-vertical-container {
@@ -522,17 +525,22 @@ table {
 }
 
 .admin-login-vertical-container h1 {
-  margin-top: 8vh;
+  margin-top: 11vh;
   font-size: 2.4vw;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   padding-bottom: 1vh;
+}
+
+.admin-login-vertical-container img {
+  margin-top: 11vh;
+  width: 15vw;
 }
 
 .admin-login-form {
   display: flex;
   flex-direction: column;
-  margin-top: 16vh;
+  margin-top: 8vh;
   width: 100%;
 }
 
@@ -546,7 +554,7 @@ table {
 .admin-login-form input {
   height: 3vh;
   border: none;
-  background-color: transparent !important;
+  background-color: transparent;
   color: white;
   font-size: 13px;
   padding-bottom: .5vh;
@@ -566,8 +574,9 @@ table {
   width: 100%;
   margin-top: 3.5vh;
   height: 4.5vh;
-  background-color: #22CE99;
-  color: #2f2e41;
+  background-color: #121459;
+  color: white;
+  font-weight: 500;
   border: none;
   border-radius: 2px;
 }
