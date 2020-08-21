@@ -9,7 +9,6 @@ function authorization(req, res, next) {
     // VERIFY IF TOKEN IS VALID.
     try {
         const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
-        console.log(decoded)
         req.user = decoded; // { _id: '498f9j3f923ffn932E4', privileges: 1, iat: 1597967032 }
         next();
     } catch (err) {

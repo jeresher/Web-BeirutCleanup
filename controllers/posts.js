@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
 var { getBeirutDate, formatPosts } = require('../tools/helperfunctions');
 var { Post } = require("../models/post");
+var User = require("../models/user");
 
 
 async function getActivePosts(req, res, next) {
@@ -13,6 +13,19 @@ async function getActivePosts(req, res, next) {
     const formattedPosts = await formatPosts(allActivePosts);
 
     req.documents = formattedPosts; 
+    next();
+}
+
+async function getUsersPosts(req, res, next) {
+    const beirutDate = getBeirutDate();
+
+    const user = await User.findOne({_id: req.user._id});
+
+    var allUsersPosts = await Post
+        .find({eventDate: {"$gte": beirutDate}, organizationName: user.name})
+        .sort({eventDate: 1})
+
+    req.documents = allUsersPosts;
     next();
 }
 
@@ -65,5 +78,6 @@ module.exports = {
     createPost: createPost,
     createUserPost: createUserPost,
     createComment: createComment,
-    getActivePosts: getActivePosts
+    getActivePosts: getActivePosts,
+    getUsersPosts: getUsersPosts
 }
