@@ -32,7 +32,7 @@ async function createPost(req, res, next) {
     next();
 }
 
-async function createAdminPost(req, res, next) {
+async function createUserPost(req, res, next) {
 
     const post = new Post({
         organizationName: req.body.name,
@@ -63,7 +63,7 @@ async function createComment(req, res, next) {
 
 module.exports = {
     createPost: createPost,
-    createAdminPost: createAdminPost,
+    createUserPost: createUserPost,
     createComment: createComment,
     getActivePosts: getActivePosts
 }

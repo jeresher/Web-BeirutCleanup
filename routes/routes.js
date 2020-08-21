@@ -1,5 +1,5 @@
-const { createPost, createAdminPost, createComment, getActivePosts } = require("../controllers/posts");
-const { registerAdmin, loginAdmin, retrieveAdmin } = require("../controllers/admin");
+const { createPost, createUserPost, createComment, getActivePosts } = require("../controllers/posts");
+const { registerUser, loginUser, retrieveUser } = require("../controllers/user");
 const {authorization, authenticationlvl1 } = require("../controllers/auth");
 const express = require('express');
 const router = express.Router();
@@ -18,22 +18,22 @@ router.post("/api/posts/:id", createComment, (req, res, next) => {
     res.send(req.document);
 });
 
-router.post("/api/register", registerAdmin, (req, res, next) => {
-    res.send(req.admin);
+router.post("/api/register", registerUser, (req, res, next) => {
+    res.send(req.user);
 });
 
-router.post("/api/login", loginAdmin, (req, res, next) => {
-    res.send(req.admin);
+router.post("/api/login", loginUser, (req, res, next) => {
+    res.send(req.user);
 });
 
 // AUTHENTICATION LVL 1.
 
-router.post("/api/adminposts", [authorization, authenticationlvl1, createAdminPost], (req, res, next) => {
+router.post("/api/userposts", [authorization, authenticationlvl1, createUserPost], (req, res, next) => {
     res.send(req.document);
 });
 
-router.get("/api/me", [authorization, authenticationlvl1, retrieveAdmin], (req, res, next) => {
-    res.send(req.admin);
+router.get("/api/me", [authorization, authenticationlvl1, retrieveUser], (req, res, next) => {
+    res.send(req.user);
 });
 
 
