@@ -1,12 +1,12 @@
 import React from "react";
 
-function EventTableItem() {
+function EventTableItem(props) {
 
     return (
         <tr>
-        <td className="event-name">ay baby you already know we aint never gonna cap baby you already feel the vibes I catch it dawg no cap dy know we aint never gonna cap baby you already feel the vibes I catch it dawg no cap</td>
-        <td className="event-date">yeet</td>
-        <td className="event-description">yeeeet</td>
+        <td className="event-name">{props.name}</td>
+        <td className="event-date">{props.date}</td>
+        <td className="event-description">{props.description}</td>
         <td className="event-buttons">
             <button className="edit-button">VIEW</button>
             <button className="delete-button">DELETE</button>    

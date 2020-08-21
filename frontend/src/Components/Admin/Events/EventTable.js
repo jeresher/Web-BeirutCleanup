@@ -1,9 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import Config from '../../../Miscellaneous/Config'
+import getAuthToken from '../../../Miscellaneous/authtoken';
 import EventTableItem from "./EventTableItem"
 
 function EventTable() {
 
-    
+    const [userPosts, setUserPosts] = useState([]);
+    const [userPostTableItems, setUserPostTableItems] = useState([]);
+
+    function retrieveUsersPosts() {
+        const authtoken = getAuthToken();
+
+        fetch(`${Config.url.API_URL}/api/userposts`, {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "auth-token": authtoken
+            }
+        })
+        .then(res => res.json())
+        .then(response => {
+            setUserPosts(response);
+            setUserPostTableItems(response.map(event => 
+                <EventTableItem 
+                    name={event.eventName} 
+                    date={event.eventDate} 
+                    description={event.eventDescription}
+                />
+            ))
+        })
+        .catch(err => console.log(err))
+    }
+
+
+    useEffect(retrieveUsersPosts, [])
 
     return(
         <div className="event-table">
@@ -17,7 +47,7 @@ function EventTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    <EventTableItem/>
+                    {userPostTableItems}
                 </tbody>
             </table>
         </div>
