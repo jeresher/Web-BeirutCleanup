@@ -10,7 +10,7 @@ function Admin() {
 
     function isUserAlreadyLoggedIn() {
         const authtoken = getAuthToken();
-        if (authtoken) history.push('admin/dashboard');
+        if (authtoken) history.push('./dashboard');
     }
 
     function attemptLogin(event) {
@@ -30,8 +30,10 @@ function Admin() {
             }
         })
         .then(res => {
+            // STORE AUTH-TOKEN IN LOCAL STORAGE.
             localStorage.setItem('auth-token', res.headers.get('auth-token'))
-            history.push('admin/dashboard');
+            // REDIRECT TO DASHBOARD.
+            history.push('./dashboard');
         })
         .catch(err => console.log(err))
         
