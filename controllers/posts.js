@@ -19,6 +19,23 @@ async function getActivePosts(req, res, next) {
 async function createPost(req, res, next) {
 
     const post = new Post({
+        organizationName: "none",
+        eventName: req.body.eventName,
+        eventDate: new Date(req.body.eventDate),
+        eventDescription: req.body.eventDescription,
+        eventLongLat: req.body.eventLongLat,
+        eventComments: req.body.eventComments
+    })
+
+    const newPost = await post.save();
+    req.document = newPost;
+    next();
+}
+
+async function createAdminPost(req, res, next) {
+
+    const post = new Post({
+        organizationName: req.body.name,
         eventName: req.body.eventName,
         eventDate: new Date(req.body.eventDate),
         eventDescription: req.body.eventDescription,
@@ -46,6 +63,7 @@ async function createComment(req, res, next) {
 
 module.exports = {
     createPost: createPost,
+    createAdminPost: createAdminPost,
     createComment: createComment,
     getActivePosts: getActivePosts
 }
