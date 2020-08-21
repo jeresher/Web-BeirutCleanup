@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 
-//REGISTER VALIDATION.
+//REGISTER A USER.
 const registerSchema = Joi.object({
     name: Joi.string().min(6).required(),
     email: Joi.string().min(6).required().email(),
@@ -40,7 +40,7 @@ async function registerUser(req, res, next) {
 }
 
 
-//LOGIN VALIDATION.
+//LOGIN A USER.
 const loginSchema = Joi.object({
     email: Joi.string().min(6).required().email(),
     password: Joi.string().min(6).required()
@@ -68,6 +68,7 @@ async function loginUser (req, res, next) {
     next();
 }
 
+// RETRIEVE A USER.
 async function retrieveUser (req, res, next) {
 
     // RETRIEVE USER INFORMATION (excluding password).
