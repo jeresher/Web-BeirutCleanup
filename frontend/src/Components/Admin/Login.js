@@ -31,6 +31,7 @@ function Admin() {
         })
         .then(res => {
             localStorage.setItem('auth-token', res.headers.get('auth-token'))
+            history.push('admin/dashboard');
         })
         .catch(err => console.log(err))
         
