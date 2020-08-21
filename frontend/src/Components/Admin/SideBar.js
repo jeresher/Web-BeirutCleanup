@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+function SideBar(props) {
+    
+
+    return (
+        <div className="admin-dashboard-sidebar">
+            <label>CORE</label>
+            <div className="section">
+                <Link to="/admin/dashboard/"><button>Events</button></Link>
+            </div>
+            <label>ADDITIONAL</label>
+            <div className="section">
+                <Link to="/admin/settings/"><button>Settings</button></Link>
+            </div>
+            <div className="userinfo">
+                <h5>Logged in as:</h5>
+                <h4>{props.name ? props.name : "Volunteer Beirut"}</h4>
+            </div>
+        </div>
+    )
+}
+
+export default SideBar;
