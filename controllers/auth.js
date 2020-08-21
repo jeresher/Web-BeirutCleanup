@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// AUTHORIZATION.
 function authorization(req, res, next) {
 
     // CHECK IF TOKEN IS PRESENT.
@@ -16,6 +17,7 @@ function authorization(req, res, next) {
     }
 }
 
+// AUTHENTICATION LEVEL 1.
 function authenticationlvl1(req, res, next) {
 
     // CHECK USERS PRIVILEGES LEVEL.

@@ -2,7 +2,7 @@ var { getBeirutDate, formatPosts } = require('../tools/helperfunctions');
 var { Post } = require("../models/post");
 var User = require("../models/user");
 
-
+// GENERAL ACCESS.
 async function getActivePosts(req, res, next) {
     const beirutDate = getBeirutDate(); // Date Object: 2020-08-12T00:00:00.000Z
 
@@ -16,39 +16,10 @@ async function getActivePosts(req, res, next) {
     next();
 }
 
-async function getUsersPosts(req, res, next) {
-    const beirutDate = getBeirutDate();
-
-    const user = await User.findOne({_id: req.user._id});
-
-    var allUsersPosts = await Post
-        .find({eventDate: {"$gte": beirutDate}, organizationName: user.name})
-        .sort({eventDate: 1})
-
-    req.documents = allUsersPosts;
-    next();
-}
-
 async function createPost(req, res, next) {
 
     const post = new Post({
         organizationName: "none",
-        eventName: req.body.eventName,
-        eventDate: new Date(req.body.eventDate),
-        eventDescription: req.body.eventDescription,
-        eventLongLat: req.body.eventLongLat,
-        eventComments: req.body.eventComments
-    })
-
-    const newPost = await post.save();
-    req.document = newPost;
-    next();
-}
-
-async function createUserPost(req, res, next) {
-
-    const post = new Post({
-        organizationName: req.body.name,
         eventName: req.body.eventName,
         eventDate: new Date(req.body.eventDate),
         eventDescription: req.body.eventDescription,
@@ -74,10 +45,40 @@ async function createComment(req, res, next) {
     next();
 }
 
+// AUTHENTICATION LEVEL 1.
+async function getUsersPosts(req, res, next) {
+    const beirutDate = getBeirutDate();
+
+    const user = await User.findOne({_id: req.user._id});
+
+    var allUsersPosts = await Post
+        .find({eventDate: {"$gte": beirutDate}, organizationName: user.name})
+        .sort({eventDate: 1})
+
+    req.documents = allUsersPosts;
+    next();
+}
+
+async function createUserPost(req, res, next) {
+
+    const post = new Post({
+        organizationName: req.body.name,
+        eventName: req.body.eventName,
+        eventDate: new Date(req.body.eventDate),
+        eventDescription: req.body.eventDescription,
+        eventLongLat: req.body.eventLongLat,
+        eventComments: req.body.eventComments
+    })
+
+    const newPost = await post.save();
+    req.document = newPost;
+    next();
+}
+
 module.exports = {
     createPost: createPost,
-    createUserPost: createUserPost,
     createComment: createComment,
     getActivePosts: getActivePosts,
-    getUsersPosts: getUsersPosts
+    getUsersPosts: getUsersPosts,
+    createUserPost: createUserPost
 }
