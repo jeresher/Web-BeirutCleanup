@@ -581,7 +581,7 @@ table {
   border-radius: 2px;
 }
 
-.admin-login-form button.request {
+.admin-login-vertical-container button.request {
   background-color: transparent;
   border: none;
   margin-top: 3vh;
@@ -589,7 +589,6 @@ table {
   font-size: .9vw;
   color: white;
 }
-
 
 
 
