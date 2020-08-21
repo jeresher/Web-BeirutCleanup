@@ -1,21 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './Style/index.css';
-import App from './Pages/App.js';
-import AdminLogin from './Pages/Admin/AdminLogin'
-import AdminDashboard from './Pages/Admin/AdminDashboard'
+import App from './Pages/App'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/admin" component={AdminLogin} />
-        <Route exact path="/admin/dashboard" component={AdminDashboard} />
-      </Switch>
-    </Router>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

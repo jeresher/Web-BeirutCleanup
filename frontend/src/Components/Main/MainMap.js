@@ -1,5 +1,5 @@
 import React from 'react';
-import Config from '../Miscellaneous/Config'
+import Config from '../../Miscellaneous/Config'
 import {
   GoogleMap,
   useLoadScript,
@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 import { debounce } from 'lodash';
 import SearchBar from "./SearchBar";
-import mapStyles from "../Style/mapStyles";
+import mapStyles from "../../Style/mapStyles";
 
 
 const libraries = ["places"];

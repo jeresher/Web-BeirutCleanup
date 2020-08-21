@@ -1,12 +1,12 @@
 import React from 'react';
-import Config from '../Miscellaneous/Config'
+import Config from '../../Miscellaneous/Config'
 import {
   GoogleMap,
   useLoadScript,
   Marker
 } from "@react-google-maps/api";
 import SearchBar from "./SearchBar";
-import mapStyles from "../Style/mapStyles";
+import mapStyles from "../../Style/mapStyles";
 
 const libraries = ["places"];
 const mapContainerStyle = {

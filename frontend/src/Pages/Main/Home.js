@@ -1,10 +1,9 @@
 import React from 'react';
-import Config from '../Miscellaneous/Config';
+import Config from '../../Miscellaneous/Config';
 import { Marker } from "@react-google-maps/api";
-import SideBar from '../Components/SideBar';
-import SideBarCell from '../Components/SideBarCell';
-import MainMap from '../Components/MainMap';
-import '../Style/App.css'; 
+import SideBar from '../../Components/Main/SideBar';
+import SideBarCell from '../../Components/Main/SideBarCell';
+import MainMap from '../../Components/Main/MainMap';
 
 function Home() {
   

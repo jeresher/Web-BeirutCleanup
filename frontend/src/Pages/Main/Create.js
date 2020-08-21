@@ -1,7 +1,6 @@
 import React from 'react';
-import CreateForm from '../Components/CreateForm'
-import CreateMap from '../Components/CreateMap'
-import '../Style/App.css'; 
+import CreateForm from '../../Components/Main/CreateForm'
+import CreateMap from '../../Components/Main/CreateMap'
 
 function Create(props) {
 

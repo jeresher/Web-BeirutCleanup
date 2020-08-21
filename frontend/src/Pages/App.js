@@ -1,28 +1,22 @@
 import React from 'react';
-import ReactGa from 'react-ga';
-import NavBar from "../Components/NavBar.js"
-import Create from "./Create";
-import Home from "./Home";
-import "@reach/combobox/styles.css";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Main from './Main/Main.js';
+import AdminLogin from './Admin/AdminLogin'
+import AdminDashboard from './Admin/AdminDashboard'
 import '../Style/App.css'; 
 
 function App() {
 
-  const [ createPage, loadCreatePage ] = React.useState(false);
+    return (
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Main} />
+                <Route exact path="/admin" component={AdminLogin} />
+                <Route exact path="/admin/dashboard" component={AdminDashboard} />
+            </Switch>
+        </Router>
+    )
 
-  React.useEffect(() => {
-    ReactGa.initialize('UA-175571871-1');
-    ReactGa.pageview('/');
-  }, []);
-
-  return (
-    <div className="main-container">
-      {/* Navigation Bar. */}
-      < NavBar createPage={createPage} loadCreatePage={loadCreatePage}/>
-      {/* Main Content. */}
-      {createPage ? <Create loadCreatePage={loadCreatePage} /> : <Home />}
-    </div>
-  );
 }
 
 export default App;

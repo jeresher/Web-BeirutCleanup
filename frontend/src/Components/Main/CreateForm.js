@@ -1,6 +1,5 @@
 import React from 'react';
-import Config from '../Miscellaneous/Config'
-import '../Style/App.css'; 
+import Config from '../../Miscellaneous/Config'
 
 function CreateForm(props) {
 
