@@ -28,18 +28,16 @@ router.post("/api/login", loginUser, (req, res, next) => {
 
 // AUTHENTICATION LVL 1.
 
-router.post("/api/userposts", [authorization, authenticationlvl1, createUserPost], (req, res, next) => {
-    res.send(req.document);
+router.get("/api/userposts", [authorization, authenticationlvl1, getUsersPosts], (req, res, next) => {
+    res.send(req.documents);
 });
 
+router.post("/api/userposts/create", [authorization, authenticationlvl1, createUserPost], (req, res, next) => {
+    res.send(req.document);
+});
 
 router.patch("/api/userposts/delete", [authorization, authenticationlvl1, deleteUserPost], (req, res, next) => {
     res.send(req.document);
-});
-
-
-router.get("/api/userposts", [authorization, authenticationlvl1, getUsersPosts], (req, res, next) => {
-    res.send(req.documents);
 });
 
 router.get("/api/me", [authorization, authenticationlvl1, retrieveUser], (req, res, next) => {

@@ -89,7 +89,7 @@ function EventCreateForm(props) {
 
         const authtoken = getAuthToken();
 
-        fetch(`${Config.url.API_URL}/api/userposts/`, {
+        fetch(`${Config.url.API_URL}/api/userposts/create`, {
             method: "POST",
             body: JSON.stringify({
                 "eventName": name,
