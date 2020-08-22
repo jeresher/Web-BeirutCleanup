@@ -1,5 +1,5 @@
 import React from "react";
-import EventMain from "./Events/EventMain";
+import EventMain from "./Events/Main/EventMain";
 import EventCreateMain from "./Events/Create/EventCreateMain"
 import {Router, Route, Switch} from "react-router-dom";
 

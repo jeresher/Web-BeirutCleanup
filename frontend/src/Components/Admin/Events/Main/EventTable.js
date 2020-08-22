@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Config from '../../../Miscellaneous/Config'
-import getAuthToken from '../../../Miscellaneous/authtoken';
+import Config from '../../../../Miscellaneous/Config'
+import getAuthToken from '../../../../Miscellaneous/authtoken';
 import EventTableItem from "./EventTableItem"
 
 function EventTable() {

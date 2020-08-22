@@ -1,6 +1,6 @@
 import React from "react";
-import Config from '../../../Miscellaneous/Config'
-import getAuthToken from '../../../Miscellaneous/authtoken';
+import Config from '../../../../Miscellaneous/Config'
+import getAuthToken from '../../../../Miscellaneous/authtoken';
 
 function EventTableItem(props) {
 
