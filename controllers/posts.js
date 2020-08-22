@@ -7,7 +7,7 @@ async function getActivePosts(req, res, next) {
     const beirutDate = getBeirutDate(); // Date Object: 2020-08-12T00:00:00.000Z
 
     var allActivePosts = await Post
-        .find({eventDate: {"$gte": beirutDate} })
+        .find({eventDate: {"$gte": beirutDate}, locked: false})
         .sort({eventDate: 1})
     
     const formattedPosts = await formatPosts(allActivePosts);
@@ -52,7 +52,7 @@ async function getUsersPosts(req, res, next) {
     const user = await User.findOne({_id: req.user._id});
 
     var allUsersPosts = await Post
-        .find({eventDate: {"$gte": beirutDate}, organizationName: user.name})
+        .find({eventDate: {"$gte": beirutDate}, organizationName: user.name, locked: false})
         .sort({eventDate: 1})
 
     const formattedPosts = await formatDashboardPosts(allUsersPosts); 
@@ -70,8 +70,7 @@ async function createUserPost(req, res, next) {
         eventName: req.body.eventName,
         eventDate: new Date(req.body.eventDate),
         eventDescription: req.body.eventDescription,
-        eventLongLat: req.body.eventLongLat,
-        eventComments: req.body.eventComments
+        eventLongLat: req.body.eventLongLat
     })
 
     const newPost = await post.save();
