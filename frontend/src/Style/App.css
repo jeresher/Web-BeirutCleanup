@@ -491,7 +491,6 @@ table {
 
 
 
-
 /* ADMIN LOGIN */
 .admin-login-main-container {
   font-family: 'Roboto', sans-serif;
@@ -599,6 +598,7 @@ table {
 
 
 
+
 /* ADMIN DASHBOARD */
 .admin-dashboard-outer-container {
   font-family: 'Roboto', sans-serif;
@@ -616,15 +616,17 @@ table {
   align-items: center;
   flex-shrink: 0;
   width: 100%;
-  height: 9vh;
+  height: 7vh;
   background-color: #333B3F;
+  z-index: 1;
+  box-shadow: 0px 1px 6px rgb(39, 39, 39);
 }
 
 .admin-dashboard-header h1 {
   color: white;
   margin-left: 1vw;
   font-size: 1.5vw;
-  font-weight: 500;
+  font-weight: 450;
 }
 
 /* INNER CONTAINER */
@@ -637,7 +639,7 @@ table {
 /* SIDEBAR */
 .admin-dashboard-sidebar {
   height: 100%;
-  flex-basis: 16%;
+  flex-basis: 15%;
   background-color: #212629;
   position: relative;
 }
@@ -686,10 +688,18 @@ table {
 /* MAINCONTENT */
 .admin-dashboard-maincontent {
   height: 100%;
-  flex-basis: 84%;
+  flex-basis: 85%;
 }
 
-/* EVENT SCREEN */
+
+
+
+
+
+
+
+
+/* EVENT MAIN SCREEN */
 .event-outer-container {
   width: 100%;
   height: 100%;
@@ -737,6 +747,10 @@ table {
   color: #353A4D;
 }
 
+.event-table thead {
+  border-bottom: 1px solid #CCCFD8;
+}
+
 .event-table tbody, .event-table thead {
   display: block;
 }
@@ -744,6 +758,10 @@ table {
 .event-table tbody {
   overflow-y: scroll;
   height: 60vh;
+}
+
+.event-table tbody tr:nth-child(even) {
+  background-color: #FBFBFB;
 }
 
 .event-table th, .event-table td {
@@ -754,7 +772,6 @@ table {
   text-align: left;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #CCCFD8;
   font-size: 13px;
   font-weight: 600;
 }
@@ -766,8 +783,6 @@ table {
   text-overflow: ellipsis;
   font-size: 11px;
   font-weight: 500;
-
-
 }
 
 .event-table .event-name {
@@ -784,8 +799,8 @@ table {
 }
 
 .event-table .event-description {
-  width: 43vw;
-  max-width: 43vw;
+  width: 45vw;
+  max-width: 45vw;
   padding-right: 1vw;
 }
 
@@ -815,7 +830,15 @@ table {
   background-color: transparent;
 }
 
-/* EVENT: CREATE MAP */
+
+
+
+
+
+
+
+
+/* EVENT CREATE SCREEN */
 .eventcreatemap {
   width: 100%;
   height: 100%;
@@ -827,8 +850,8 @@ table {
   display: flex;
   flex-direction: column;
   padding: 1%;
-  margin: 4vh;
-  height: 80vh;
+  margin: 3vh;
+  height: 83vh;
   width: 30vw;
   min-width: 300px;
   background-color: white;
@@ -900,111 +923,34 @@ table {
   font-weight: 300;
 }
 
-.eventform .submit {
+.eventform .buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 
-.eventform .submit button {
+.eventform #submit, .eventform #back {
   cursor: pointer;
-  width: 90%;
+  width: 43%;
   height: 45px;
   border: 0;
   border-radius: 5px;
-  background-color: #121459;
   font-size: 90%;
   font-weight: 900;
-  color: white;
   box-shadow: 0px 2px 2px rgb(190, 190, 190);
 }
 
-
-
-
-
-
-
-
-
-
-
-/* ADMIN DASHBOARD 
-.admin-dashboard-main-container {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #43425D;
-}
-
-.admin-dashboard-inner-container {
-  display: flex;
-  flex-direction: column;
-  width: 75vw;
-  height: 85vh;
-  border-radius: 30px;
-  box-shadow: 0px 11px 20px 8px #232230;
-  background-color: #43425D;
-}
-
-.admin-dashboard-header {
-  flex-shrink: 0;
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 2vw 2vw 0 2vw;
-  padding-bottom: .5vw;
-  border-bottom: 1px solid #CCCFD8;
-}
-
-.admin-dashboard-header h1 {
-  color: white;
-  font-weight: 400;
-  font-size: 2.5vw;
-}
-
-.admin-dashboard-header button {
-  border: 0;
-  padding: 10px 10px;
-  color: white;
+.eventform #submit {
   background-color: #121459;
-  border-radius: 5%;
-  font-weight: 900;
-  font-size: .8rem;
+  color: white;
 }
 
-.admin-dashboard-table {
-  flex-grow: 1;
-  overflow: scroll;
-  margin: 2vw;
-  background-color: transparent;
-}
-
-.admin-dashboard-table table {
-  font-weight: 500;
-  width: 100%;
-  text-align: left;
-  text-overflow: clip;
-}
-
-.admin-dashboard-table .tdname {
-  width: 15%;
-  max-width: 15%;
-}
-
-.admin-dashboard-table thead tr td:first-child {
-  max-width: 15%;
-}
-
-.admin-dashboard-table td {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 30vw;
+.eventform #back {
+  background-color: rgba(209, 209, 209, 0.041);
+  color: #121459;
+  border: 2px solid rgb(228, 228, 228);
+  box-shadow: none;
 }
 
 
@@ -1012,28 +958,7 @@ table {
 
 
 
-.coupon-table {
-  background-color: white;
-  border-collapse: collapse;
-  width: 100%;
-  box-shadow: 0px 1px 3px #999;
-}
 
-.coupon-table th, .coupon-table td {
-  padding: 15px 0 15px 2%;
-}
-
-.coupon-table thead tr th {
-  text-align: left;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #CCCFD8;
-  font-weight: 600;
-  color: #353A4D;
-}
-
-
-*/
 
 
 

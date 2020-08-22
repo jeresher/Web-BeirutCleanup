@@ -1,12 +1,19 @@
 import React from "react";
-import EventCreateHeading from "./EventCreateHeading";
+import EventCreateMap from "./EventCreateMap";
+import EventCreateForm from "./EventCreateForm";
 
 function EventCreateMain() {
+
+    const [ location, setLocation ] = React.useState();
+
+    function handleLocationChange(newLocation) {
+        setLocation(newLocation)
+    }
+
     return (
         <div className="event-outer-container">
-            <div className="event-inner-container">
-                <EventCreateHeading />
-            </div>
+            <EventCreateForm location={location} />
+            <EventCreateMap handleLocationChange={handleLocationChange} />
         </div>
     )
 }
