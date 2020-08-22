@@ -1,6 +1,7 @@
 import React from "react";
 import EventMain from "./Events/EventMain";
-import {Route, Switch} from "react-router-dom";
+import EventCreateMain from "./Events/Create/EventCreateMain"
+import {Router, Route, Switch} from "react-router-dom";
 
 function MainContent() {
     
@@ -8,7 +9,8 @@ function MainContent() {
     return (
         <div className="admin-dashboard-maincontent">
             <Switch>
-                <Route path="/admin/dashboard/" component={EventMain} />
+                <Route exact path="/admin/dashboard" component={EventMain} />
+                <Route exact path="/admin/dashboard/create" component={EventCreateMain} />
             </Switch>
         </div>
     )
