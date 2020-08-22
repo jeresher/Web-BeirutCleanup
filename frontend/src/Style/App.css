@@ -844,6 +844,53 @@ table {
   height: 100%;
 }
 
+/* EVENT: SEARCHBAR */
+.eventsearchbar {
+  position: absolute;
+  z-index: 10;
+  margin-top: 4vh;
+  margin-right: 14vw;
+  right: 0;
+  border-bottom: 4px solid #0F1146;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventsearchbar input {
+  font-size: 15px !important;
+  width: 10vw;
+  height: 2vh;
+}
+
+.eventsearchbar button {
+  width: 5vw;
+  height: 2.5vh;
+}
+
+.eventsearchbar input {
+  background-color: transparent;
+  font-size: 15px;
+  padding: 1.3vh .3vw;
+  width: 18vw;
+  border: none;
+}
+
+.eventsearchbar input:focus {
+  outline: none;
+}
+
+.eventsearchbar button {
+  width: 1.2vw;
+  height: 1.2vw;
+  border: none;
+  background-color: transparent;
+  background-image: url("../Assets/search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;  
+}
+
 /* EVENT: CREATE FORM */
 .eventform {
   position: absolute;

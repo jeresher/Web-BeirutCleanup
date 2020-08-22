@@ -5,7 +5,7 @@ import {
   useLoadScript,
   Marker
 } from "@react-google-maps/api";
-//import EventSearchBar from "./EventSearchBar";
+import EventSearchBar from "./EventSearchBar";
 import mapStyles from "../../../../Style/mapStyles";
 
 const libraries = ["places"];
@@ -57,7 +57,7 @@ function EventCreateMap(props) {
   return (
     <div className="eventcreatemap">
 
-      {/* <EventSearchBar panTo={panTo} /> */}
+      <EventSearchBar panTo={panTo} />
 
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 

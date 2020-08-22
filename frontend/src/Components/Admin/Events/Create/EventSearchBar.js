@@ -28,7 +28,7 @@ function SearchBar({ panTo }) {
     })
   
     return (
-      <div className="searchbar">
+      <div className="eventsearchbar">
         <Combobox 
           onSelect={async (address) => {
 
