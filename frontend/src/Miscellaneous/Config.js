@@ -4,7 +4,7 @@ const dev = {
         API_URL: 'http://localhost:5000'
     },
     key: {
-        GOOGLE_KEY: 'AIzaSyAU-1wDQIL9WbWwCuC0-pmbzpXa4p64EF8'
+        GOOGLE_KEY: 'AIzaSyCf7q432pZoSonob_rX7lWI5VOVYWop5ww'
     }
  }
 const prod = {

@@ -614,6 +614,7 @@ table {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
   width: 100%;
   height: 9vh;
   background-color: #333B3F;
@@ -686,7 +687,6 @@ table {
 .admin-dashboard-maincontent {
   height: 100%;
   flex-basis: 84%;
-  background-color: white;
 }
 
 /* EVENT SCREEN */
@@ -737,6 +737,15 @@ table {
   color: #353A4D;
 }
 
+.event-table tbody, .event-table thead {
+  display: block;
+}
+
+.event-table tbody {
+  overflow-y: scroll;
+  height: 60vh;
+}
+
 .event-table th, .event-table td {
   padding: 15px 1vw;
 }
@@ -762,8 +771,8 @@ table {
 }
 
 .event-table .event-name {
-  width: 10vw;
-  max-width: 10vw;
+  width: 8vw;
+  max-width: 8vw;
   padding: 1vw;
 
 }
@@ -775,8 +784,8 @@ table {
 }
 
 .event-table .event-description {
-  width: 60vw;
-  max-width: 60vw;
+  width: 43vw;
+  max-width: 43vw;
   padding-right: 1vw;
 }
 
@@ -805,6 +814,112 @@ table {
   border: none;
   background-color: transparent;
 }
+
+/* EVENT: CREATE MAP */
+.eventcreatemap {
+  width: 100%;
+  height: 100%;
+}
+
+/* EVENT: CREATE FORM */
+.eventform {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  margin: 4vh;
+  height: 80vh;
+  width: 30vw;
+  min-width: 300px;
+  background-color: white;
+  box-shadow: 0px 4px 10px #999;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1vw;
+  z-index: 3;
+}
+
+.eventform ::placeholder {
+  font-size: 1.1vw;
+}
+
+.eventform .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: inherit;
+}
+
+.eventform .info h1 {
+  font-size: 2.3vw;
+  font-weight: 700;
+  border-bottom: 6px #161a92 solid;
+  margin-bottom: 1.2vh;
+  margin-top: 3vh; 
+}
+
+.eventform .info input {
+  height: 4.4vh;
+  width: 90%;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 4px; 
+  margin: 2% 0;
+  font-family: inherit;
+  font-size: 1.1vw;
+}
+
+.eventform .description {
+  flex-grow: 1;
+}
+
+.eventform .description textarea {
+  resize: none;
+  width: 90%;
+  margin: 2% 0;
+  height: 100%;
+  font-family: inherit;
+  font-size: 1.1vw;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 2px; 
+}
+
+.eventform #location {
+  text-align: center;
+  border: none;
+  background-color: white;
+  border-right: rgb(200, 200, 200) 2px solid;
+  border-left: rgb(200, 200, 200) 2px solid;
+  border-radius: 5px;
+  font-size: .95vw;
+  font-weight: 400;
+  color: black;
+}
+
+.eventform #location::placeholder {
+  font-size: .95vw;
+  font-weight: 300;
+}
+
+.eventform .submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventform .submit button {
+  cursor: pointer;
+  width: 90%;
+  height: 45px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #121459;
+  font-size: 90%;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0px 2px 2px rgb(190, 190, 190);
+}
+
+
 
 
 
@@ -1002,7 +1117,6 @@ table {
 
   .createmap {
     height: 50%;
-
   }
   /*
 .createmap {
