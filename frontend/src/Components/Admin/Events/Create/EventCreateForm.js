@@ -1,7 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Config from '../../../../Miscellaneous/Config';
 
 function EventCreateForm(props) {
+
+    const history = useHistory();
 
     const [ type, setType ] = React.useState("text");
 
@@ -105,6 +108,11 @@ function EventCreateForm(props) {
         
     }
 
+    function backButtonClicked(event) {
+        event.stopPropagation();
+        history.push('/admin/dashboard/');
+    }
+
     return (      
         <form className="eventform" onSubmit={(event) => clientSideFormValidation(event)}>
             <div className="info">
@@ -148,6 +156,7 @@ function EventCreateForm(props) {
             <div className="buttons">
                 <button
                     id="back"
+                    onClick={backButtonClicked}
                 >BACK</button>
                 <button 
                     id="submit"
