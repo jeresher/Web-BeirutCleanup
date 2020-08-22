@@ -23,6 +23,8 @@ function EventTable() {
             setUserPosts(response);
             setUserPostTableItems(response.map(event => 
                 <EventTableItem 
+                    key={event._id}
+                    id={event._id}
                     name={event.eventName} 
                     date={event.eventDate} 
                     description={event.eventDescription}

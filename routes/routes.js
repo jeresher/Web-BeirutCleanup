@@ -1,4 +1,4 @@
-const { createPost, createUserPost, createComment, getActivePosts, getUsersPosts } = require("../controllers/posts");
+const { createPost, createUserPost, createComment, getActivePosts, getUsersPosts, deleteUserPost } = require("../controllers/posts");
 const { registerUser, loginUser, retrieveUser } = require("../controllers/user");
 const {authorization, authenticationlvl1 } = require("../controllers/auth");
 const express = require('express');
@@ -31,6 +31,12 @@ router.post("/api/login", loginUser, (req, res, next) => {
 router.post("/api/userposts", [authorization, authenticationlvl1, createUserPost], (req, res, next) => {
     res.send(req.document);
 });
+
+
+router.patch("/api/userposts/delete", [authorization, authenticationlvl1, deleteUserPost], (req, res, next) => {
+    res.send(req.document);
+});
+
 
 router.get("/api/userposts", [authorization, authenticationlvl1, getUsersPosts], (req, res, next) => {
     res.send(req.documents);

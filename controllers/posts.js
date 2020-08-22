@@ -78,10 +78,20 @@ async function createUserPost(req, res, next) {
     next();
 }
 
+async function deleteUserPost(req, res, next) {
+
+    const post = await Post.findByIdAndUpdate(req.body.id, {locked: true})
+    if (!post) res.status(400).send("That post does not exist.");
+
+    req.document = post;
+    next();
+}
+
 module.exports = {
     createPost: createPost,
     createComment: createComment,
     getActivePosts: getActivePosts,
     getUsersPosts: getUsersPosts,
-    createUserPost: createUserPost
+    createUserPost: createUserPost,
+    deleteUserPost: deleteUserPost
 }
