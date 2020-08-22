@@ -63,8 +63,10 @@ async function getUsersPosts(req, res, next) {
 
 async function createUserPost(req, res, next) {
 
+    const user = await User.findOne({_id: req.user._id});
+
     const post = new Post({
-        organizationName: req.body.name,
+        organizationName: user.name,
         eventName: req.body.eventName,
         eventDate: new Date(req.body.eventDate),
         eventDescription: req.body.eventDescription,

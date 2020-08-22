@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import getAuthToken from '../../../../Miscellaneous/authtoken';
 import Config from '../../../../Miscellaneous/Config';
 
 function EventCreateForm(props) {
@@ -86,24 +87,23 @@ function EventCreateForm(props) {
 
     function submitPostRequest(name, date, description, location) {
 
-        fetch(`${Config.url.API_URL}/api/posts/`, {
+        const authtoken = getAuthToken();
+
+        fetch(`${Config.url.API_URL}/api/userposts/`, {
             method: "POST",
             body: JSON.stringify({
                 "eventName": name,
                 "eventDate": date,
                 "eventDescription": description,
-                "eventLongLat": [location.lng, location.lat],
-                "eventComments": []
+                "eventLongLat": [location.lng, location.lat]
             }),
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-type": "application/json; charset=UTF-8",
+                "auth-token": authtoken
             }
         })
         .then(res => res.json())
-        .then(response => {
-            console.log(response);
-            props.loadCreatePage(false);
-        })
+        .then(response => history.push('/admin/dashboard/'))
         .catch(err => console.log(err))
         
     }

@@ -7,7 +7,7 @@ var postSchema = new mongoose.Schema({
   eventDate: Date,
   eventDescription: String,
   eventLongLat: [ Decimal128 ], // [ Longtitude, Latitude ]
-  eventComments: [ String ]
+  eventComments: {type: [ String ], default: []}
 });
 
 var Post = mongoose.model('Post', postSchema);

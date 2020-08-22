@@ -89,8 +89,7 @@ function CreateForm(props) {
                 "eventName": name,
                 "eventDate": date,
                 "eventDescription": description,
-                "eventLongLat": [location.lng, location.lat],
-                "eventComments": []
+                "eventLongLat": [location.lng, location.lat]
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
