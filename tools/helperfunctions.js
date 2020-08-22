@@ -19,9 +19,9 @@ function getBeirutDate() {
     return formattedDate; // Find a better solution
 }
 
-async function formatPosts(allActivePosts) {
+async function formatPosts(posts) {
 
-    var stringifyPosts = await JSON.stringify(allActivePosts);
+    var stringifyPosts = await JSON.stringify(posts);
     var formattedPosts = await JSON.parse(stringifyPosts);
 
     // Format Date: 2020-08-12T00:00:00.000Z -> TODAY.
@@ -29,7 +29,7 @@ async function formatPosts(allActivePosts) {
     const oneDay = 24 * 60 * 60 * 1000;
 
     for (var i = 0; i < formattedPosts.length; i++) {
-        const eventDate = allActivePosts[i].eventDate;
+        const eventDate = posts[i].eventDate;
         const difference = Math.round(Math.abs((beirutDate - eventDate) / oneDay));
 
         if (difference === 0) {
@@ -48,7 +48,26 @@ async function formatPosts(allActivePosts) {
     return formattedPosts;
 }
 
+async function formatDashboardPosts(posts) {
+
+    var stringifyPosts = await JSON.stringify(posts);
+    var formattedPosts = await JSON.parse(stringifyPosts);
+
+    for (var i = 0; i < formattedPosts.length; i++) {
+        const eventDate = posts[i].eventDate;
+        
+        const day = eventDate.getUTCDate();
+        const month = eventDate.getUTCMonth() + 1;
+        const year = eventDate.getUTCFullYear();
+
+        formattedPosts[i].eventDate = `${day}/${month}/${year}`
+    }
+    
+    return formattedPosts;
+}
+
 module.exports = {
     getBeirutDate: getBeirutDate,
-    formatPosts: formatPosts
+    formatPosts: formatPosts,
+    formatDashboardPosts: formatDashboardPosts
 }

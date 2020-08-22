@@ -1,4 +1,4 @@
-var { getBeirutDate, formatPosts } = require('../tools/helperfunctions');
+var { getBeirutDate, formatPosts, formatDashboardPosts } = require('../tools/helperfunctions');
 var { Post } = require("../models/post");
 var User = require("../models/user");
 
@@ -55,7 +55,9 @@ async function getUsersPosts(req, res, next) {
         .find({eventDate: {"$gte": beirutDate}, organizationName: user.name})
         .sort({eventDate: 1})
 
-    req.documents = allUsersPosts;
+    const formattedPosts = await formatDashboardPosts(allUsersPosts); 
+
+    req.documents = formattedPosts;
     next();
 }
 
