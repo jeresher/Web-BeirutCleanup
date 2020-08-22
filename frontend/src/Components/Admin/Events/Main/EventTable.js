@@ -22,13 +22,7 @@ function EventTable() {
         .then(response => {
             setUserPosts(response);
             setUserPostTableItems(response.map(event => 
-                <EventTableItem 
-                    key={event._id}
-                    id={event._id}
-                    name={event.eventName} 
-                    date={event.eventDate} 
-                    description={event.eventDescription}
-                />
+                <EventTableItem key={event._id} event={event} />
             ))
         })
         .catch(err => console.log(err))
