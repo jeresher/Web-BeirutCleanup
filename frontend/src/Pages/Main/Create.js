@@ -6,14 +6,9 @@ function Create(props) {
 
     const [ location, setLocation ] = React.useState();
 
-    function handleLocationChange(newLocation) {
-        setLocation(newLocation)
-    }
-
     return (
-
         <div className="inner-container create">
-            <CreateMap handleLocationChange={handleLocationChange} />
+            <CreateMap setLocation={setLocation} />
             <CreateForm location={location} loadCreatePage={props.loadCreatePage} />
         </div>
 

@@ -35,7 +35,7 @@ function CreateMap(props) {
 
   const onMapClick = React.useCallback((event) => {
     const location = { lng: event.latLng.lng(), lat: event.latLng.lat() }
-    props.handleLocationChange(location);
+    props.setLocation(location);
     setMarker(location)
   }, [])
 
