@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
-function SideBar(props) {
-    
+function SideBar(props) {    
+
 
     return (
         <div className="admin-dashboard-sidebar">
@@ -16,7 +16,7 @@ function SideBar(props) {
             </div>
             <div className="userinfo">
                 <h5>Logged in as:</h5>
-                <h4>{props.name ? props.name : "Volunteer Beirut"}</h4>
+                <h4>{props.user ? props.user.name : "Loading..."}</h4>
             </div>
         </div>
     )

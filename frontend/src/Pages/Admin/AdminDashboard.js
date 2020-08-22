@@ -29,10 +29,7 @@ function AdminDashboard() {
             }
         })
         .then(res => res.json())
-        .then(response => {
-            setUser(response)
-            console.log(response)
-        })
+        .then(response => {setUser(response)})
         .catch(err => console.log(err))
     }
 

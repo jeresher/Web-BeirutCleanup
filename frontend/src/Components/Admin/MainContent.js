@@ -3,14 +3,20 @@ import EventMain from "./Events/EventMain";
 import EventCreateMain from "./Events/Create/EventCreateMain"
 import {Router, Route, Switch} from "react-router-dom";
 
-function MainContent() {
+function MainContent({user}) {
     
 
     return (
         <div className="admin-dashboard-maincontent">
             <Switch>
-                <Route exact path="/admin/dashboard" component={EventMain} />
-                <Route exact path="/admin/dashboard/create" component={EventCreateMain} />
+                <Route 
+                    exact path="/admin/dashboard" 
+                    render={(props) => <EventMain {...props} user={user} />}
+                />
+                <Route 
+                    exact path="/admin/dashboard/create" 
+                    render={(props) => <EventCreateMain {...props} user={user} />}
+                />
             </Switch>
         </div>
     )

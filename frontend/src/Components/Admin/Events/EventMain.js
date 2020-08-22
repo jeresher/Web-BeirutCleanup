@@ -2,7 +2,9 @@ import React from "react";
 import EventHeading from "./EventHeading";
 import EventTable from "./EventTable";
 
-function EventMain() {
+function EventMain(props) {
+
+
     return (
         <div className="event-outer-container">
             <div className="event-inner-container">
