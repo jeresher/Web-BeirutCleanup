@@ -851,7 +851,7 @@ table {
   margin-top: 4vh;
   margin-right: 14vw;
   right: 0;
-  border-bottom: 4px solid #0F1146;
+  border-bottom: 2px solid #0f114662;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -886,6 +886,7 @@ table {
   border: none;
   background-color: transparent;
   background-image: url("../Assets/search.png");
+  opacity: .5;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;  

@@ -204,7 +204,7 @@ function EventEditForm(props) {
                 <button 
                     id="submit"
                     type="submit"
-                >SAVE <div> أنشئ حدثًا جديدًا </div></button>
+                >SAVE <div>تغيير</div></button>
             </div>
         </form>
     );
