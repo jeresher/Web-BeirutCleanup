@@ -30,10 +30,22 @@ function Admin() {
             }
         })
         .then(res => {
+            console.log('received a response')
+            const account = res.headers.get('auth-token')
+            if (account) {
+                console.log('theres an acc', res)
+                localStorage.setItem('auth-token', account)
+                history.push('/admin/dashboard')
+            } else {
+                console.log('theres no acc', res)
+                console.log("Invalid")
+            }
+            /*
             // STORE AUTH-TOKEN IN LOCAL STORAGE.
             localStorage.setItem('auth-token', res.headers.get('auth-token'))
             // REDIRECT TO DASHBOARD.
             history.push('/admin/dashboard');
+            */
         })
         .catch(err => console.log(err))
         
