@@ -7,13 +7,11 @@ function EventEditForm(props) {
 
     const history = useHistory();
 
-    const [ type, setType ] = React.useState("text");
-
     function setInitialValues() {
         const eventLong = Number(props.event.eventLongLat[0].$numberDecimal)
         const eventLat = Number(props.event.eventLongLat[1].$numberDecimal)
         const eventName = props.event.eventName
-        const eventDate = props.event.eventDate
+        const eventDate = formatPropDate(props.event.eventDate)
         const eventDescription = props.event.eventDescription
 
         // SET INITIAL LOCATION.
@@ -30,16 +28,6 @@ function EventEditForm(props) {
         // SET INTIAL DESCRIPTION.
         var description = document.getElementById("description");
         description.value = eventDescription;
-    }
-
-    function didItPass(bool, element) {
-        if (bool === false) {
-            element.style.borderColor = "red";
-            element.style.borderWidth = "2px";
-        } else {
-            element.style.borderColor = "rgb(210, 210, 210)";
-            element.style.borderWidth = "1px";
-        }
     }
 
     function setLocationValue() {
@@ -112,9 +100,10 @@ function EventEditForm(props) {
 
         const authtoken = getAuthToken();
 
-        fetch(`${Config.url.API_URL}/api/userposts/create`, {
-            method: "POST",
+        fetch(`${Config.url.API_URL}/api/userposts/edit`, {
+            method: "PATCH",
             body: JSON.stringify({
+                "id": props.event._id,
                 "eventName": name,
                 "eventDate": date,
                 "eventDescription": description,
@@ -129,6 +118,29 @@ function EventEditForm(props) {
         .then(response => history.push('/admin/dashboard/'))
         .catch(err => console.log(err))
         
+    }
+
+    function didItPass(bool, element) {
+        if (bool === false) {
+            element.style.borderColor = "red";
+            element.style.borderWidth = "2px";
+        } else {
+            element.style.borderColor = "rgb(210, 210, 210)";
+            element.style.borderWidth = "1px";
+        }
+    }
+
+    function formatPropDate(date) { // TEMP SOLUTION. d/m/yyyy -> yyyy-mm-dd
+
+        var strippedDate = date.split('/');
+        var yyyy = strippedDate[2]
+        var dd = strippedDate[0];
+        if (dd.length === 1) dd = `0${dd}`
+        var mm = strippedDate[1];
+        if (mm.length === 1) mm = `0${mm}`
+        const formattedDate = `${yyyy}-${mm}-${dd}`
+
+        return formattedDate;
     }
 
     function backButtonClicked(event) {
@@ -155,10 +167,16 @@ function EventEditForm(props) {
             <div className="info">
                 <input 
                     id="date" 
-                    placeholder="Date تاريخ الحدث" 
-                    type={type} 
-                    onFocus={() => setType("date")} 
+                    type="date"
                     pattern="\d{4}-\d{2}-\d{2}"
+                    onChange={(event) => {
+                        var date = document.getElementById("date");
+                        console.log(date.value);
+                        console.log(typeof date.value);
+                        const eventDate = props.event.eventDate;
+                        console.log(eventDate);
+                        console.log(typeof eventDate);
+                    }}
                     required
                 />
             </div>

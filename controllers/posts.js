@@ -78,10 +78,24 @@ async function createUserPost(req, res, next) {
     next();
 }
 
+async function editUserPost(req, res, next) {
+
+    const post = await Post.findByIdAndUpdate(req.body.id, {
+        eventName: req.body.eventName,
+        eventDate: new Date(req.body.eventDate),
+        eventDescription: req.body.eventDescription,
+        eventLongLat: req.body.eventLongLat
+    })
+    if (!post) res.status(404).send("This post does not exist.");
+
+    req.document = post;
+    next();
+}
+
 async function deleteUserPost(req, res, next) {
 
     const post = await Post.findByIdAndUpdate(req.body.id, {locked: true})
-    if (!post) res.status(400).send("That post does not exist.");
+    if (!post) res.status(404).send("This post does not exist.");
 
     req.document = post;
     next();
@@ -93,5 +107,6 @@ module.exports = {
     getActivePosts: getActivePosts,
     getUsersPosts: getUsersPosts,
     createUserPost: createUserPost,
+    editUserPost: editUserPost,
     deleteUserPost: deleteUserPost
 }

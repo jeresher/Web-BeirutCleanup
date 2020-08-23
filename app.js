@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/beirut')
 .then(() => console.log("Connection Successful."))
+.catch((err) => console.log(err))
 
 
 //Temporary for CORS.
