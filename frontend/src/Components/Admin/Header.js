@@ -12,7 +12,7 @@ function Header() {
     }
 
     return (
-        <div className="admin-dashboard-header">
+        <div className="admin-dashboard-header" onClick={() => window.location.reload()}>
             <div>
                 <h1>Beirut Cleanup</h1>
             </div>

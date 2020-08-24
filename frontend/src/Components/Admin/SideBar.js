@@ -27,7 +27,7 @@ function SideBar(props) {
             </div>
             </Link>
 
-            <div className="userinfo">
+            <div className="userinfo noselect">
                 <h5>Logged in as:</h5>
                 <h4>{props.user ? props.user.name : "Loading..."}</h4>
             </div>

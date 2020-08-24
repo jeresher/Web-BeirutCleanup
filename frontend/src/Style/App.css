@@ -622,6 +622,7 @@ table {
 }
 
 .admin-dashboard-header h1 {
+  cursor: pointer;
   color: white;
   margin-left: 1vw;
   font-size: 1.5vw;
@@ -685,10 +686,12 @@ table {
 }
 
 .admin-dashboard-sidebar .section img {
+  cursor: pointer;
   padding-left: 20px;
 }
 
 .admin-dashboard-sidebar .section button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   color: white;
@@ -769,6 +772,7 @@ table {
 }
 
 .event-heading .add-event-button {
+  cursor: pointer;
   border: 0;
   padding: 10px 10px;
   color: white;
@@ -863,12 +867,14 @@ table {
 }
 
 .edit-button {
+  cursor: pointer;
   background-color: white;
   border-radius: 5%;
   border: 1px solid #CCCFD8;
 }
 
 .delete-button {
+  cursor: pointer;
   border: none;
   background-color: transparent;
 }
