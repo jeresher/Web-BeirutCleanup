@@ -628,6 +628,26 @@ table {
   font-weight: 450;
 }
 
+.admin-dashboard-header .exit {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.admin-dashboard-header .exit h6 {
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1vw;
+  font-size: 14px;
+  font-weight: 400;
+  padding-right: 3px;
+}
+
+.admin-dashboard-header .exit img {
+  opacity: .5;
+  padding-right: 3vw;
+
+}
+
 /* INNER CONTAINER */
 .admin-dashboard-inner-container {
   display: flex;
