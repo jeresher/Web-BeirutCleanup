@@ -11,8 +11,7 @@ function SideBar(props) {
         <div className="admin-dashboard-sidebar">
 
             <label>CORE</label>
-
-            <Link to="/admin/dashboard/" className="routerlink">
+            <Link to="/admin/dashboard/events" className="routerlink">
             <div className="section">
                 <img src={markersvg}></img>
                 <button>Events</button>
@@ -20,7 +19,7 @@ function SideBar(props) {
             </Link>
 
             <label>ADMIN</label>
-            <Link to="/admin/allevents/" className="routerlink">
+            <Link to="/admin/dashboard/allevents" className="routerlink">
             <div className="section">
                 <img src={globesvg}></img>
                 <button>All Events</button>

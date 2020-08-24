@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Config from '../../../../Miscellaneous/Config'
 import getAuthToken from '../../../../Miscellaneous/authtoken';
 
-function EventTableItem({event}) {
+function AllEventsTableItem({event}) {
 
     function onDelete() {
 
@@ -29,7 +29,7 @@ function EventTableItem({event}) {
             <td className="event-description">{event.eventDescription}</td>
             <td className="event-buttons">
                 <Link to={{
-                    pathname: `/admin/dashboard/events/view/${event.eventName}`,
+                    pathname: `/admin/dashboard/view/${event.eventName}`,
                     state: {event: event}
                 }}>
                 <button className="edit-button">VIEW</button>
@@ -40,4 +40,4 @@ function EventTableItem({event}) {
     )
 }
 
-export default EventTableItem;
+export default AllEventsTableItem;

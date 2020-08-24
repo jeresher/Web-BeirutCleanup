@@ -6,7 +6,7 @@ function EventHeading() {
     return(
         <div className="event-heading">
             <h1 className="title noselect">Your Events</h1>
-            <Link to="/admin/dashboard/create">
+            <Link to="/admin/dashboard/events/create">
             <button className="add-event-button">+ NEW EVENT</button>
             </Link>
         </div>
