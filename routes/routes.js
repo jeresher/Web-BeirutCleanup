@@ -6,7 +6,8 @@ const {
     createUserPost,
     editUserPost, 
     deleteUserPost,
-    getAllUsersPosts
+    getAllUsersPosts,
+    getAllUsersAccounts
 } = require("../controllers/posts");
 const { 
     registerUser, 
@@ -67,6 +68,10 @@ router.get("/api/me", [authorization, authenticationlvl1, retrieveUser], (req, r
 
 // AUTHENTICATION LVL 10.
 router.get("/api/alluserposts", [authorization, authenticationlvl10, getAllUsersPosts], (req, res, next) => {
+    res.send(req.documents);
+});
+
+router.get("/api/alluseraccounts", [authorization, authenticationlvl10, getAllUsersAccounts], (req, res, next) => {
     res.send(req.documents);
 });
 

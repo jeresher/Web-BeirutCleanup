@@ -7,7 +7,8 @@ const UserSchema = new mongoose.Schema({
     password: String,
     status: { type: String, default: "pending" },
     privileges: { type: Number, default: 1},
-    registrationDate: { type: Date, default: Date.now }
+    registrationDate: { type: Date, default: Date.now },
+    locked: { type: Boolean, default: false}
 })
 
 UserSchema.methods.generateAuthToken = function() {

@@ -115,6 +115,14 @@ async function getAllUsersPosts(req, res, next) {
     next();
 }
 
+async function getAllUsersAccounts(req, res, next) {
+
+    const users = await User.find().select('-password');
+
+    req.documents = users;
+    next();
+}
+
 
 
 module.exports = {
@@ -125,5 +133,6 @@ module.exports = {
     createUserPost: createUserPost,
     editUserPost: editUserPost,
     deleteUserPost: deleteUserPost,
-    getAllUsersPosts: getAllUsersPosts
+    getAllUsersPosts: getAllUsersPosts,
+    getAllUsersAccounts: getAllUsersAccounts
 }
