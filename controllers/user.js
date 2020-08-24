@@ -18,9 +18,9 @@ async function registerUser(req, res, next) {
     const { error } = registerSchema.validate(req.body)
     if (error) return res.status(400).send(error.details[0].message);
 
-    // CHECK IF THE EMAIL ALREADY EXISTS IN THE DATABASE.
-    const emailExist = await User.findOne({email: req.body.email})
-    if (emailExist) return res.status(400).send('Email already exists.');
+    // CHECK IF THE NAME OR EMAIL ALREADY EXISTS IN THE DATABASE.
+    const accountExist = await User.findOne({$or: [{email: req.body.email},{name: req.body.name}]})
+    if (accountExist) return res.status(400).send('Name or email already exists.');
 
     // HASH THE PASSWORD.
     const salt = await bcrypt.genSalt(10); 
