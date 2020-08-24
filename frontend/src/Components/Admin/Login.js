@@ -94,7 +94,9 @@ function Admin() {
                         <h6 id="pass-error-message" style={{visibility: 'hidden'}}>This password is invalid.</h6>
                         <button type="submit" className="submit">Sign In</button>
                     </form>
+                    <a href="mailto:volunteerbeirut@gmail.com?subject=Beirut Cleanup: Event Organizer Account Application">
                     <button className="request">Request an Account</button>
+                    </a>
                 </div>
             </div>
         </div>
