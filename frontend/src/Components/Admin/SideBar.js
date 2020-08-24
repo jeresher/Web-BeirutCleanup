@@ -6,7 +6,7 @@ import globesvg from "../../Assets/icons/globe.svg"
 
 function SideBar({user}) {    
 
-    function adjustSidebar() {
+    function adjustSidebarDependingOnUserPrivileges() {
 
         if (!user) return;
         
@@ -28,7 +28,7 @@ function SideBar({user}) {
         }
     }
 
-    useEffect(adjustSidebar, [user])
+    useEffect(adjustSidebarDependingOnUserPrivileges, [user])
 
     return (
         <div className="admin-dashboard-sidebar">
