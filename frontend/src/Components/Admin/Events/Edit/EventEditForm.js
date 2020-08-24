@@ -148,6 +148,17 @@ function EventEditForm(props) {
         history.push('/admin/dashboard/');
     }
 
+    function setMinDate() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) dd = `0${dd}`
+        if (mm < 10) mm = `0${mm}`
+        const date = document.getElementById('date');
+        date.setAttribute('min', `${yyyy}-${mm}-${dd}`)
+    }
+
     useEffect(setInitialValues, [props.event])
 
     return (      
@@ -169,14 +180,7 @@ function EventEditForm(props) {
                     id="date" 
                     type="date"
                     pattern="\d{4}-\d{2}-\d{2}"
-                    onChange={(event) => {
-                        var date = document.getElementById("date");
-                        console.log(date.value);
-                        console.log(typeof date.value);
-                        const eventDate = props.event.eventDate;
-                        console.log(eventDate);
-                        console.log(typeof eventDate);
-                    }}
+                    onFocus={setMinDate}
                     required
                 />
             </div>

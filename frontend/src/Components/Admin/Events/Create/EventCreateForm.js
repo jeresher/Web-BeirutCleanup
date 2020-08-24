@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import getAuthToken from '../../../../Miscellaneous/authtoken';
 import Config from '../../../../Miscellaneous/Config';
@@ -8,16 +8,6 @@ function EventCreateForm(props) {
     const history = useHistory();
 
     const [ type, setType ] = React.useState("text");
-
-    function didItPass(bool, element) {
-        if (bool === false) {
-            element.style.borderColor = "red";
-            element.style.borderWidth = "2px";
-        } else {
-            element.style.borderColor = "rgb(210, 210, 210)";
-            element.style.borderWidth = "1px";
-        }
-    }
 
     function setLocationValue() {
         const input = document.getElementById("location");
@@ -108,9 +98,30 @@ function EventCreateForm(props) {
         
     }
 
+    function didItPass(bool, element) {
+        if (bool === false) {
+            element.style.borderColor = "red";
+            element.style.borderWidth = "2px";
+        } else {
+            element.style.borderColor = "rgb(210, 210, 210)";
+            element.style.borderWidth = "1px";
+        }
+    }
+
     function backButtonClicked(event) {
         event.stopPropagation();
         history.push('/admin/dashboard/');
+    }
+
+    function setMinDate() {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) dd = `0${dd}`
+        if (mm < 10) mm = `0${mm}`
+        const date = document.getElementById('date');
+        date.setAttribute('min', `${yyyy}-${mm}-${dd}`)
     }
 
     return (      
@@ -131,8 +142,12 @@ function EventCreateForm(props) {
                 <input 
                     id="date" 
                     placeholder="Date تاريخ الحدث" 
-                    type={type} 
-                    onFocus={() => setType("date")} 
+                    type="date"
+                    type={type}
+                    onFocus={() => {
+                        setType("date")
+                        setMinDate()
+                    }} 
                     pattern="\d{4}-\d{2}-\d{2}"
                     required
                 />
