@@ -571,6 +571,7 @@ table {
 }
 
 .admin-login-form button.submit {
+  cursor: pointer;
   width: 100%;
   margin-top: 15px;
   height: 33px;
@@ -582,6 +583,7 @@ table {
 }
 
 .admin-login-vertical-container button.request {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   margin-top: 22px;
