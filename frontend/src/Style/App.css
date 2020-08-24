@@ -1057,6 +1057,32 @@ table {
 
 
 
+/* ACCOUNT MAIN SCREEN */
+.accounts-body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2%;
+  background-color: red;
+  height: 65vh;
+}
+
+/* ACCOUNT: CREATE ACCOUNT */
+.accounts-form {
+  width: 30vw;
+  background-color: blue;
+}
+
+/* ACCOUNT: ACCOUNT TABLE */
+.accounts-table {
+  width: 48vw;
+  background-color: green;
+  color: blue;
+}
+
+
+
+
 
 
 

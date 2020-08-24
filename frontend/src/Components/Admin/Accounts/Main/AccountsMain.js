@@ -1,6 +1,6 @@
 import React from "react";
 import AccountsHeading from "./AccountsHeading";
-
+import AccountsBody from "./AccountsBody";
 function AccountsMain(props) {
 
 
@@ -8,6 +8,7 @@ function AccountsMain(props) {
         <div className="event-outer-container">
             <div className="event-inner-container">
                 <AccountsHeading />
+                <AccountsBody />
             </div>
         </div>
     )
