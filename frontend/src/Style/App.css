@@ -1125,6 +1125,7 @@ table {
 
 .accounts-form-inner-container .formsubmit {
   padding: 2vh 0;
+  width: 100%;
 }
 
 .accounts-form-inner-container .formsubmit button {
