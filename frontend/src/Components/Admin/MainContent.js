@@ -3,6 +3,7 @@ import EventMain from "./Events/Main/EventMain";
 import EventCreateMain from "./Events/Create/EventCreateMain"
 import EventEditMain from "./Events/Edit/EventEditMain"
 import AllEventsMain from "../Admin/AllEvents/Main/AllEventsMain"
+import AllEventsEditMain from "../Admin/AllEvents/Edit/AllEventsEditMain"
 import {Router, Route, Switch} from "react-router-dom";
 
 function MainContent({user}) {
@@ -33,6 +34,10 @@ function MainContent({user}) {
                 <Route
                     exact path="/admin/dashboard/allevents"
                     render={(props) => <AllEventsMain {...props} user={user} />}
+                />
+                <Route 
+                    exact path="/admin/dashboard/allevents/view/:id" 
+                    render={(props) => <AllEventsEditMain {...props} user={user} />}
                 />
             </Switch>
         </div>
