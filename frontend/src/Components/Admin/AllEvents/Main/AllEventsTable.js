@@ -11,7 +11,7 @@ function AllEventsTable() {
     function retrieveUsersPosts() {
         const authtoken = getAuthToken();
 
-        fetch(`${Config.url.API_URL}/api/userposts`, {
+        fetch(`${Config.url.API_URL}/api/alluserposts`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",

@@ -26,9 +26,19 @@ function authenticationlvl1(req, res, next) {
     next();
 }
 
+// AUTHENTICATION LEVEL 10.
+function authenticationlvl10(req, res, next) {
+
+    // CHECK USERS PRIVILEGES LEVEL.
+    if (req.user.privileges < 10) return res.status(403).send('Access Denied. Invalid permissions.');
+    
+    next();
+}
+
 
 
 module.exports = {
     authorization: authorization,
-    authenticationlvl1: authenticationlvl1
+    authenticationlvl1: authenticationlvl1,
+    authenticationlvl10: authenticationlvl10
 }

@@ -101,6 +101,22 @@ async function deleteUserPost(req, res, next) {
     next();
 }
 
+// AUTHENTICATION LEVEL 10.
+async function getAllUsersPosts(req, res, next) {
+    const beirutDate = getBeirutDate();
+
+    var allUsersPosts = await Post
+        .find({eventDate: {"$gte": beirutDate}, locked: false})
+        .sort({eventDate: 1})
+
+    const formattedPosts = await formatDashboardPosts(allUsersPosts); 
+
+    req.documents = formattedPosts;
+    next();
+}
+
+
+
 module.exports = {
     createPost: createPost,
     createComment: createComment,
@@ -108,5 +124,6 @@ module.exports = {
     getUsersPosts: getUsersPosts,
     createUserPost: createUserPost,
     editUserPost: editUserPost,
-    deleteUserPost: deleteUserPost
+    deleteUserPost: deleteUserPost,
+    getAllUsersPosts: getAllUsersPosts
 }
