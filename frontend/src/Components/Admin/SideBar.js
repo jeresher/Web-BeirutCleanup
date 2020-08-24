@@ -1,23 +1,37 @@
 import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
+import markersvg from "../../Assets/icons/marker.svg"
+import globesvg from "../../Assets/icons/globe.svg"
+
 
 function SideBar(props) {    
 
 
     return (
         <div className="admin-dashboard-sidebar">
+
             <label>CORE</label>
+
+            <Link to="/admin/dashboard/" className="routerlink">
             <div className="section">
-                <Link to="/admin/dashboard/"><button>Events</button></Link>
+                <img src={markersvg}></img>
+                <button>Events</button>
             </div>
-            <label>ADDITIONAL</label>
+            </Link>
+
+            <label>ADMIN</label>
+            <Link to="/admin/allevents/" className="routerlink">
             <div className="section">
-                <Link to="/admin/settings/"><button>Settings</button></Link>
+                <img src={globesvg}></img>
+                <button>All Events</button>
             </div>
+            </Link>
+
             <div className="userinfo">
                 <h5>Logged in as:</h5>
                 <h4>{props.user ? props.user.name : "Loading..."}</h4>
             </div>
+
         </div>
     )
 }

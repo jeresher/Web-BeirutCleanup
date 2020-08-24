@@ -652,13 +652,37 @@ table {
   margin-left: 1vw;
 }
 
+.admin-dashboard-sidebar .section {
+  display: flex;
+  color: white;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.admin-dashboard-sidebar .routerlink {
+  text-decoration: none;
+}
+
+.admin-dashboard-sidebar .section img {
+  padding-left: 20px;
+}
+
 .admin-dashboard-sidebar .section button {
-  margin-left: 1vw;
   background-color: transparent;
   border: none;
   color: white;
   font-weight: 700;
-  font-size: 1.1vw;
+  font-size: 16px;
+  flex-grow: 1;
+  text-align: left;
+  outline: none;
+}
+
+.admin-dashboard-sidebar .section h6 {
+  padding-right: 15px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .admin-dashboard-sidebar .userinfo {
