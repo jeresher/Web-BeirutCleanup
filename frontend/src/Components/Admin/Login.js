@@ -87,14 +87,14 @@ function Admin() {
                     <img src={logo}></img>
                     <form className="admin-login-form">
                         <h5>Email</h5>
-                        <input placeholder="example@email.com" id="user-email" required />
+                        <input placeholder="example@email.com" id="user-email" type="email" required />
                         <h6 id="email-error-message" style={{visibility: 'hidden'}}>This email does not exist.</h6>
                         <h5>Password</h5>
-                        <input placeholder="• • • • •" type="password" id="user-password" required />
+                        <input placeholder="• • • • •" type="password" id="user-password" minlength="6" required />
                         <h6 id="pass-error-message" style={{visibility: 'hidden'}}>This password is invalid.</h6>
                         <button type="submit" className="submit">Sign In</button>
                     </form>
-                    <a href="mailto:volunteerbeirut@gmail.com?subject=Beirut Cleanup: Event Organizer Account Application">
+                    <a href="mailto:volunteerbeirut@gmail.com?subject=Beirut Cleanup: Event Organizer Account Request">
                     <button className="request">Request an Account</button>
                     </a>
                 </div>
