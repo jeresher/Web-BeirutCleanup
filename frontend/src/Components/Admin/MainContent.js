@@ -4,6 +4,7 @@ import EventCreateMain from "./Events/Create/EventCreateMain"
 import EventEditMain from "./Events/Edit/EventEditMain"
 import AllEventsMain from "../Admin/AllEvents/Main/AllEventsMain"
 import AllEventsEditMain from "../Admin/AllEvents/Edit/AllEventsEditMain"
+import AccountsMain from "../Admin/Accounts/Main/AccountsMain"
 import {Router, Route, Switch} from "react-router-dom";
 
 function MainContent({user}) {
@@ -39,6 +40,12 @@ function MainContent({user}) {
                     exact path="/admin/dashboard/allevents/view/:id" 
                     render={(props) => <AllEventsEditMain {...props} user={user} />}
                 />
+                {/* ADMIN ACCOUNTS */}
+                <Route
+                    exact path="/admin/dashboard/accounts"
+                    render={(props) => <AccountsMain {...props} user={user} />}
+                />
+
             </Switch>
         </div>
     )

@@ -25,7 +25,9 @@ function SideBar({user}) {
 
         if (user.privileges >= 10) {
             const alleventstab = document.getElementById('all-events-tab');
+            const accountstab = document.getElementById('accounts-tab');
             alleventstab.style.display = 'block'
+            accountstab.style.display = 'block'
         }
     }
 
@@ -54,7 +56,7 @@ function SideBar({user}) {
             </div>
             </Link>
 
-            <Link to="/admin/dashboard/allevents" id="all-events-tab" className="routerlink">
+            <Link to="/admin/dashboard/accounts" id="accounts-tab" style={{display: "none"}} className="routerlink">
             <div className="section">
                 <img src={userssvg}></img>
                 <button>Accounts</button>
