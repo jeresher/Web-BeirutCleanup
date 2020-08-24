@@ -54,11 +54,11 @@ async function loginUser (req, res, next) {
 
     // CHECK IF EMAIL EXISTS.
     const user = await User.findOne({email: req.body.email})
-    if (!user) return res.status(400).send('Email doesn\'t exist.');
+    if (!user) return res.status(404).send('Email doesn\'t exist.');
 
     // CHECK IF PASSWORD IS CORRECT.
     const validPass = await bcrypt.compare(req.body.password, user.password)
-    if (!validPass) return res.status(400).send('Password is invalid.');
+    if (!validPass) return res.status(401).send('Password is invalid.');
 
     // CREATE & ASSIGN A TOKEN.
     const token = user.generateAuthToken();

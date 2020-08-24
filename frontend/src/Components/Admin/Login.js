@@ -30,29 +30,55 @@ function Admin() {
             }
         })
         .then(res => {
-            console.log('received a response')
-            const account = res.headers.get('auth-token')
-            if (account) {
-                console.log('theres an acc', res)
-                localStorage.setItem('auth-token', account)
-                history.push('/admin/dashboard')
-            } else {
-                console.log('theres no acc', res)
-                console.log("Invalid")
+
+            // SUCCESSFUL LOGIN.
+            if (res.status === 200) {
+                // STORE AUTH-TOKEN IN LOCAL STORAGE.
+                localStorage.setItem('auth-token', res.headers.get('auth-token'))
+                // REDIRECT TO DASHBOARD.
+                history.push('/admin/dashboard');   
             }
-            /*
-            // STORE AUTH-TOKEN IN LOCAL STORAGE.
-            localStorage.setItem('auth-token', res.headers.get('auth-token'))
-            // REDIRECT TO DASHBOARD.
-            history.push('/admin/dashboard');
-            */
+
+            // INVALID EMAIL.
+            else if (res.status === 404) {
+                showErrorMessage(res.status);
+            }
+            // INVALID PASSWORD.
+            else if (res.status === 401) {
+                showErrorMessage(res.status);
+            
+            // UNIDENTIFIED ERROR.
+            } else {
+                throw new Error("An error has occured.")
+            }
+
         })
         .catch(err => console.log(err))
         
     }
 
-    useEffect(isUserAlreadyLoggedIn, [])
+    function showErrorMessage(status) {
+        const emailInput = document.getElementById('user-email');
+        const passInput = document.getElementById('user-password');
+        const emailErrorMessage = document.getElementById('email-error-message');
+        const passErrorMessage = document.getElementById('pass-error-message');
+        emailInput.style.borderColor = 'white';
+        passInput.style.borderColor = 'white'; 
+        emailErrorMessage.style.visibility = 'hidden';
+        passErrorMessage.style.visibility = 'hidden';
 
+        if (status === 404) {
+            emailErrorMessage.style.visibility = 'visible';
+            emailInput.style.borderColor = '#121459';
+        }
+
+        else if (status === 401) {
+            passErrorMessage.style.visibility = 'visible';
+            passInput.style.borderColor = '#121459';
+        }
+    }
+
+    useEffect(isUserAlreadyLoggedIn, [])
 
     return (
         <div className="admin-login-main-container">
@@ -62,9 +88,10 @@ function Admin() {
                     <form className="admin-login-form">
                         <h5>Email</h5>
                         <input placeholder="example@email.com" id="user-email" required />
+                        <h6 id="email-error-message" style={{visibility: 'hidden'}}>This email does not exist.</h6>
                         <h5>Password</h5>
                         <input placeholder="• • • • •" type="password" id="user-password" required />
-
+                        <h6 id="pass-error-message" style={{visibility: 'hidden'}}>This password is invalid.</h6>
                         <button type="submit" className="submit">Sign In</button>
                     </form>
                     <button className="request">Request an Account</button>

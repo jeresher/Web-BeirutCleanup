@@ -509,8 +509,8 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25vw;
-  height: 65vh;
+  width: 325px;
+  height: 450px;
   border-radius: 2px;
   box-shadow: 0px 11px 20px 8px #221e4198;
   background-color: #bebebe80;
@@ -520,47 +520,39 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 18vw;
+  width: 235px;
   height: 100%;
   background-color: transparent;
 }
 
-.admin-login-vertical-container h1 {
-  margin-top: 11vh;
-  font-size: 2.4vw;
-  font-weight: 400;
-  color: white;
-  padding-bottom: 1vh;
-}
-
 .admin-login-vertical-container img {
-  margin-top: 11vh;
-  width: 15vw;
+  margin-top: 70px;
+  width: 200px;
 }
 
 .admin-login-form {
   display: flex;
   flex-direction: column;
-  margin-top: 8vh;
+  margin-top: 55px;
   width: 100%;
 }
 
 .admin-login-form h5 {
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: 1vh;
+  margin-bottom: 8px;
   color: white;
 }
 
 .admin-login-form input {
-  height: 3vh;
+  height: 22px;
   border: none;
   background-color: transparent;
   color: white;
   font-size: 13px;
-  padding-bottom: .5vh;
+  padding-bottom: 4px;
   border-bottom: 2px solid white;
-  margin-bottom: 3vh;
+  margin-bottom: 5px;
 }
 
 .admin-login-form input::placeholder {
@@ -571,10 +563,17 @@ table {
   outline: none;
 }
 
+.admin-login-form h6 {
+  font-size: 10px;
+  font-weight: 700;
+  color: #121459;
+  margin-bottom: 11px;
+}
+
 .admin-login-form button.submit {
   width: 100%;
-  margin-top: 3.5vh;
-  height: 4.5vh;
+  margin-top: 15px;
+  height: 33px;
   background-color: #121459;
   color: white;
   font-weight: 500;
@@ -585,9 +584,9 @@ table {
 .admin-login-vertical-container button.request {
   background-color: transparent;
   border: none;
-  margin-top: 3vh;
+  margin-top: 22px;
   text-align: center;
-  font-size: .9vw;
+  font-size: 12px;
   color: white;
 }
 
