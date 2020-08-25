@@ -2,9 +2,9 @@ import React from "react";
 import EventMain from "./Events/Main/EventMain";
 import EventCreateMain from "./Events/Create/EventCreateMain"
 import EventEditMain from "./Events/Edit/EventEditMain"
-import AllEventsMain from "../Admin/AllEvents/Main/AllEventsMain"
-import AllEventsEditMain from "../Admin/AllEvents/Edit/AllEventsEditMain"
-import AccountsMain from "../Admin/Accounts/Main/AccountsMain"
+import AllEventsMain from "../AllEvents/Main/AllEventsMain"
+import AllEventsEditMain from "../AllEvents/Edit/AllEventsEditMain"
+import AccountsMain from "../Accounts/Main/AccountsMain"
 import {Router, Route, Switch} from "react-router-dom";
 
 function MainContent({user}) {
@@ -15,34 +15,34 @@ function MainContent({user}) {
             <Switch>
                 {/* ADMIN DASHBOARD: TEMPORARY UNTIL DASHBOARD IS CREATED */}
                 <Route 
-                    exact path="/admin/dashboard" 
+                    exact path="/dashboard" 
                     render={(props) => <EventMain {...props} user={user} />}
                 />
                 {/* ADMIN EVENTS */}
                 <Route 
-                    exact path="/admin/dashboard/events" 
+                    exact path="/dashboard/events" 
                     render={(props) => <EventMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/admin/dashboard/events/create" 
+                    exact path="/dashboard/events/create" 
                     render={(props) => <EventCreateMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/admin/dashboard/events/view/:id" 
+                    exact path="/dashboard/events/view/:id" 
                     render={(props) => <EventEditMain {...props} user={user} />}
                 />
                 {/* ADMIN ALL EVENTS */}
                 <Route
-                    exact path="/admin/dashboard/allevents"
+                    exact path="/dashboard/allevents"
                     render={(props) => <AllEventsMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/admin/dashboard/allevents/view/:id" 
+                    exact path="/dashboard/allevents/view/:id" 
                     render={(props) => <AllEventsEditMain {...props} user={user} />}
                 />
                 {/* ADMIN ACCOUNTS */}
                 <Route
-                    exact path="/admin/dashboard/accounts"
+                    exact path="/dashboard/accounts"
                     render={(props) => <AccountsMain {...props} user={user} />}
                 />
 

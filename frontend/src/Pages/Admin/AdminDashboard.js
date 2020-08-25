@@ -14,7 +14,7 @@ function AdminDashboard() {
 
     function validateUser() {
         const authtoken = getAuthToken();
-        if (!authtoken) history.push('/admin');
+        if (!authtoken) history.push('/');
         else retrieveUser();
     }
 
