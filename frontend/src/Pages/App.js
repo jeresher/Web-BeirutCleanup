@@ -1,21 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './Main/Main.js';
-import AdminLogin from './Admin/AdminLogin'
-import AdminDashboard from './Admin/AdminDashboard'
+import MainRoutes from './Main/MainRoutes';
+import AdminRoutes from './Admin/AdminRoutes'
 import '../Style/App.css'; 
 
 function App() {
 
+    function identifySubdomain() {
+        const [subdomain] = window.location.hostname.split('.');
+        
+        if (subdomain === 'admin') return <AdminRoutes />;
+        else return <MainRoutes />;
+    }
+
     return (
         <Router>
-              <Route 
+            <Route
+                path="/"
+                render={identifySubdomain}
+            />
+
+            {/*
+            <Route 
                 path="/" 
                 render={() => {
                     const [subdomain] = window.location.hostname.split('.');
                     if (subdomain === 'admin') return <AdminLogin />;
-                return <Main />;
-                }}/>
+                    return <Main />;
+                }}
+            />
+            */}
+
             {/*
             <Switch>
                 <Route exact path="/" component={Main} />

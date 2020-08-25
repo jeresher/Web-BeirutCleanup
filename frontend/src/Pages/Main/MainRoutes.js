@@ -5,7 +5,7 @@ import Create from "./Create";
 import Home from "./Home";
 import "@reach/combobox/styles.css";
 
-function Main() {
+function MainRoutes() {
 
   const [ createPage, loadCreatePage ] = React.useState(false);
 
@@ -24,4 +24,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainRoutes;
