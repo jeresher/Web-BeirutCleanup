@@ -11,7 +11,7 @@ function AccountsTable() {
     function retrieveUsersAccounts() {
         const authtoken = getAuthToken();
 
-        fetch(`${Config.url.API_URL}/api/userposts`, {
+        fetch(`${Config.url.API_URL}/api/alluseraccounts`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
@@ -21,9 +21,15 @@ function AccountsTable() {
         .then(res => res.json())
         .then(response => {
             setUserAccounts(response);
+            setUserAccountsTableItems(response.map(user => 
+                <AccountsTableItem key={user._id} user={user} />
+            ))
+            /*
+            setUserAccounts(response);
             setUserAccountsTableItems(response.map(event => 
                 <AccountsTableItem key={event._id} event={event} />
-            ))
+            )) 
+            */
         })
         .catch(err => console.log(err))
     }
@@ -36,7 +42,7 @@ function AccountsTable() {
             <table>
                 <thead>
                     <tr>
-                        <th className="account-name">Name</th>
+                        <th className="account-name">User</th>
                         <th className="account-email">Email</th>
                         <th className="account-privileges">Privileges</th>
                         <th className="account-locked">Locked</th>
@@ -44,102 +50,6 @@ function AccountsTable() {
                 </thead>
                 <tbody>
                     {userAccountsTableItems}
-
-
-
-                    <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-        <tr>
-            <td className="account-name">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-email">A VERY LONG NAME TO SEE IF IT WORKS BOYO LETS SEEE THEN I MEAN SHIT</td>
-            <td className="account-privileges">5</td>
-            <td className="account-locked">Yas</td>
-        </tr>
-
-
-
                 </tbody>
             </table>
         </div>

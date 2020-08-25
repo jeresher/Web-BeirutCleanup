@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Config from '../../../../Miscellaneous/Config'
 import getAuthToken from '../../../../Miscellaneous/authtoken';
 
-function AccountTableItem({event}) {
+function AccountTableItem({user}) {
 
     return (
         <tr>
-            <td className="account-name">{event.eventName}</td>
-            <td className="account-email">{event.eventDate}</td>
-            <td className="account-privileges">{event.eventDescription}</td>
+            <td className="account-name">{user.name}</td>
+            <td className="account-email">{user.email}</td>
+            <td className="account-privileges">{user.privileges}</td>
             <td className="account-locked">Yas</td>
         </tr>
     )
