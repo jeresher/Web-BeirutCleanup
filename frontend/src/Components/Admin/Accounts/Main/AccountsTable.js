@@ -24,12 +24,6 @@ function AccountsTable() {
             setUserAccountsTableItems(response.map(user => 
                 <AccountsTableItem key={user._id} user={user} />
             ))
-            /*
-            setUserAccounts(response);
-            setUserAccountsTableItems(response.map(event => 
-                <AccountsTableItem key={event._id} event={event} />
-            )) 
-            */
         })
         .catch(err => console.log(err))
     }

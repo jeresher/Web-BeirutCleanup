@@ -123,6 +123,15 @@ async function getAllUsersAccounts(req, res, next) {
     next();
 }
 
+async function lockUser(req, res, next) {
+
+    const user = await User.findByIdAndUpdate(req.body.id, {locked: req.body.lock});
+    if (!user) res.status(404).send("This user does not exist.");
+
+    req.user = user;
+    next();
+}
+
 
 
 module.exports = {
@@ -134,5 +143,6 @@ module.exports = {
     editUserPost: editUserPost,
     deleteUserPost: deleteUserPost,
     getAllUsersPosts: getAllUsersPosts,
-    getAllUsersAccounts: getAllUsersAccounts
+    getAllUsersAccounts: getAllUsersAccounts,
+    lockUser: lockUser
 }

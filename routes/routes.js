@@ -7,7 +7,8 @@ const {
     editUserPost, 
     deleteUserPost,
     getAllUsersPosts,
-    getAllUsersAccounts
+    getAllUsersAccounts,
+    lockUser
 } = require("../controllers/posts");
 const { 
     registerUser, 
@@ -73,6 +74,10 @@ router.get("/api/alluserposts", [authorization, authenticationlvl10, getAllUsers
 
 router.get("/api/alluseraccounts", [authorization, authenticationlvl10, getAllUsersAccounts], (req, res, next) => {
     res.send(req.documents);
+});
+
+router.patch("/api/useraccount/lock", [authorization, authenticationlvl10, lockUser], (req, res, next) => {
+    res.send(req.user);
 });
 
 
