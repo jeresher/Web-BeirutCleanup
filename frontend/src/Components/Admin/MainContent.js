@@ -2,9 +2,9 @@ import React from "react";
 import EventMain from "./Events/Main/EventMain";
 import EventCreateMain from "./Events/Create/EventCreateMain"
 import EventEditMain from "./Events/Edit/EventEditMain"
-import AllEventsMain from "../AllEvents/Main/AllEventsMain"
-import AllEventsEditMain from "../AllEvents/Edit/AllEventsEditMain"
-import AccountsMain from "../Accounts/Main/AccountsMain"
+import AllEventsMain from "./AllEvents/Main/AllEventsMain"
+import AllEventsEditMain from "./AllEvents/Edit/AllEventsEditMain"
+import AccountsMain from "./Accounts/Main/AccountsMain"
 import {Router, Route, Switch} from "react-router-dom";
 
 function MainContent({user}) {
