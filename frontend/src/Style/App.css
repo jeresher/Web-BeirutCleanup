@@ -1287,15 +1287,20 @@ table {
 
   html {
     overflow-y: hidden;
+    min-height: -webkit-fill-available !important;
+    touch-action: none !important;
   }
 
   body {
     background-color: #EFF2F5;
     overflow-y: hidden;
+    min-height: 100vh !important;
+    min-height: -webkit-fill-available !important;
+    touch-action: none !important;
   }
 
   .main-container {
-    height: 94vh;
+    height: 100vh;
     touch-action: none !important;
   }
 
