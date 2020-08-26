@@ -15,7 +15,7 @@ function MainRoutes() {
   }, []);
 
   return (
-    <div className="main-container">
+    <div className="main-container" onTouchStart={(event) => event.preventDefault()}>
       {/* Navigation Bar. */}
       < NavBar createPage={createPage} loadCreatePage={loadCreatePage}/>
       {/* Main Content. */}

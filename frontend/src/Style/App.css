@@ -1291,11 +1291,17 @@ table {
 
   .main-container {
     height: 94vh;
-  
+    touch-action: none !important;
   }
 
   .navbar {
     background-color: white;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .searchbar {
+    position: fixed;
   }
 
   .inner-container {
