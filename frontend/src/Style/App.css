@@ -1287,6 +1287,7 @@ table {
 
   html {
     overflow-y: hidden;
+    height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
     touch-action: none !important;
   }
@@ -1295,12 +1296,14 @@ table {
     background-color: #EFF2F5;
     overflow-y: hidden;
     min-height: 100vh !important;
+    height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
     touch-action: none !important;
   }
 
   .main-container {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available !important;
     touch-action: none !important;
   }
 
@@ -1317,9 +1320,6 @@ table {
   .inner-container {
     flex-direction: row !important;
     flex-wrap: wrap-reverse !important;
-    flex-basis: auto;
-    align-content: stretch;
-    align-items: flex-end;
     height: 100%;
   }
 
@@ -1339,7 +1339,7 @@ table {
   }
 
   .sidebar .heading {
-    padding: 2vh;
+    padding: 2vh 0;
   }
 
   .sidebar .heading h1 {
@@ -1349,19 +1349,6 @@ table {
   .sidebar .cell .texttruncationfadeeffect {
     display: none;
   }
-
-  /*
-  .sidebar .cell .texttruncationfadeeffect {
-    position: absolute;
-    width: 96%; /* Somewhat iffy measurements for text fade */
-    /*
-    height: 75%;
-    background: linear-gradient(to bottom, transparent, transparent, transparent, transparent,  white 85%);
-  }
-  */
-
-
-
 }
 
 
