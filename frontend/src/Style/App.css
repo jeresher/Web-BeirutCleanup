@@ -1225,83 +1225,6 @@ table {
   align-items: center;
 }
 
-/*
-.event-table {
-  display: flex;
-  width: 100%;
-  margin-top: 2%;
-  table-layout: fixed;
-  text-align: left;
-  background-color: white;
-  box-shadow: 0px 1px 3px #999;
-  color: #353A4D;
-}
-
-.event-table thead {
-  border-bottom: 1px solid #CCCFD8;
-}
-
-.event-table tbody, .event-table thead {
-  display: block;
-}
-
-.event-table tbody {
-  overflow-y: scroll;
-  height: 60vh;
-}
-
-.event-table tbody tr:nth-child(even) {
-  background-color: #FBFBFB;
-}
-
-.event-table th, .event-table td {
-  padding: 15px 1vw;
-}
-
-.event-table th {
-  text-align: left;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-
-.event-table td {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.event-table .event-name {
-  width: 8vw;
-  max-width: 8vw;
-  padding: 1vw;
-
-}
-
-.event-table .event-date {
-  width: 10vw;
-  max-width: 10vw;
-  padding-right: 1vw;
-}
-
-.event-table .event-description {
-  width: 45vw;
-  max-width: 45vw;
-  padding-right: 1vw;
-}
-
-.event-table .event-buttons {
-  width:10vw;
-  max-width: 10vw;
-  display: flex;
-  flex-direction: row;
-}
-*/
-
 
 
 
@@ -1322,7 +1245,81 @@ table {
 
 
 
+/* INNER CONTAINER */
+/*
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  height: 100%;
+  min-height:0;
+}
+
+/* MAP */
+/*
+.mainmap {
+  flex-basis: 60%;
+  height: 100%;
+}
+*/
+/*
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  max-width: 40vw; /* new addition for whitespace */
+  /*
+  background-color: #EFF2F5;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  z-index: 2;
+  box-shadow: 1px 5px 5px rgb(190, 190, 190);
+  min-height:0;
+}
+*/
+
+
+@media only screen and (max-width: 600px) {
+
+  * {
+    font-size: 13px !important;
+  }
+
+  .inner-container {
+    flex-direction: row !important;
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .mainmap {
+    width: 100vw;
+    flex-basis: auto;
+    height: 50%;
+  }
+  
+  .sidebar {
+    width: 100vw;
+    max-width: 100vw;
+    flex-basis: auto;
+    height: 50%;
+  }
+
+  .sidebar .heading {
+    padding: 2vh;
+  }
+
+  .sidebar .heading h1 {
+    display: none;
+  }
+
+
+
+}
+
+
+
+
 /* MOBILE SCREENS */
+/* COMMENTED 
 @media only screen and (max-width: 600px) {
 
   * {
@@ -1331,6 +1328,7 @@ table {
 
 
   /* MAIN SCREEN */
+  /* COMMENTED
   .main-container {
     position: relative;
     min-height: 100vh;
@@ -1371,6 +1369,7 @@ table {
   }
 
   /* CREATE SCREEN */
+  /* COMMENTED
   .create {
     display: flex !important;
     flex-direction: column !important;
@@ -1385,7 +1384,7 @@ table {
   min-height:0;
 }
   */
-
+  /* COMMENTED
   .createmap {
     height: 50%;
   }
@@ -1395,7 +1394,7 @@ table {
   height: 100%;
 }
   */
-
+  /* COMMENTED
   .form {
     position: static;
     height: 60%;
@@ -1420,7 +1419,9 @@ table {
   font-size: 1.1vw;
 }
 */
+  /* COMMENTED
   .form ::placeholder {
     font-size: 15px !important;
   }
 }
+*/

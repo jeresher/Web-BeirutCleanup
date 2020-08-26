@@ -23,7 +23,8 @@ const options = {
   styles: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
-  clickableIcons: false
+  clickableIcons: false,
+  gestureHandling: "greedy"
 }
 
 function MainMap(props) {
