@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainRoutes from './Main/MainRoutes';
 import AdminRoutes from './Admin/AdminRoutes'
 import '../Style/App.css'; 
@@ -15,32 +15,9 @@ function App() {
 
     return (
         <Router>
-            <Route
-                path="/"
-                render={identifySubdomain}
-            />
-
-            {/*
-            <Route 
-                path="/" 
-                render={() => {
-                    const [subdomain] = window.location.hostname.split('.');
-                    if (subdomain === 'admin') return <AdminLogin />;
-                    return <Main />;
-                }}
-            />
-            */}
-
-            {/*
-            <Switch>
-                <Route exact path="/" component={Main} />
-                <Route exact path="/admin" component={AdminLogin} />
-                <Route path="/admin/dashboard" component={AdminDashboard} />
-            </Switch>
-            */}
+            <Route path="/" render={identifySubdomain} />
         </Router>
     )
-
 }
 
 export default App;
