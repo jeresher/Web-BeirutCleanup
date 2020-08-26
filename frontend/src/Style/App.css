@@ -1287,10 +1287,11 @@ table {
 
   body {
     background-color: #EFF2F5;
+    overflow-y: hidden;
   }
 
   .main-container {
-    height: 94vh;
+    height: 100vh;
     touch-action: none !important;
   }
 
@@ -1310,7 +1311,7 @@ table {
     flex-basis: auto;
     align-content: stretch;
     align-items: flex-end;
-    height: 100%;
+    height: 94%;
   }
 
   .mainmap {

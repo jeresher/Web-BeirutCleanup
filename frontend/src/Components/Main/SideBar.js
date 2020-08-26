@@ -5,7 +5,7 @@ function SideBar(props) {
 
   return(
     <div className='sidebar'>
-      <div className='heading'>
+      <div className='heading noselect'>
         <h1>الأحداث القادمة</h1>
         <h6>UPCOMING EVENTS</h6>
       </div>
