@@ -1304,7 +1304,6 @@ table {
   .main-container {
     touch-action: none !important;
     min-height: 100vh !important;
-    height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
   }
 
@@ -1321,7 +1320,7 @@ table {
   .inner-container {
     flex-direction: row !important;
     flex-wrap: wrap-reverse !important;
-    height: 93vh;
+    height: 100%;
   }
 
   .mainmap {
@@ -1345,6 +1344,10 @@ table {
 
   .sidebar .heading h1 {
     display: none;
+  }
+
+  .sidebar .body {
+    padding-bottom: 8vh;
   }
 
   .sidebar .cell .texttruncationfadeeffect {
