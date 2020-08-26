@@ -29,7 +29,7 @@ function EventTableItem({event}) {
             <td className="event-description">{event.eventDescription}</td>
             <td className="event-buttons">
                 <Link to={{
-                    pathname: `/admin/dashboard/events/view/${event.eventName}`,
+                    pathname: `/dashboard/events/view/${event.eventName}`,
                     state: {event: event}
                 }}>
                 <button className="edit-button">VIEW</button>

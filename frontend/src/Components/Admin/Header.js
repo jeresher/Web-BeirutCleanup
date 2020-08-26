@@ -8,7 +8,7 @@ function Header() {
     
     function onLogoutClicked() {
         localStorage.clear();
-        history.push('/admin/')
+        history.push('/')
     }
 
     return (

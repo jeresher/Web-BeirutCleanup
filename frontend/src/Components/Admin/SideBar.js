@@ -38,7 +38,7 @@ function SideBar({user}) {
 
             <label id="core-label" style={{display: "none"}}>CORE</label>
 
-            <Link to="/admin/dashboard/events" id="events-tab" style={{display: "none"}} className="routerlink">
+            <Link to="/dashboard/events" id="events-tab" style={{display: "none"}} className="routerlink">
             <div className="section">
                 <img src={markersvg}></img>
                 <button>Events</button>
@@ -49,14 +49,14 @@ function SideBar({user}) {
 
             <label id="admin-label" style={{display: "none"}}>ADMIN</label>
 
-            <Link to="/admin/dashboard/allevents" id="all-events-tab" style={{display: "none"}} className="routerlink">
+            <Link to="/dashboard/allevents" id="all-events-tab" style={{display: "none"}} className="routerlink">
             <div className="section">
                 <img src={globesvg}></img>
                 <button>All Events</button>
             </div>
             </Link>
 
-            <Link to="/admin/dashboard/accounts" id="accounts-tab" style={{display: "none"}} className="routerlink">
+            <Link to="/dashboard/accounts" id="accounts-tab" style={{display: "none"}} className="routerlink">
             <div className="section">
                 <img src={userssvg}></img>
                 <button>Accounts</button>

@@ -115,7 +115,7 @@ function AllEventsEditForm(props) {
             }
         })
         .then(res => res.json())
-        .then(response => history.push('/admin/dashboard/allevents'))
+        .then(response => history.push('/dashboard/allevents'))
         .catch(err => console.log(err))
         
     }
@@ -145,7 +145,7 @@ function AllEventsEditForm(props) {
 
     function backButtonClicked(event) {
         event.stopPropagation();
-        history.push('/admin/dashboard/allevents');
+        history.push('/dashboard/allevents');
     }
 
     function setMinDate() {
