@@ -1285,9 +1285,26 @@ table {
     font-size: 13px !important;
   }
 
+  body {
+    background-color: #EFF2F5;
+  }
+
+  .main-container {
+    height: 94vh;
+  
+  }
+
+  .navbar {
+    background-color: white;
+  }
+
   .inner-container {
     flex-direction: row !important;
     flex-wrap: wrap-reverse !important;
+    flex-basis: auto;
+    align-content: stretch;
+    align-items: flex-end;
+    height: 100%;
   }
 
   .mainmap {
@@ -1301,6 +1318,8 @@ table {
     max-width: 100vw;
     flex-basis: auto;
     height: 50%;
+    box-shadow: none;
+
   }
 
   .sidebar .heading {
@@ -1310,6 +1329,20 @@ table {
   .sidebar .heading h1 {
     display: none;
   }
+
+  .sidebar .cell .texttruncationfadeeffect {
+    display: none;
+  }
+
+  /*
+  .sidebar .cell .texttruncationfadeeffect {
+    position: absolute;
+    width: 96%; /* Somewhat iffy measurements for text fade */
+    /*
+    height: 75%;
+    background: linear-gradient(to bottom, transparent, transparent, transparent, transparent,  white 85%);
+  }
+  */
 
 
 
