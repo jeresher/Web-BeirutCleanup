@@ -1286,25 +1286,26 @@ table {
   }
 
   html {
+    touch-action: none !important;
     overflow-y: hidden;
     height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
-    touch-action: none !important;
   }
 
   body {
-    background-color: #EFF2F5;
+    touch-action: none !important;
     overflow-y: hidden;
     min-height: 100vh !important;
     height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
-    touch-action: none !important;
+    background-color: #EFF2F5;
   }
 
   .main-container {
-    min-height: 100vh;
-    min-height: -webkit-fill-available !important;
     touch-action: none !important;
+    min-height: 100vh !important;
+    height: -webkit-fill-available !important;
+    min-height: -webkit-fill-available !important;
   }
 
   .navbar {
@@ -1320,7 +1321,7 @@ table {
   .inner-container {
     flex-direction: row !important;
     flex-wrap: wrap-reverse !important;
-    height: 100%;
+    height: 93vh;
   }
 
   .mainmap {
