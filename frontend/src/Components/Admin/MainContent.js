@@ -15,34 +15,34 @@ function MainContent({user}) {
             <Switch>
                 {/* ADMIN DASHBOARD: TEMPORARY UNTIL DASHBOARD IS CREATED */}
                 <Route 
-                    exact path="/dashboard" 
+                    exact path="/" 
                     render={(props) => <EventMain {...props} user={user} />}
                 />
                 {/* ADMIN EVENTS */}
                 <Route 
-                    exact path="/dashboard/events" 
+                    exact path="/events" 
                     render={(props) => <EventMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/dashboard/events/create" 
+                    exact path="/events/create" 
                     render={(props) => <EventCreateMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/dashboard/events/view/:id" 
+                    exact path="/events/view/:id" 
                     render={(props) => <EventEditMain {...props} user={user} />}
                 />
                 {/* ADMIN ALL EVENTS */}
                 <Route
-                    exact path="/dashboard/allevents"
+                    exact path="/allevents"
                     render={(props) => <AllEventsMain {...props} user={user} />}
                 />
                 <Route 
-                    exact path="/dashboard/allevents/view/:id" 
+                    exact path="/allevents/view/:id" 
                     render={(props) => <AllEventsEditMain {...props} user={user} />}
                 />
                 {/* ADMIN ACCOUNTS */}
                 <Route
-                    exact path="/dashboard/accounts"
+                    exact path="/accounts"
                     render={(props) => <AccountsMain {...props} user={user} />}
                 />
 

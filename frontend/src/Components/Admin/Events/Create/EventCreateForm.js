@@ -93,7 +93,7 @@ function EventCreateForm(props) {
             }
         })
         .then(res => res.json())
-        .then(response => history.push('/dashboard/events'))
+        .then(response => history.push('/events'))
         .catch(err => console.log(err))
         
     }
@@ -110,7 +110,7 @@ function EventCreateForm(props) {
 
     function backButtonClicked(event) {
         event.stopPropagation();
-        history.push('/dashboard/events');
+        history.push('/events');
     }
 
     function setMinDate() {

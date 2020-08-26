@@ -8,8 +8,8 @@ function AdminRoutes() {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={AdminLogin} />
-                <Route path="/dashboard" component={AdminDashboard} />
+                <Route exact path="/login" component={AdminLogin} />
+                <Route path="/" component={AdminDashboard} />
             </Switch>
         </Router>
     )
