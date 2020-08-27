@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import markersvg from "../../Assets/icons/marker.svg"
 import globesvg from "../../Assets/icons/globe.svg"
 import userssvg from "../../Assets/icons/users.svg"
@@ -38,30 +38,30 @@ function SideBar({user}) {
 
             <label id="core-label" style={{display: "none"}}>CORE</label>
 
-            <Link to="/events" id="events-tab" style={{display: "none"}} className="routerlink">
+            <NavLink to="/events" id="events-tab" style={{display: "none"}} className="link" activeClassName="activelink">
             <div className="section">
                 <img src={markersvg}></img>
                 <button>Events</button>
             </div>
-            </Link>
+            </NavLink>
 
 
 
             <label id="admin-label" style={{display: "none"}}>ADMIN</label>
 
-            <Link to="/allevents" id="all-events-tab" style={{display: "none"}} className="routerlink">
+            <NavLink to="/allevents" id="all-events-tab" style={{display: "none"}} className="link" activeClassName="activelink">
             <div className="section">
                 <img src={globesvg}></img>
                 <button>All Events</button>
             </div>
-            </Link>
+            </NavLink>
 
-            <Link to="/accounts" id="accounts-tab" style={{display: "none"}} className="routerlink">
+            <NavLink to="/accounts" id="accounts-tab" style={{display: "none"}} className="link" activeClassName="activelink">
             <div className="section">
                 <img src={userssvg}></img>
                 <button>Accounts</button>
             </div>
-            </Link>
+            </NavLink>
 
 
 

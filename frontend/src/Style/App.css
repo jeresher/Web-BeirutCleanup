@@ -683,20 +683,21 @@ table {
   margin-bottom: 28px;
 }
 
-.admin-dashboard-sidebar .routerlink {
+.admin-dashboard-sidebar .link {
   text-decoration: none;
 }
 
 .admin-dashboard-sidebar .section img {
   cursor: pointer;
   margin-left: 1vw;
+  opacity: .5;
 }
 
 .admin-dashboard-sidebar .section button {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
   font-size: 16px;
   flex-grow: 1;
@@ -709,6 +710,14 @@ table {
   font-size: 20px;
   font-weight: 500;
 }
+
+.admin-dashboard-sidebar .activelink img {
+  opacity: 1 !important;
+}
+
+.admin-dashboard-sidebar .activelink button {
+  color: rgba(255, 255, 255) !important;
+} 
 
 .admin-dashboard-sidebar .userinfo {
   position: absolute;
