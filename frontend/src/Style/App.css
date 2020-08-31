@@ -65,12 +65,12 @@ table {
 
 /* NAVBAR: LOGO */
 .navbar .logo {
-  padding-left: 2%;
+  padding-left: 0.5%; /* 2% Beirut Cleanup logo */
 }
 
 .navbar .logo img {
   cursor: pointer;
-  max-width: 13vw;
+  max-width: 19vw; /* 13vw Beirut Cleanup logo */
   display: inline;
 }
 
