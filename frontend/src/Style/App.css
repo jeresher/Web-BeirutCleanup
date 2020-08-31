@@ -239,7 +239,7 @@ table {
 }
 
 .sidebar .cell .eventtext p {
-  font-size: 1vw;
+  font-size: 14px;
   line-height: 2.1vh;
   color: #848484;
 }
@@ -1388,6 +1388,10 @@ table {
 
   .sidebar .body {
     padding-bottom: 13vh;
+  }
+
+  .sidebar .cell {
+    height: 22vh;
   }
 
   .sidebar .cell .texttruncationfadeeffect {
