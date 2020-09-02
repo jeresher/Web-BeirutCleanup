@@ -84,9 +84,12 @@ function MainMap(props) {
 
               <div className="divider" />
 
-              <p className="description"
+              <p 
+                className="description"
                 onClick={() => props.setSelectedTableMarker(props.selectedMapMarker[0])}>
-                <span className="date">{props.selectedMapMarker[0].eventDate}</span> {props.selectedMapMarker[0].eventDescription}
+                <span className="date">{props.selectedMapMarker[0].eventDate}</span>
+                <span style={{visibility:"hidden"}}>x</span>
+                {props.selectedMapMarker[0].eventDescription}
               </p>
 
             </div>

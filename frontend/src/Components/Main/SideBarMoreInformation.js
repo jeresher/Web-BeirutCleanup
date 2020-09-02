@@ -14,7 +14,11 @@ function SideBarMainInformation(props) {
             <div className="information">
                 <h1>{marker.eventName}</h1>
                 <div />
-                <p><span className="date">{marker.eventDate}</span> {marker.eventDescription}</p>
+                <p>
+                    <span className="date">{marker.eventDate}</span>
+                    <span style={{visibility:"hidden"}}>x</span>
+                    {marker.eventDescription}
+                </p>
                 <div />
             </div>
         </div>
