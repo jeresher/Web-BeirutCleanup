@@ -18,7 +18,7 @@ function authorization(req, res, next) {
 }
 
 // AUTHORIZATION LEVEL 1.
-function authenticationlvl1(req, res, next) {
+function authorizationlvl1(req, res, next) {
 
     // CHECK USERS PRIVILEGES LEVEL.
     if (req.user.privileges < 1) return res.status(403).send('Access Denied. Invalid permissions.');
@@ -27,7 +27,7 @@ function authenticationlvl1(req, res, next) {
 }
 
 // AUTHORIZATION LEVEL 10.
-function authenticationlvl10(req, res, next) {
+function authorizationlvl10(req, res, next) {
 
     // CHECK USERS PRIVILEGES LEVEL.
     if (req.user.privileges < 10) return res.status(403).send('Access Denied. Invalid permissions.');
@@ -39,6 +39,6 @@ function authenticationlvl10(req, res, next) {
 
 module.exports = {
     authorization: authorization,
-    authenticationlvl1: authenticationlvl1,
-    authenticationlvl10: authenticationlvl10
+    authorizationlvl1: authorizationlvl1,
+    authorizationlvl10: authorizationlvl10
 }
