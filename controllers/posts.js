@@ -45,7 +45,7 @@ async function createComment(req, res, next) {
     next();
 }
 
-// AUTHENTICATION LEVEL 1.
+// AUTHORIZATION LEVEL 1.
 async function getUsersPosts(req, res, next) {
     const beirutDate = getBeirutDate();
 
@@ -101,7 +101,7 @@ async function deleteUserPost(req, res, next) {
     next();
 }
 
-// AUTHENTICATION LEVEL 10.
+// AUTHORIZATION LEVEL 10.
 async function getAllUsersPosts(req, res, next) {
     const beirutDate = getBeirutDate();
 

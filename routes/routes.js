@@ -45,7 +45,7 @@ router.post("/api/login", loginUser, (req, res, next) => {
     res.send(req.user);
 });
 
-// AUTHENTICATION LVL 1.
+// AUTHORIZATION LVL 1.
 
 router.get("/api/userposts", [authorization, authenticationlvl1, getUsersPosts], (req, res, next) => {
     res.send(req.documents);
@@ -67,7 +67,7 @@ router.get("/api/me", [authorization, authenticationlvl1, retrieveUser], (req, r
     res.send(req.user);
 });
 
-// AUTHENTICATION LVL 10.
+// AUTHORIZATION LVL 10.
 router.get("/api/alluserposts", [authorization, authenticationlvl10, getAllUsersPosts], (req, res, next) => {
     res.send(req.documents);
 });

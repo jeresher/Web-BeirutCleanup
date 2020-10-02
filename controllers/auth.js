@@ -17,7 +17,7 @@ function authorization(req, res, next) {
     }
 }
 
-// AUTHENTICATION LEVEL 1.
+// AUTHORIZATION LEVEL 1.
 function authenticationlvl1(req, res, next) {
 
     // CHECK USERS PRIVILEGES LEVEL.
@@ -26,7 +26,7 @@ function authenticationlvl1(req, res, next) {
     next();
 }
 
-// AUTHENTICATION LEVEL 10.
+// AUTHORIZATION LEVEL 10.
 function authenticationlvl10(req, res, next) {
 
     // CHECK USERS PRIVILEGES LEVEL.
