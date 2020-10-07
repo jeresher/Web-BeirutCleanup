@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
-// AUTHORIZATION.
-function authorization(req, res, next) {
+// AUTHENTICATION.
+function authentication(req, res, next) {
 
     // CHECK IF TOKEN IS PRESENT.
     const token = req.header('auth-token');
@@ -38,7 +38,7 @@ function authorizationlvl10(req, res, next) {
 
 
 module.exports = {
-    authorization: authorization,
+    authentication: authentication,
     authorizationlvl1: authorizationlvl1,
     authorizationlvl10: authorizationlvl10
 }
