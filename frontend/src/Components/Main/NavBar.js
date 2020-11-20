@@ -17,7 +17,9 @@ function NavBar(props) {
           <button id="addevent" onClick={() => props.loadCreatePage(true)}><h1>ADD EVENT</h1><h1>إضافة حدث</h1></button>
           }
           */}
-          <a href="https://supportlrc.app/" target="_blank"><button id="donate"><h1>DONATE</h1><h1>تبرع</h1></button></a>
+          <a href="https://www.redcross.org.lb/" target="_blank"><button id="donate"><h1>DONATE</h1><h1>تبرع</h1></button></a>
+          <a href="https://admin.beirutcleanup.com/" target="_blank"><button id="addevent"><h1>ADD EVENT</h1><h1>عرض الأحداث</h1></button></a>
+
         </div>
       </div>
     );

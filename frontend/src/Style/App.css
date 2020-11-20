@@ -80,27 +80,26 @@ table {
   display: flex;
 }
 
-.navbar .navigation #viewevent, #addevent {
+.navbar .navigation #addevent, #donate {
   cursor: pointer;
-  border: 0;
-  border-radius: 3px;
-  padding: 4px 15px;
-  background-color: #121459;
-  color: white;
   font-weight: 900;
   font-size: .8rem;
+  border-radius: 3px;
+  margin-left: 1.2vw;
+}
+
+.navbar .navigation #addevent {
+  color: white;
+  background-color: #121459;
+  border: 1px solid #121459;
+  padding: 4px 11px;
   box-shadow: 0px 2px 3px rgb(190, 190, 190);
 }
 
 .navbar .navigation #donate {
-  cursor: pointer;
-  border: 1px solid #d6d6d6;
   color: #121459;
-  font-weight: 900;
-  font-size: .8rem;
   background-color: transparent;
-  border-radius: 3px;
-  margin-left: 1.2vw;
+  border: 1px solid #d6d6d6;
   padding: 4px 20px;
   box-shadow: 0px 1px 3px rgb(190, 190, 190);
 }
