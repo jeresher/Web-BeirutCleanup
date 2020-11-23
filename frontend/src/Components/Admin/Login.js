@@ -10,7 +10,7 @@ function Admin() {
 
     function isUserAlreadyLoggedIn() {
         const authtoken = getAuthToken();
-        if (authtoken) history.push('/');
+        if (authtoken) history.push('/events');
     }
 
     function attemptLogin(event) {
@@ -36,7 +36,7 @@ function Admin() {
                 // STORE AUTH-TOKEN IN LOCAL STORAGE.
                 localStorage.setItem('auth-token', res.headers.get('auth-token'))
                 // REDIRECT TO DASHBOARD.
-                history.push('/');   
+                history.push('/events');   
             }
 
             // INVALID EMAIL.
